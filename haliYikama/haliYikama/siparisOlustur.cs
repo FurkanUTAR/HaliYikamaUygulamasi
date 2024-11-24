@@ -71,51 +71,8 @@ namespace haliYikama
         private void musteriDuzenleButton_Click(object sender, EventArgs e)
         {
             musteriDuzenle musteriDuzenle = new musteriDuzenle();
-            musteriDuzenle.AdSoyad = adSoyadLabel.Text;
-            musteriDuzenle.TelNo = telNoLabel.Text; 
-            musteriDuzenle.Adres = adresLabel.Text;
             musteriDuzenle.Show();
             this.Hide();
-        }
-
-        private void adresLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void siparisNotuTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void siparisTarihiDateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void telNoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void adSoyadLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

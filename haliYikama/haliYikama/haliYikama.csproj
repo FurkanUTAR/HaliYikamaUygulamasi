@@ -83,6 +83,18 @@
     <Compile Include="gelirGiderTakip.Designer.cs">
       <DependentUpon>gelirGiderTakip.cs</DependentUpon>
     </Compile>
+    <Compile Include="hazirOlanlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hazirOlanlar.Designer.cs">
+      <DependentUpon>hazirOlanlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hepsi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hepsi.Designer.cs">
+      <DependentUpon>hepsi.cs</DependentUpon>
+    </Compile>
     <Compile Include="kayitOl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +175,12 @@
     <EmbeddedResource Include="gelirGiderTakip.resx">
       <DependentUpon>gelirGiderTakip.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="hazirOlanlar.resx">
+      <DependentUpon>hazirOlanlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hepsi.resx">
+      <DependentUpon>hepsi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="kayitOl.resx">
       <DependentUpon>kayitOl.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,15 +245,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\addOrder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\addOrder %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\removeOrder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,15 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
 
 namespace haliYikama
 {
     public partial class alinacaklar : Form
     {
-
-        OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
-
         public alinacaklar()
         {
             InitializeComponent();
@@ -26,17 +22,6 @@ namespace haliYikama
             siparisler siparisler = new siparisler();
             siparisler.Show();
             this.Hide();
-        }
-
-        void siparisGoster()
-        {
-            string komut = "SELECT * FROM ";
-
-            connect.Open();
-
-
-
-            connect.Close();
         }
     }
 }

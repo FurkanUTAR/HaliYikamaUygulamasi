@@ -58,7 +58,9 @@ namespace haliYikama
 
         private void hepsiDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            hepsi hepsi = new hepsi();
+            hepsi.Show();
+            this.Hide();
         }
 
         void goster()

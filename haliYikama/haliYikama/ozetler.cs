@@ -21,11 +21,5 @@ namespace haliYikama
             InitializeComponent();
         }
 
-        private void geriDonPictureBox_Click(object sender, EventArgs e)
-        {
-            anaSayfa anaSayfa = new anaSayfa();
-            anaSayfa.Show();
-            this.Hide();
-        }
     }
 }

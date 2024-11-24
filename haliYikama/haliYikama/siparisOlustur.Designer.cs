@@ -50,7 +50,6 @@
             this.adSoyadLabel.Size = new System.Drawing.Size(53, 13);
             this.adSoyadLabel.TabIndex = 38;
             this.adSoyadLabel.Text = "Ad-Soyad";
-            this.adSoyadLabel.Click += new System.EventHandler(this.adSoyadLabel_Click);
             // 
             // telNoLabel
             // 
@@ -60,7 +59,6 @@
             this.telNoLabel.Size = new System.Drawing.Size(90, 13);
             this.telNoLabel.TabIndex = 39;
             this.telNoLabel.Text = "Telefon Numarası";
-            this.telNoLabel.Click += new System.EventHandler(this.telNoLabel_Click);
             // 
             // label3
             // 
@@ -70,7 +68,6 @@
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 40;
             this.label3.Text = "Alınma Tarihi";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -80,7 +77,6 @@
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 41;
             this.label4.Text = "Açıklama";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // siparisTarihiDateTimePicker
             // 
@@ -89,7 +85,6 @@
             this.siparisTarihiDateTimePicker.Name = "siparisTarihiDateTimePicker";
             this.siparisTarihiDateTimePicker.Size = new System.Drawing.Size(81, 20);
             this.siparisTarihiDateTimePicker.TabIndex = 42;
-            this.siparisTarihiDateTimePicker.ValueChanged += new System.EventHandler(this.siparisTarihiDateTimePicker_ValueChanged);
             // 
             // siparisNotuTextBox
             // 
@@ -98,7 +93,6 @@
             this.siparisNotuTextBox.Name = "siparisNotuTextBox";
             this.siparisNotuTextBox.Size = new System.Drawing.Size(151, 82);
             this.siparisNotuTextBox.TabIndex = 43;
-            this.siparisNotuTextBox.TextChanged += new System.EventHandler(this.siparisNotuTextBox_TextChanged);
             // 
             // siparisOlusturButton
             // 
@@ -116,7 +110,6 @@
             this.adresLabel.Name = "adresLabel";
             this.adresLabel.Size = new System.Drawing.Size(152, 73);
             this.adresLabel.TabIndex = 46;
-            this.adresLabel.Click += new System.EventHandler(this.adresLabel_Click);
             // 
             // label6
             // 
@@ -126,7 +119,6 @@
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 45;
             this.label6.Text = "Adres";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // musteriDuzenleButton
             // 

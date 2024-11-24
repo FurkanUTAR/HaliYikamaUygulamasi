@@ -53,7 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 61);
+            this.label1.Location = new System.Drawing.Point(41, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 39;
@@ -61,14 +61,14 @@
             // 
             // adSoyadTextBox
             // 
-            this.adSoyadTextBox.Location = new System.Drawing.Point(94, 58);
+            this.adSoyadTextBox.Location = new System.Drawing.Point(95, 58);
             this.adSoyadTextBox.Name = "adSoyadTextBox";
             this.adSoyadTextBox.Size = new System.Drawing.Size(100, 20);
             this.adSoyadTextBox.TabIndex = 40;
             // 
             // telNoTextBox
             // 
-            this.telNoTextBox.Location = new System.Drawing.Point(94, 91);
+            this.telNoTextBox.Location = new System.Drawing.Point(95, 91);
             this.telNoTextBox.Name = "telNoTextBox";
             this.telNoTextBox.Size = new System.Drawing.Size(100, 20);
             this.telNoTextBox.TabIndex = 42;
@@ -76,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 94);
+            this.label2.Location = new System.Drawing.Point(41, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 41;
@@ -84,7 +84,7 @@
             // 
             // adresTextBox
             // 
-            this.adresTextBox.Location = new System.Drawing.Point(38, 144);
+            this.adresTextBox.Location = new System.Drawing.Point(39, 144);
             this.adresTextBox.Multiline = true;
             this.adresTextBox.Name = "adresTextBox";
             this.adresTextBox.Size = new System.Drawing.Size(156, 67);
@@ -93,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 128);
+            this.label3.Location = new System.Drawing.Point(41, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 43;
@@ -101,13 +101,12 @@
             // 
             // duzenleButton
             // 
-            this.duzenleButton.Location = new System.Drawing.Point(38, 217);
+            this.duzenleButton.Location = new System.Drawing.Point(39, 217);
             this.duzenleButton.Name = "duzenleButton";
             this.duzenleButton.Size = new System.Drawing.Size(156, 23);
             this.duzenleButton.TabIndex = 45;
             this.duzenleButton.Text = "Düzenle";
             this.duzenleButton.UseVisualStyleBackColor = true;
-            this.duzenleButton.Click += new System.EventHandler(this.duzenleButton_Click);
             // 
             // musteriDuzenle
             // 

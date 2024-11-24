@@ -38,7 +38,7 @@ namespace haliYikama
 
         private void musteriDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
             { 
                 DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex]; 
                 string adSoyad = row.Cells["adiSoyAdi"].Value.ToString(); 

@@ -66,6 +66,7 @@
             this.parolaTextBox.Size = new System.Drawing.Size(166, 20);
             this.parolaTextBox.TabIndex = 2;
             this.parolaTextBox.UseSystemPasswordChar = true;
+            this.parolaTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // girisYapButton
             // 
@@ -168,6 +169,7 @@
             this.Controls.Add(this.parolaTextBox);
             this.Name = "girisEkrani";
             this.Text = "Giriş Yap";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
