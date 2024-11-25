@@ -23,5 +23,10 @@ namespace haliYikama
             siparisler.Show();
             this.Hide();
         }
+
+        private void alinacaklar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
