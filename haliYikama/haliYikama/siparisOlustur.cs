@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Globalization;
 
 namespace haliYikama
 {
@@ -31,6 +32,7 @@ namespace haliYikama
             get { return adresLabel.Text; }
             set { adresLabel.Text = value; }
         }
+        public string Kimlik { get; set; }
 
         public siparisOlustur()
         {
@@ -41,6 +43,13 @@ namespace haliYikama
         {
             musteriler musteriler = new musteriler();
             musteriler.Show();
+            this.Hide();
+        }
+
+        private void musteriDuzenleButton_Click(object sender, EventArgs e)
+        {
+            musteriDuzenle musteriDuzenle = new musteriDuzenle();
+            musteriDuzenle.Show();
             this.Hide();
         }
 
@@ -67,12 +76,22 @@ namespace haliYikama
 
             connect.Close();
         }
-
-        private void musteriDuzenleButton_Click(object sender, EventArgs e)
+    
+        void musteriSil()
         {
-            musteriDuzenle musteriDuzenle = new musteriDuzenle();
-            musteriDuzenle.Show();
-            this.Hide();
+            string komut = "DELETE FROM musteriler WHERE Kimlik=" + Kimlik + "";
+
+            connect.Open();
+
+            OleDbCommand sil=new OleDbCommand(komut,connect);
+            sil.ExecuteNonQuery();
+
+            connect.Close();
+        }
+
+        private void musteriSilButton_Click(object sender, EventArgs e)
+        {
+            musteriSil();
         }
     }
 }

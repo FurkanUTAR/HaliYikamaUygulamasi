@@ -39,7 +39,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.musteriDuzenleButton = new System.Windows.Forms.Button();
             this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.musteriSilButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +49,7 @@
             this.adSoyadLabel.Location = new System.Drawing.Point(35, 30);
             this.adSoyadLabel.Name = "adSoyadLabel";
             this.adSoyadLabel.Size = new System.Drawing.Size(53, 13);
-            this.adSoyadLabel.TabIndex = 38;
+            this.adSoyadLabel.TabIndex = 1;
             this.adSoyadLabel.Text = "Ad-Soyad";
             // 
             // telNoLabel
@@ -58,7 +58,7 @@
             this.telNoLabel.Location = new System.Drawing.Point(35, 52);
             this.telNoLabel.Name = "telNoLabel";
             this.telNoLabel.Size = new System.Drawing.Size(90, 13);
-            this.telNoLabel.TabIndex = 39;
+            this.telNoLabel.TabIndex = 2;
             this.telNoLabel.Text = "Telefon Numarası";
             // 
             // label3
@@ -85,7 +85,8 @@
             this.siparisTarihiDateTimePicker.Location = new System.Drawing.Point(106, 175);
             this.siparisTarihiDateTimePicker.Name = "siparisTarihiDateTimePicker";
             this.siparisTarihiDateTimePicker.Size = new System.Drawing.Size(81, 20);
-            this.siparisTarihiDateTimePicker.TabIndex = 42;
+            this.siparisTarihiDateTimePicker.TabIndex = 4;
+            this.siparisTarihiDateTimePicker.Value = new System.DateTime(2024, 11, 26, 21, 41, 14, 0);
             // 
             // siparisNotuTextBox
             // 
@@ -93,14 +94,14 @@
             this.siparisNotuTextBox.Multiline = true;
             this.siparisNotuTextBox.Name = "siparisNotuTextBox";
             this.siparisNotuTextBox.Size = new System.Drawing.Size(151, 82);
-            this.siparisNotuTextBox.TabIndex = 43;
+            this.siparisNotuTextBox.TabIndex = 5;
             // 
             // siparisOlusturButton
             // 
             this.siparisOlusturButton.Location = new System.Drawing.Point(38, 304);
             this.siparisOlusturButton.Name = "siparisOlusturButton";
             this.siparisOlusturButton.Size = new System.Drawing.Size(149, 23);
-            this.siparisOlusturButton.TabIndex = 44;
+            this.siparisOlusturButton.TabIndex = 6;
             this.siparisOlusturButton.Text = "Sipraiş Oluştur";
             this.siparisOlusturButton.UseVisualStyleBackColor = true;
             this.siparisOlusturButton.Click += new System.EventHandler(this.siparisOlusturButton_Click);
@@ -110,7 +111,7 @@
             this.adresLabel.Location = new System.Drawing.Point(35, 87);
             this.adresLabel.Name = "adresLabel";
             this.adresLabel.Size = new System.Drawing.Size(152, 73);
-            this.adresLabel.TabIndex = 46;
+            this.adresLabel.TabIndex = 3;
             // 
             // label6
             // 
@@ -126,7 +127,7 @@
             this.musteriDuzenleButton.Location = new System.Drawing.Point(38, 333);
             this.musteriDuzenleButton.Name = "musteriDuzenleButton";
             this.musteriDuzenleButton.Size = new System.Drawing.Size(149, 23);
-            this.musteriDuzenleButton.TabIndex = 47;
+            this.musteriDuzenleButton.TabIndex = 7;
             this.musteriDuzenleButton.Text = "Müşteriyi Düzenle";
             this.musteriDuzenleButton.UseVisualStyleBackColor = true;
             this.musteriDuzenleButton.Click += new System.EventHandler(this.musteriDuzenleButton_Click);
@@ -142,21 +143,22 @@
             this.geriDonPictureBox.TabStop = false;
             this.geriDonPictureBox.Click += new System.EventHandler(this.geriDonPictureBox_Click);
             // 
-            // button1
+            // musteriSilButton
             // 
-            this.button1.Location = new System.Drawing.Point(38, 362);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 23);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "Müşteriyi Sil";
-            this.button1.UseVisualStyleBackColor = true;
+            this.musteriSilButton.Location = new System.Drawing.Point(38, 362);
+            this.musteriSilButton.Name = "musteriSilButton";
+            this.musteriSilButton.Size = new System.Drawing.Size(149, 23);
+            this.musteriSilButton.TabIndex = 8;
+            this.musteriSilButton.Text = "Müşteriyi Sil";
+            this.musteriSilButton.UseVisualStyleBackColor = true;
+            this.musteriSilButton.Click += new System.EventHandler(this.musteriSilButton_Click);
             // 
             // siparisOlustur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.musteriSilButton);
             this.Controls.Add(this.musteriDuzenleButton);
             this.Controls.Add(this.adresLabel);
             this.Controls.Add(this.label6);
@@ -189,6 +191,6 @@
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label adSoyadLabel;
         private System.Windows.Forms.Button musteriDuzenleButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button musteriSilButton;
     }
 }

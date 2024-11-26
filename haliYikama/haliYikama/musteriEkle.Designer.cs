@@ -59,7 +59,7 @@
             this.adSoyadTextBox.Location = new System.Drawing.Point(12, 58);
             this.adSoyadTextBox.Name = "adSoyadTextBox";
             this.adSoyadTextBox.Size = new System.Drawing.Size(210, 20);
-            this.adSoyadTextBox.TabIndex = 38;
+            this.adSoyadTextBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -84,7 +84,7 @@
             this.telNoTextBox.Location = new System.Drawing.Point(15, 97);
             this.telNoTextBox.Name = "telNoTextBox";
             this.telNoTextBox.Size = new System.Drawing.Size(207, 20);
-            this.telNoTextBox.TabIndex = 40;
+            this.telNoTextBox.TabIndex = 2;
             // 
             // label3
             // 
@@ -119,7 +119,7 @@
             this.adresTextBox.Multiline = true;
             this.adresTextBox.Name = "adresTextBox";
             this.adresTextBox.Size = new System.Drawing.Size(207, 44);
-            this.adresTextBox.TabIndex = 46;
+            this.adresTextBox.TabIndex = 5;
             // 
             // ilceComboBox
             // 
@@ -127,7 +127,7 @@
             this.ilceComboBox.Location = new System.Drawing.Point(15, 136);
             this.ilceComboBox.Name = "ilceComboBox";
             this.ilceComboBox.Size = new System.Drawing.Size(207, 21);
-            this.ilceComboBox.TabIndex = 48;
+            this.ilceComboBox.TabIndex = 3;
             // 
             // mahalleComboBox
             // 
@@ -136,14 +136,14 @@
             this.mahalleComboBox.Location = new System.Drawing.Point(15, 174);
             this.mahalleComboBox.Name = "mahalleComboBox";
             this.mahalleComboBox.Size = new System.Drawing.Size(207, 21);
-            this.mahalleComboBox.TabIndex = 49;
+            this.mahalleComboBox.TabIndex = 4;
             // 
             // musteriEkleButton
             // 
             this.musteriEkleButton.Location = new System.Drawing.Point(15, 264);
             this.musteriEkleButton.Name = "musteriEkleButton";
             this.musteriEkleButton.Size = new System.Drawing.Size(207, 42);
-            this.musteriEkleButton.TabIndex = 50;
+            this.musteriEkleButton.TabIndex = 6;
             this.musteriEkleButton.Text = "Müşteri  Ekle";
             this.musteriEkleButton.UseVisualStyleBackColor = true;
             this.musteriEkleButton.Click += new System.EventHandler(this.musteriEkleButton_Click);
