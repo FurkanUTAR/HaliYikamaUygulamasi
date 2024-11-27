@@ -70,8 +70,26 @@ namespace haliYikama
             {
                 siparisNoAra();
             }
+            if (string.IsNullOrWhiteSpace(araTextBox.Text))
+            {
+                butunMusterileriGoster();
+            }
         }
 
+        void butunMusterileriGoster()
+        {
+            string komut = "SELECT * FROM musteriler";
+
+            connect.Open();
+
+            OleDbDataAdapter da= new OleDbDataAdapter(komut,connect);
+            DataTable dt = new DataTable(); 
+            da.Fill(dt);
+
+            connect.Close();
+            musteriDataGridView.DataSource = dt;
+        }
+        
         void musteriAdiAra()
         {
             string arama = "%" + araTextBox.Text + "%";
