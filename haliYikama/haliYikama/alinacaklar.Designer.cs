@@ -38,7 +38,7 @@
             this.eklePictureBox = new System.Windows.Forms.PictureBox();
             this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
             this.gonderButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.indirimTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.indirimEklePictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -49,11 +49,13 @@
             // 
             // urunComboBox
             // 
+            this.urunComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.urunComboBox.FormattingEnabled = true;
             this.urunComboBox.Location = new System.Drawing.Point(11, 43);
             this.urunComboBox.Name = "urunComboBox";
             this.urunComboBox.Size = new System.Drawing.Size(95, 21);
             this.urunComboBox.TabIndex = 37;
+            this.urunComboBox.SelectedIndexChanged += new System.EventHandler(this.urunComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -83,6 +85,7 @@
             // 
             // adetComboBox
             // 
+            this.adetComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.adetComboBox.FormattingEnabled = true;
             this.adetComboBox.Location = new System.Drawing.Point(112, 43);
             this.adetComboBox.Name = "adetComboBox";
@@ -114,6 +117,7 @@
             this.eklePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.eklePictureBox.TabIndex = 45;
             this.eklePictureBox.TabStop = false;
+            this.eklePictureBox.Click += new System.EventHandler(this.eklePictureBox_Click);
             // 
             // geriDonPictureBox
             // 
@@ -135,12 +139,12 @@
             this.gonderButton.Text = "Gönder";
             this.gonderButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // indirimTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(95, 20);
-            this.textBox1.TabIndex = 48;
+            this.indirimTextBox.Location = new System.Drawing.Point(13, 83);
+            this.indirimTextBox.Name = "indirimTextBox";
+            this.indirimTextBox.Size = new System.Drawing.Size(95, 20);
+            this.indirimTextBox.TabIndex = 48;
             // 
             // label4
             // 
@@ -167,7 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
             this.Controls.Add(this.indirimEklePictureBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.indirimTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.gonderButton);
             this.Controls.Add(this.eklePictureBox);
@@ -203,7 +207,7 @@
         private System.Windows.Forms.TextBox metreKareTextBox;
         private System.Windows.Forms.PictureBox eklePictureBox;
         private System.Windows.Forms.Button gonderButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox indirimTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox indirimEklePictureBox;
     }
