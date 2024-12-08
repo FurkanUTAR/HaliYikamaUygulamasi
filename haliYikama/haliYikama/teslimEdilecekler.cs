@@ -23,5 +23,17 @@ namespace haliYikama
             siparisler.Show();
             this.Hide();
         }
+
+        private void teslimEdilecekler_Load(object sender, EventArgs e)
+        {
+            yukle();
+        }
+
+        void yukle()
+        {
+            odemeSekliComboBox.Items.Add("Nakit");
+            odemeSekliComboBox.Items.Add("Kart");
+            odemeSekliComboBox.Items.Add("Havale");
+        }
     }
 }

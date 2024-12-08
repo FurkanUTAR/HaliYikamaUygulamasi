@@ -38,7 +38,6 @@
             this.yoneticiTabPage = new System.Windows.Forms.TabPage();
             this.mesajlarButton = new System.Windows.Forms.Button();
             this.fiyatButton = new System.Windows.Forms.Button();
-            this.ayarlarTabPage = new System.Windows.Forms.TabPage();
             this.TabControl.SuspendLayout();
             this.anaSayfaTabPage.SuspendLayout();
             this.yoneticiTabPage.SuspendLayout();
@@ -48,7 +47,6 @@
             // 
             this.TabControl.Controls.Add(this.anaSayfaTabPage);
             this.TabControl.Controls.Add(this.yoneticiTabPage);
-            this.TabControl.Controls.Add(this.ayarlarTabPage);
             this.TabControl.Location = new System.Drawing.Point(0, -1);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
@@ -135,7 +133,7 @@
             this.yoneticiTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.yoneticiTabPage.Size = new System.Drawing.Size(228, 453);
             this.yoneticiTabPage.TabIndex = 1;
-            this.yoneticiTabPage.Text = "Yönetici";
+            this.yoneticiTabPage.Text = "Ayarlar";
             this.yoneticiTabPage.UseVisualStyleBackColor = true;
             // 
             // mesajlarButton
@@ -159,16 +157,6 @@
             this.fiyatButton.Text = "Fiyat";
             this.fiyatButton.UseVisualStyleBackColor = true;
             this.fiyatButton.Click += new System.EventHandler(this.fiyatButton_Click);
-            // 
-            // ayarlarTabPage
-            // 
-            this.ayarlarTabPage.Location = new System.Drawing.Point(4, 22);
-            this.ayarlarTabPage.Name = "ayarlarTabPage";
-            this.ayarlarTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ayarlarTabPage.Size = new System.Drawing.Size(228, 453);
-            this.ayarlarTabPage.TabIndex = 2;
-            this.ayarlarTabPage.Text = "Ayarlar";
-            this.ayarlarTabPage.UseVisualStyleBackColor = true;
             // 
             // anaSayfa
             // 
@@ -196,7 +184,6 @@
         private System.Windows.Forms.Button siparislerButton;
         private System.Windows.Forms.Button gelirGiderButton;
         private System.Windows.Forms.Button aramaGecmisiButton;
-        private System.Windows.Forms.TabPage ayarlarTabPage;
         private System.Windows.Forms.Button fiyatButton;
         private System.Windows.Forms.Button mesajlarButton;
     }

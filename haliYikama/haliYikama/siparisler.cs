@@ -10,12 +10,12 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Data.Common;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 
 namespace haliYikama
 {
     public partial class siparisler : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public siparisler()
@@ -37,9 +37,43 @@ namespace haliYikama
 
         private void alinacakDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            alinacaklar alinacaklar = new alinacaklar();
-            alinacaklar.Show();
-            this.Hide();
+            if (alinacakDataGridView.CurrentRow != null) // Seçili satır var mı?
+            {
+                var cellValue = alinacakDataGridView.CurrentRow.Cells[0].Value; // Hücre değeri alınır
+
+                if (cellValue != null && int.TryParse(cellValue.ToString(), out int siparisNo)) // Geçerli bir sayı mı?
+                {
+                    alinacaklar alinacaklar = new alinacaklar();
+                    alinacaklar.SiparisNo = siparisNo;
+
+                    alinacaklar.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
+
+            /*
+            if (alinacakDataGridView.CurrentRow != null)
+            {
+                int siparisNo = int.Parse(alinacakDataGridView.CurrentRow.Cells[0].Value.ToString());
+
+                alinacaklar alinacaklar = new alinacaklar();
+                alinacaklar.SiparisNo = siparisNo;
+
+                alinacaklar.Show();
+                this.Hide();
+            }
+            else MessageBox.Show("Lütfen geçerli bir kayıt seçin.");
+            */
         }
 
         private void teslimatDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -68,7 +102,7 @@ namespace haliYikama
             alinacakGoster();
             teslimatGoster();
             veresiyeGoster();
-            hespiGoster();
+            hepsiGoster();
 
             void alinacakGoster()
             {
@@ -112,9 +146,9 @@ namespace haliYikama
                 connect.Close();
             }
 
-            void hespiGoster()
+            void hepsiGoster()
             {
-                string komut = "SELECT * FROM siparisler WHERE siparisDurum = 'Alınacak' OR 'Teslimat' OR 'Veresiye'";
+                string komut = "SELECT * FROM siparisler WHERE siparisDurum = 'Alınacak' OR siparisDurum = 'Teslimat' OR siparisDurum = 'Veresiye'";
 
                 connect.Open();
 
@@ -125,11 +159,6 @@ namespace haliYikama
 
                 connect.Close();
             }
-        }
-
-        private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

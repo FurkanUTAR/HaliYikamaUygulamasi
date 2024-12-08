@@ -12,9 +12,16 @@ namespace haliYikama
 {
     public partial class veresiye : Form
     {
+
+
         public veresiye()
         {
             InitializeComponent();
+        }
+
+        private void veresiye_Load(object sender, EventArgs e)
+        {
+            yukle();
         }
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
@@ -22,6 +29,19 @@ namespace haliYikama
             siparisler siparisler = new siparisler();
             siparisler.Show();
             this.Hide();
+        }
+
+
+
+
+
+
+
+        void yukle()
+        {
+            odemeSekliComboBox.Items.Add("Nakit");
+            odemeSekliComboBox.Items.Add("Kart");
+            odemeSekliComboBox.Items.Add("Havale");
         }
     }
 }

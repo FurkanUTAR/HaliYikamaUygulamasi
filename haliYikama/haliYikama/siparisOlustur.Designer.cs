@@ -171,7 +171,7 @@
             this.Controls.Add(this.adSoyadLabel);
             this.Controls.Add(this.geriDonPictureBox);
             this.Name = "siparisOlustur";
-            this.Text = "Sipariş Oluştur";
+            this.Text = "Müşteri";
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

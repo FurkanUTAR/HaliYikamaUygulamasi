@@ -30,7 +30,7 @@
         {
             this.urunComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.alinacakHaliDataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.adetComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,7 +41,11 @@
             this.indirimTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.indirimEklePictureBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cıkarButton = new System.Windows.Forms.Button();
+            this.adetLabel = new System.Windows.Forms.Label();
+            this.toplamFiyatLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.alinacakHaliDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eklePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.indirimEklePictureBox)).BeginInit();
@@ -66,13 +70,15 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "Ürün";
             // 
-            // dataGridView1
+            // alinacakHaliDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(232, 316);
-            this.dataGridView1.TabIndex = 39;
+            this.alinacakHaliDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.alinacakHaliDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.alinacakHaliDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.alinacakHaliDataGridView.Location = new System.Drawing.Point(1, 106);
+            this.alinacakHaliDataGridView.Name = "alinacakHaliDataGridView";
+            this.alinacakHaliDataGridView.Size = new System.Drawing.Size(232, 236);
+            this.alinacakHaliDataGridView.TabIndex = 39;
             // 
             // label2
             // 
@@ -132,7 +138,7 @@
             // 
             // gonderButton
             // 
-            this.gonderButton.Location = new System.Drawing.Point(1, 428);
+            this.gonderButton.Location = new System.Drawing.Point(145, 428);
             this.gonderButton.Name = "gonderButton";
             this.gonderButton.Size = new System.Drawing.Size(84, 36);
             this.gonderButton.TabIndex = 46;
@@ -164,12 +170,54 @@
             this.indirimEklePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.indirimEklePictureBox.TabIndex = 49;
             this.indirimEklePictureBox.TabStop = false;
+            this.indirimEklePictureBox.Click += new System.EventHandler(this.indirimEklePictureBox_Click);
+            // 
+            // cıkarButton
+            // 
+            this.cıkarButton.Location = new System.Drawing.Point(145, 348);
+            this.cıkarButton.Name = "cıkarButton";
+            this.cıkarButton.Size = new System.Drawing.Size(84, 24);
+            this.cıkarButton.TabIndex = 50;
+            this.cıkarButton.Text = "Çıkar";
+            this.cıkarButton.UseVisualStyleBackColor = true;
+            this.cıkarButton.Click += new System.EventHandler(this.cıkarButton_Click);
+            // 
+            // adetLabel
+            // 
+            this.adetLabel.AutoSize = true;
+            this.adetLabel.Location = new System.Drawing.Point(8, 354);
+            this.adetLabel.Name = "adetLabel";
+            this.adetLabel.Size = new System.Drawing.Size(29, 13);
+            this.adetLabel.TabIndex = 51;
+            this.adetLabel.Text = "Adet";
+            // 
+            // toplamFiyatLabel
+            // 
+            this.toplamFiyatLabel.AutoSize = true;
+            this.toplamFiyatLabel.Location = new System.Drawing.Point(68, 354);
+            this.toplamFiyatLabel.Name = "toplamFiyatLabel";
+            this.toplamFiyatLabel.Size = new System.Drawing.Size(32, 13);
+            this.toplamFiyatLabel.TabIndex = 52;
+            this.toplamFiyatLabel.Text = " Fiyat";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(53, 354);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(9, 13);
+            this.label6.TabIndex = 53;
+            this.label6.Text = "|";
             // 
             // alinacaklar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.toplamFiyatLabel);
+            this.Controls.Add(this.adetLabel);
+            this.Controls.Add(this.cıkarButton);
             this.Controls.Add(this.indirimEklePictureBox);
             this.Controls.Add(this.indirimTextBox);
             this.Controls.Add(this.label4);
@@ -179,14 +227,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.adetComboBox);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.alinacakHaliDataGridView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.urunComboBox);
             this.Controls.Add(this.geriDonPictureBox);
             this.Name = "alinacaklar";
             this.Text = "Alınacaklar";
             this.Load += new System.EventHandler(this.alinacaklar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alinacakHaliDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eklePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.indirimEklePictureBox)).EndInit();
@@ -200,7 +248,7 @@
         private System.Windows.Forms.PictureBox geriDonPictureBox;
         private System.Windows.Forms.ComboBox urunComboBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView alinacakHaliDataGridView;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox adetComboBox;
         private System.Windows.Forms.Label label3;
@@ -210,5 +258,9 @@
         private System.Windows.Forms.TextBox indirimTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox indirimEklePictureBox;
+        private System.Windows.Forms.Button cıkarButton;
+        private System.Windows.Forms.Label adetLabel;
+        private System.Windows.Forms.Label toplamFiyatLabel;
+        private System.Windows.Forms.Label label6;
     }
 }

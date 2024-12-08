@@ -92,6 +92,12 @@ namespace haliYikama
         private void musteriSilButton_Click(object sender, EventArgs e)
         {
             musteriSil();
+
+            musteriler musteriler = new musteriler();
+            musteriler.Show();
+            this.Hide();
         }
+
+
     }
 }

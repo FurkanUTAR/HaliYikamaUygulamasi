@@ -32,7 +32,7 @@
             this.gonderButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.odemeSekliComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
@@ -75,13 +75,14 @@
             this.textBox1.Size = new System.Drawing.Size(102, 21);
             this.textBox1.TabIndex = 49;
             // 
-            // comboBox1
+            // odemeSekliComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(120, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(102, 21);
-            this.comboBox1.TabIndex = 50;
+            this.odemeSekliComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.odemeSekliComboBox.FormattingEnabled = true;
+            this.odemeSekliComboBox.Location = new System.Drawing.Point(120, 55);
+            this.odemeSekliComboBox.Name = "odemeSekliComboBox";
+            this.odemeSekliComboBox.Size = new System.Drawing.Size(102, 21);
+            this.odemeSekliComboBox.TabIndex = 50;
             // 
             // label1
             // 
@@ -108,13 +109,14 @@
             this.ClientSize = new System.Drawing.Size(234, 476);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.odemeSekliComboBox);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.gonderButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.geriDonPictureBox);
             this.Name = "teslimEdilecekler";
             this.Text = "Teslim Edilecekler";
+            this.Load += new System.EventHandler(this.teslimEdilecekler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -128,7 +130,7 @@
         private System.Windows.Forms.Button gonderButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox odemeSekliComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

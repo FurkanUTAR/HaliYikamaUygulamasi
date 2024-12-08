@@ -61,7 +61,6 @@
             this.TabControl.SelectedIndex = 0;
             this.TabControl.Size = new System.Drawing.Size(234, 453);
             this.TabControl.TabIndex = 36;
-            this.TabControl.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
             // 
             // alinacakTabPage
             // 
