@@ -16,5 +16,12 @@ namespace haliYikama
         {
             InitializeComponent();
         }
+
+        private void geriDonPictureBox_Click(object sender, EventArgs e)
+        {
+            siparisler siparisler = new siparisler();
+            siparisler.Show();
+            this.Hide();
+        }
     }
 }

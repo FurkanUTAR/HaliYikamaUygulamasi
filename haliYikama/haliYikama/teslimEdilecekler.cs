@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace haliYikama
 {
     public partial class teslimEdilecekler : Form
     {
+
+        OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
+
+        public int SiparisNo { get; set; }
+
         public teslimEdilecekler()
         {
             InitializeComponent();

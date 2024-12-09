@@ -41,6 +41,7 @@
             this.geriDonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.geriDonPictureBox.TabIndex = 36;
             this.geriDonPictureBox.TabStop = false;
+            this.geriDonPictureBox.Click += new System.EventHandler(this.geriDonPictureBox_Click);
             // 
             // hepsi
             // 

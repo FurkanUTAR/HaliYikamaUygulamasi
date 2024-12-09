@@ -144,16 +144,33 @@ namespace haliYikama
 
                 connect.Close();
                
-                string komutEkle = "INSERT INTO alinacakHali(siparisKimlik, haliCins, haliAdet, haliBoyut, haliFiyat, toplamFiyat) " +
+
+                if (string.IsNullOrWhiteSpace(urunComboBox.Text))
+                {
+                    string komutEkle = "INSERT INTO alinacakHali(siparisKimlik, haliCins, haliAdet, haliBoyut, haliFiyat, toplamFiyat) " +
+                    "VALUES (" + SiparisNo + ", '" + "Makine" + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ", " + fiyat + ")";
+
+                    connect.Open();
+
+                    OleDbCommand cmd = new OleDbCommand(komutEkle, connect);
+                    cmd.ExecuteNonQuery();
+
+                    connect.Close();
+                    goster();
+                }
+                else
+                {
+                    string komutEkle = "INSERT INTO alinacakHali(siparisKimlik, haliCins, haliAdet, haliBoyut, haliFiyat, toplamFiyat) " +
                     "VALUES (" + SiparisNo + ", '" + urunComboBox.Text + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ", " + fiyat + ")";
 
-                connect.Open();
+                    connect.Open();
 
-                OleDbCommand cmd = new OleDbCommand(komutEkle, connect);
-                cmd.ExecuteNonQuery();
+                    OleDbCommand cmd = new OleDbCommand(komutEkle, connect);
+                    cmd.ExecuteNonQuery();
 
-                connect.Close();
-                goster();
+                    connect.Close();
+                    goster();
+                }
             }
             else
             {
@@ -236,7 +253,13 @@ namespace haliYikama
             }
             connect.Close();
 
-            toplamFiyat = fiyat - indirim;
+
+            if (fiyat == 0)
+            {
+                toplamFiyat = 0;
+                indirim = 0;
+            }
+            else toplamFiyat = fiyat - indirim;
 
             toplamFiyatLabel.Text = toplamFiyat.ToString() +" ₺";
         }

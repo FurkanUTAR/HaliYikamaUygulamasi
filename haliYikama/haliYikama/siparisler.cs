@@ -18,7 +18,7 @@ namespace haliYikama
     {
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
-        public siparisler()
+       public siparisler()
         {
             InitializeComponent();
         }
@@ -37,64 +37,22 @@ namespace haliYikama
 
         private void alinacakDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (alinacakDataGridView.CurrentRow != null) // Seçili satır var mı?
-            {
-                var cellValue = alinacakDataGridView.CurrentRow.Cells[0].Value; // Hücre değeri alınır
-
-                if (cellValue != null && int.TryParse(cellValue.ToString(), out int siparisNo)) // Geçerli bir sayı mı?
-                {
-                    alinacaklar alinacaklar = new alinacaklar();
-                    alinacaklar.SiparisNo = siparisNo;
-
-                    alinacaklar.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-
-
-            /*
-            if (alinacakDataGridView.CurrentRow != null)
-            {
-                int siparisNo = int.Parse(alinacakDataGridView.CurrentRow.Cells[0].Value.ToString());
-
-                alinacaklar alinacaklar = new alinacaklar();
-                alinacaklar.SiparisNo = siparisNo;
-
-                alinacaklar.Show();
-                this.Hide();
-            }
-            else MessageBox.Show("Lütfen geçerli bir kayıt seçin.");
-            */
+            alinacakKontrol();
         }
 
         private void teslimatDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            teslimEdilecekler teslimEdilecekler = new teslimEdilecekler();
-            teslimEdilecekler.Show();
-            this.Hide();
+            teslimatKontrol();    
         }
 
         private void veresiyeDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            veresiye veresiye = new veresiye();
-            veresiye.Show();
-            this.Hide();
+            veresiyeKontrol();
         }
 
         private void hepsiDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            hepsi hepsi = new hepsi();
-            hepsi.Show();
-            this.Hide();
+            hepsiKontrol();
         }
 
         void goster()
@@ -158,6 +116,103 @@ namespace haliYikama
                 hepsiDataGridView.DataSource = dt;
 
                 connect.Close();
+            }
+        }
+
+        void alinacakKontrol()
+        {
+            if (alinacakDataGridView.CurrentRow != null) // Seçili satır var mı?
+            {
+                var cellValue = alinacakDataGridView.CurrentRow.Cells[0].Value; // Hücre değeri alınır
+
+                if (cellValue != null && int.TryParse(cellValue.ToString(), out int siparisNo)) // Geçerli bir sayı mı?
+                {
+                    alinacaklar alinacaklar = new alinacaklar();
+                    alinacaklar.SiparisNo = siparisNo;
+
+                    alinacaklar.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        void teslimatKontrol()
+        {
+            if (teslimatDataGridView.CurrentRow != null) // Seçili satır var mı?
+            {
+                var cellValue = teslimatDataGridView.CurrentRow.Cells[0].Value; // Hücre değeri alınır
+
+                if (cellValue != null && int.TryParse(cellValue.ToString(), out int siparisNo)) // Geçerli bir sayı mı?
+                {
+                    teslimEdilecekler teslimEdilecekler = new teslimEdilecekler();
+                    teslimEdilecekler.SiparisNo = siparisNo;
+                    teslimEdilecekler.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        void veresiyeKontrol()
+        {
+
+            if (veresiyeDataGridView.CurrentRow != null) // Seçili satır var mı?
+            {
+                var cellValue = veresiyeDataGridView.CurrentRow.Cells[0].Value; // Hücre değeri alınır
+
+                if (cellValue != null && int.TryParse(cellValue.ToString(), out int siparisNo)) // Geçerli bir sayı mı?
+                {
+                    veresiye veresiye = new veresiye();
+                    // veresiye.SiparisNo = siparisNo;
+                    veresiye.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        void hepsiKontrol()
+        {
+            if (hepsiDataGridView.CurrentRow != null) // Seçili satır var mı?
+            {
+                var cellValue = hepsiDataGridView.CurrentRow.Cells[0].Value; // Hücre değeri alınır
+
+                if (cellValue != null && int.TryParse(cellValue.ToString(), out int siparisNo)) // Geçerli bir sayı mı?
+                {
+                    hepsi hepsi = new hepsi();
+                    // hepsi.SiparisNo = siparisNo;
+                    hepsi.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

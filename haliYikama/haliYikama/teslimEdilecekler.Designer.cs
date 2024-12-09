@@ -52,7 +52,7 @@
             // 
             // gonderButton
             // 
-            this.gonderButton.Location = new System.Drawing.Point(1, 428);
+            this.gonderButton.Location = new System.Drawing.Point(146, 428);
             this.gonderButton.Name = "gonderButton";
             this.gonderButton.Size = new System.Drawing.Size(84, 36);
             this.gonderButton.TabIndex = 48;
@@ -61,10 +61,12 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 94);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 82);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(232, 328);
+            this.dataGridView1.Size = new System.Drawing.Size(232, 297);
             this.dataGridView1.TabIndex = 47;
             // 
             // textBox1
