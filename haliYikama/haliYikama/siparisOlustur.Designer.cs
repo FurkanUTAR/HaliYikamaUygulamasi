@@ -86,7 +86,7 @@
             this.siparisTarihiDateTimePicker.Name = "siparisTarihiDateTimePicker";
             this.siparisTarihiDateTimePicker.Size = new System.Drawing.Size(81, 20);
             this.siparisTarihiDateTimePicker.TabIndex = 4;
-            this.siparisTarihiDateTimePicker.Value = new System.DateTime(2024, 11, 26, 21, 41, 14, 0);
+            this.siparisTarihiDateTimePicker.Value = new System.DateTime(2024, 12, 10, 0, 0, 0, 0);
             // 
             // siparisNotuTextBox
             // 
@@ -108,7 +108,7 @@
             // 
             // adresLabel
             // 
-            this.adresLabel.Location = new System.Drawing.Point(35, 87);
+            this.adresLabel.Location = new System.Drawing.Point(35, 90);
             this.adresLabel.Name = "adresLabel";
             this.adresLabel.Size = new System.Drawing.Size(152, 73);
             this.adresLabel.TabIndex = 3;

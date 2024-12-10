@@ -30,13 +30,13 @@
         {
             this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
             this.gonderButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.haliDataGridView = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.odemeSekliComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.haliDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // geriDonPictureBox
@@ -59,15 +59,15 @@
             this.gonderButton.Text = "Gönder";
             this.gonderButton.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // haliDataGridView
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 82);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(232, 297);
-            this.dataGridView1.TabIndex = 47;
+            this.haliDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.haliDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.haliDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.haliDataGridView.Location = new System.Drawing.Point(1, 82);
+            this.haliDataGridView.Name = "haliDataGridView";
+            this.haliDataGridView.Size = new System.Drawing.Size(232, 297);
+            this.haliDataGridView.TabIndex = 47;
             // 
             // textBox1
             // 
@@ -114,13 +114,13 @@
             this.Controls.Add(this.odemeSekliComboBox);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.gonderButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.haliDataGridView);
             this.Controls.Add(this.geriDonPictureBox);
             this.Name = "teslimEdilecekler";
             this.Text = "Teslim Edilecekler";
             this.Load += new System.EventHandler(this.teslimEdilecekler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.haliDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,7 +130,7 @@
 
         private System.Windows.Forms.PictureBox geriDonPictureBox;
         private System.Windows.Forms.Button gonderButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView haliDataGridView;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox odemeSekliComboBox;
         private System.Windows.Forms.Label label1;

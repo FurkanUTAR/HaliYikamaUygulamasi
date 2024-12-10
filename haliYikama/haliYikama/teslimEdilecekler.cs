@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 
 namespace haliYikama
 {
@@ -16,7 +17,7 @@ namespace haliYikama
 
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
-        public int SiparisNo { get; set; }
+        public int siparisNo { get; set; }
 
         public teslimEdilecekler()
         {
@@ -40,6 +41,22 @@ namespace haliYikama
             odemeSekliComboBox.Items.Add("Nakit");
             odemeSekliComboBox.Items.Add("Kart");
             odemeSekliComboBox.Items.Add("Havale");
+
+            string komut= "SELECT * FROM haliBilgi WHERE siparisNo=" + siparisNo + "";
+
+            connect.Open();
+            
+            OleDbDataAdapter da=new OleDbDataAdapter(komut,connect);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            haliDataGridView.DataSource = dt;
+
+            connect.Close();
+
+            if (haliDataGridView.Columns.Contains("Kimlik"))
+            {
+                haliDataGridView.Columns["Kimlik"].Visible = false;
+            }
         }
     }
 }

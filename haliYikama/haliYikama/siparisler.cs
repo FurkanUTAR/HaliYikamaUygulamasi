@@ -74,6 +74,27 @@ namespace haliYikama
                 alinacakDataGridView.DataSource = dt;
 
                 connect.Close();
+
+                if (alinacakDataGridView.Columns.Contains("siparisDurum"))
+                {
+                    alinacakDataGridView.Columns["siparisDurum"].Visible = false;
+                }
+                if (alinacakDataGridView.Columns.Contains("teslimTarihi"))
+                {
+                    alinacakDataGridView.Columns["teslimTarihi"].Visible = false;
+                }
+                if (alinacakDataGridView.Columns.Contains("siparisTutari"))
+                {
+                    alinacakDataGridView.Columns["siparisTutari"].Visible = false;
+                }
+                if (alinacakDataGridView.Columns.Contains("indirimMiktari"))
+                {
+                    alinacakDataGridView.Columns["indirimMiktari"].Visible = false;
+                }
+                if (alinacakDataGridView.Columns.Contains("haliAdet"))
+                {
+                    alinacakDataGridView.Columns["haliAdet"].Visible = false;
+                }
             }
 
             void teslimatGoster()
@@ -88,7 +109,17 @@ namespace haliYikama
                 teslimatDataGridView.DataSource = dt;
 
                 connect.Close();
+
+                if (teslimatDataGridView.Columns.Contains("siparisDurum"))
+                {
+                    teslimatDataGridView.Columns["siparisDurum"].Visible = false;
+                }
+                if (teslimatDataGridView.Columns.Contains("siparisTarihi"))
+                {
+                    teslimatDataGridView.Columns["siparisTarihi"].Visible = false;
+                }
             }
+        
 
             void veresiyeGoster()
             {
@@ -128,8 +159,7 @@ namespace haliYikama
                 if (cellValue != null && int.TryParse(cellValue.ToString(), out int siparisNo)) // Geçerli bir sayı mı?
                 {
                     alinacaklar alinacaklar = new alinacaklar();
-                    alinacaklar.SiparisNo = siparisNo;
-
+                    alinacaklar.siparisNo = siparisNo;
                     alinacaklar.Show();
                     this.Hide();
                 }
@@ -153,7 +183,7 @@ namespace haliYikama
                 if (cellValue != null && int.TryParse(cellValue.ToString(), out int siparisNo)) // Geçerli bir sayı mı?
                 {
                     teslimEdilecekler teslimEdilecekler = new teslimEdilecekler();
-                    teslimEdilecekler.SiparisNo = siparisNo;
+                    teslimEdilecekler.siparisNo = siparisNo;
                     teslimEdilecekler.Show();
                     this.Hide();
                 }

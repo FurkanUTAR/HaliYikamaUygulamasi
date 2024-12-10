@@ -45,6 +45,8 @@
             this.adetLabel = new System.Windows.Forms.Label();
             this.toplamFiyatLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.teslimTarihiDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.alinacakHaliDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eklePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
@@ -144,6 +146,7 @@
             this.gonderButton.TabIndex = 46;
             this.gonderButton.Text = "Gönder";
             this.gonderButton.UseVisualStyleBackColor = true;
+            this.gonderButton.Click += new System.EventHandler(this.gonderButton_Click);
             // 
             // indirimTextBox
             // 
@@ -209,11 +212,31 @@
             this.label6.TabIndex = 53;
             this.label6.Text = "|";
             // 
+            // teslimTarihiDateTimePicker
+            // 
+            this.teslimTarihiDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.teslimTarihiDateTimePicker.Location = new System.Drawing.Point(145, 84);
+            this.teslimTarihiDateTimePicker.Name = "teslimTarihiDateTimePicker";
+            this.teslimTarihiDateTimePicker.Size = new System.Drawing.Size(81, 20);
+            this.teslimTarihiDateTimePicker.TabIndex = 54;
+            this.teslimTarihiDateTimePicker.Value = new System.DateTime(2024, 12, 10, 20, 43, 23, 0);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(143, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 13);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "Teslim Tarihi";
+            // 
             // alinacaklar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.teslimTarihiDateTimePicker);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.toplamFiyatLabel);
             this.Controls.Add(this.adetLabel);
@@ -262,5 +285,7 @@
         private System.Windows.Forms.Label adetLabel;
         private System.Windows.Forms.Label toplamFiyatLabel;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker teslimTarihiDateTimePicker;
+        private System.Windows.Forms.Label label5;
     }
 }
