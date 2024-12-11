@@ -40,6 +40,8 @@
             this.ilceComboBox = new System.Windows.Forms.ComboBox();
             this.mahalleComboBox = new System.Windows.Forms.ComboBox();
             this.musteriEkleButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.telNoIkiTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 120);
+            this.label3.Location = new System.Drawing.Point(12, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 13);
             this.label3.TabIndex = 43;
@@ -98,7 +100,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 158);
+            this.label4.Location = new System.Drawing.Point(12, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 45;
@@ -107,7 +109,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 198);
+            this.label5.Location = new System.Drawing.Point(12, 237);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 47;
@@ -115,7 +117,7 @@
             // 
             // adresTextBox
             // 
-            this.adresTextBox.Location = new System.Drawing.Point(15, 214);
+            this.adresTextBox.Location = new System.Drawing.Point(15, 253);
             this.adresTextBox.Multiline = true;
             this.adresTextBox.Name = "adresTextBox";
             this.adresTextBox.Size = new System.Drawing.Size(207, 44);
@@ -124,7 +126,7 @@
             // ilceComboBox
             // 
             this.ilceComboBox.FormattingEnabled = true;
-            this.ilceComboBox.Location = new System.Drawing.Point(15, 136);
+            this.ilceComboBox.Location = new System.Drawing.Point(15, 175);
             this.ilceComboBox.Name = "ilceComboBox";
             this.ilceComboBox.Size = new System.Drawing.Size(207, 21);
             this.ilceComboBox.TabIndex = 3;
@@ -133,14 +135,14 @@
             // 
             this.mahalleComboBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.mahalleComboBox.FormattingEnabled = true;
-            this.mahalleComboBox.Location = new System.Drawing.Point(15, 174);
+            this.mahalleComboBox.Location = new System.Drawing.Point(15, 213);
             this.mahalleComboBox.Name = "mahalleComboBox";
             this.mahalleComboBox.Size = new System.Drawing.Size(207, 21);
             this.mahalleComboBox.TabIndex = 4;
             // 
             // musteriEkleButton
             // 
-            this.musteriEkleButton.Location = new System.Drawing.Point(15, 264);
+            this.musteriEkleButton.Location = new System.Drawing.Point(15, 303);
             this.musteriEkleButton.Name = "musteriEkleButton";
             this.musteriEkleButton.Size = new System.Drawing.Size(207, 42);
             this.musteriEkleButton.TabIndex = 6;
@@ -148,11 +150,29 @@
             this.musteriEkleButton.UseVisualStyleBackColor = true;
             this.musteriEkleButton.Click += new System.EventHandler(this.musteriEkleButton_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 120);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 13);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "2. Telefon Numarası";
+            // 
+            // telNoIkiTextBox
+            // 
+            this.telNoIkiTextBox.Location = new System.Drawing.Point(15, 136);
+            this.telNoIkiTextBox.Name = "telNoIkiTextBox";
+            this.telNoIkiTextBox.Size = new System.Drawing.Size(207, 20);
+            this.telNoIkiTextBox.TabIndex = 48;
+            // 
             // musteriEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.telNoIkiTextBox);
             this.Controls.Add(this.musteriEkleButton);
             this.Controls.Add(this.mahalleComboBox);
             this.Controls.Add(this.ilceComboBox);
@@ -187,5 +207,7 @@
         private System.Windows.Forms.ComboBox ilceComboBox;
         private System.Windows.Forms.ComboBox mahalleComboBox;
         private System.Windows.Forms.Button musteriEkleButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox telNoIkiTextBox;
     }
 }

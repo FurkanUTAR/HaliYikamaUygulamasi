@@ -31,7 +31,7 @@
             this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
             this.gonderButton = new System.Windows.Forms.Button();
             this.haliDataGridView = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.alinanTutarTextBox = new System.Windows.Forms.TextBox();
             this.odemeSekliComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             this.gonderButton.TabIndex = 48;
             this.gonderButton.Text = "Gönder";
             this.gonderButton.UseVisualStyleBackColor = true;
+            this.gonderButton.Click += new System.EventHandler(this.gonderButton_Click);
             // 
             // haliDataGridView
             // 
@@ -69,13 +70,13 @@
             this.haliDataGridView.Size = new System.Drawing.Size(232, 297);
             this.haliDataGridView.TabIndex = 47;
             // 
-            // textBox1
+            // alinanTutarTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 55);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(102, 21);
-            this.textBox1.TabIndex = 49;
+            this.alinanTutarTextBox.Location = new System.Drawing.Point(12, 55);
+            this.alinanTutarTextBox.Multiline = true;
+            this.alinanTutarTextBox.Name = "alinanTutarTextBox";
+            this.alinanTutarTextBox.Size = new System.Drawing.Size(102, 21);
+            this.alinanTutarTextBox.TabIndex = 49;
             // 
             // odemeSekliComboBox
             // 
@@ -112,7 +113,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.odemeSekliComboBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.alinanTutarTextBox);
             this.Controls.Add(this.gonderButton);
             this.Controls.Add(this.haliDataGridView);
             this.Controls.Add(this.geriDonPictureBox);
@@ -131,7 +132,7 @@
         private System.Windows.Forms.PictureBox geriDonPictureBox;
         private System.Windows.Forms.Button gonderButton;
         private System.Windows.Forms.DataGridView haliDataGridView;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox alinanTutarTextBox;
         private System.Windows.Forms.ComboBox odemeSekliComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

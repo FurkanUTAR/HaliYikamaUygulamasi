@@ -53,6 +53,15 @@ namespace haliYikama
             this.Hide();
         }
 
+        private void musteriSilButton_Click(object sender, EventArgs e)
+        {
+            musteriSil();
+
+            musteriler musteriler = new musteriler();
+            musteriler.Show();
+            this.Hide();
+        }
+
         private void siparisOlusturButton_Click(object sender, EventArgs e)
         {
             databaseSiparisOlustur();
@@ -88,16 +97,5 @@ namespace haliYikama
 
             connect.Close();
         }
-
-        private void musteriSilButton_Click(object sender, EventArgs e)
-        {
-            musteriSil();
-
-            musteriler musteriler = new musteriler();
-            musteriler.Show();
-            this.Hide();
-        }
-
-
     }
 }

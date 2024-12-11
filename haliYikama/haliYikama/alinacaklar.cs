@@ -68,6 +68,25 @@ namespace haliYikama
             goster();
         }
 
+        private void gonderButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Siparişi tamamlamak istediğinden emin misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (result == DialogResult.Yes)
+            {
+                toplamFiyatEkle();
+                siparisCek();    
+
+                siparisler siparisler = new siparisler();
+                siparisler.Show();
+                this.Hide();
+            }
+            else
+            {
+
+            }
+        }
+
         void yukle()
         {
             urunComboBox.Items.Add("Makine");
@@ -147,8 +166,8 @@ namespace haliYikama
 
                 if (string.IsNullOrWhiteSpace(urunComboBox.Text))
                 {
-                    string komutEkle = "INSERT INTO haliBilgi(siparisNo, haliCins, haliAdet, haliBoyut, haliFiyat, toplamFiyat) " +
-                    "VALUES (" + siparisNo + ", '" + "Makine" + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ", " + fiyat + ")";
+                    string komutEkle = "INSERT INTO haliBilgi(siparisNo, haliCins, haliAdet, haliBoyut, haliFiyat) " +
+                    "VALUES (" + siparisNo + ", '" + "Makine" + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ")";
 
                     connect.Open();
 
@@ -160,8 +179,8 @@ namespace haliYikama
                 }
                 else
                 {
-                    string komutEkle = "INSERT INTO haliBilgi(siparisNo, haliCins, haliAdet, haliBoyut, haliFiyat, toplamFiyat) " +
-                    "VALUES (" + siparisNo + ", '" + urunComboBox.Text + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ", " + fiyat + ")";
+                    string komutEkle = "INSERT INTO haliBilgi(siparisNo, haliCins, haliAdet, haliBoyut, haliFiyat) " +
+                    "VALUES (" + siparisNo + ", '" + urunComboBox.Text + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ")";
 
                     connect.Open();
 
@@ -261,7 +280,7 @@ namespace haliYikama
             }
             else toplamFiyat = fiyat - indirim;
 
-            toplamFiyatLabel.Text = toplamFiyat.ToString() + " ₺";
+            toplamFiyatLabel.Text = toplamFiyat.ToString();
         }
 
         void adet()
@@ -287,17 +306,18 @@ namespace haliYikama
             }
             connect.Close();
 
-            adetLabel.Text = adet.ToString() + " Adet";
+            adetLabel.Text = adet.ToString();
         }
 
         void indirimEkle()
         {
-            indirim = double.Parse(indirimTextBox.Text);
+            if (!string.IsNullOrWhiteSpace(indirimTextBox.Text)) indirim = double.Parse(indirimTextBox.Text);
+            else MessageBox.Show("İndirim Kısmını Boş Bırakmayınız");
         }
 
         void siparisCek()
         {
-            if (double.TryParse(toplamFiyatLabel.Text.Replace(" ₺", ""), out double toplamFiyat))
+            if (double.TryParse(toplamFiyatLabel.Text, out double toplamFiyat))
             {
                 string komut = "UPDATE siparisler SET siparisDurum='Teslimat', " +
                "siparisTutari=" + toplamFiyat.ToString().Replace(",", ".") + ", " +
@@ -306,8 +326,8 @@ namespace haliYikama
                "haliAdet='" + adetLabel.Text + "' " +
                "WHERE siparisNo=" + siparisNo;
 
-                OleDbCommand cmd = new OleDbCommand(komut, connect);
                 connect.Open();
+                OleDbCommand cmd = new OleDbCommand(komut, connect);
                 cmd.ExecuteNonQuery();
                 connect.Close();
 
@@ -318,21 +338,22 @@ namespace haliYikama
             }
         }
 
-        private void gonderButton_Click(object sender, EventArgs e)
+        void toplamFiyatEkle()
         {
-            DialogResult result = MessageBox.Show("Siparişi tamamlamak istediğinden emin misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-
-            if (result == DialogResult.Yes)
+            if (double.TryParse(toplamFiyatLabel.Text, out double toplamFiyat))
             {
-                siparisCek();
-
-                siparisler siparisler = new siparisler();
-                siparisler.Show();
-                this.Hide();
-            }
-            else
-            {
-
+                
+                string komut = "UPDATE haliBilgi SET toplamFiyat = " + toplamFiyat + " WHERE siparisNo= " + siparisNo;
+                connect.Open(); 
+                OleDbCommand cmd = new OleDbCommand(komut, connect);
+                cmd.ExecuteNonQuery();
+                connect.Close();
+                teslimEdilecekler teslimEdilecekler = new teslimEdilecekler();
+                teslimEdilecekler.toplamFiyat = toplamFiyat;
+            } 
+            else 
+            { 
+                MessageBox.Show("Toplam fiyat değeri geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
         }
     }

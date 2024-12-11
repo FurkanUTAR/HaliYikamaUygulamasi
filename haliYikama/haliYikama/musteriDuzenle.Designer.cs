@@ -36,6 +36,8 @@
             this.adresTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.duzenleButton = new System.Windows.Forms.Button();
+            this.telNoIkiTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 61);
+            this.label1.Location = new System.Drawing.Point(46, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 39;
@@ -61,30 +63,30 @@
             // 
             // adSoyadTextBox
             // 
-            this.adSoyadTextBox.Location = new System.Drawing.Point(95, 58);
+            this.adSoyadTextBox.Location = new System.Drawing.Point(44, 62);
             this.adSoyadTextBox.Name = "adSoyadTextBox";
-            this.adSoyadTextBox.Size = new System.Drawing.Size(100, 20);
+            this.adSoyadTextBox.Size = new System.Drawing.Size(151, 20);
             this.adSoyadTextBox.TabIndex = 40;
             // 
             // telNoTextBox
             // 
-            this.telNoTextBox.Location = new System.Drawing.Point(95, 91);
+            this.telNoTextBox.Location = new System.Drawing.Point(44, 103);
             this.telNoTextBox.Name = "telNoTextBox";
-            this.telNoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.telNoTextBox.Size = new System.Drawing.Size(151, 20);
             this.telNoTextBox.TabIndex = 42;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 94);
+            this.label2.Location = new System.Drawing.Point(46, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 41;
-            this.label2.Text = "Tel No";
+            this.label2.Text = "Telefon Numarası";
             // 
             // adresTextBox
             // 
-            this.adresTextBox.Location = new System.Drawing.Point(39, 144);
+            this.adresTextBox.Location = new System.Drawing.Point(44, 181);
             this.adresTextBox.Multiline = true;
             this.adresTextBox.Name = "adresTextBox";
             this.adresTextBox.Size = new System.Drawing.Size(156, 67);
@@ -93,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 128);
+            this.label3.Location = new System.Drawing.Point(46, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 43;
@@ -101,18 +103,36 @@
             // 
             // duzenleButton
             // 
-            this.duzenleButton.Location = new System.Drawing.Point(39, 217);
+            this.duzenleButton.Location = new System.Drawing.Point(44, 254);
             this.duzenleButton.Name = "duzenleButton";
             this.duzenleButton.Size = new System.Drawing.Size(156, 23);
             this.duzenleButton.TabIndex = 45;
             this.duzenleButton.Text = "Düzenle";
             this.duzenleButton.UseVisualStyleBackColor = true;
             // 
+            // telNoIkiTextBox
+            // 
+            this.telNoIkiTextBox.Location = new System.Drawing.Point(44, 142);
+            this.telNoIkiTextBox.Name = "telNoIkiTextBox";
+            this.telNoIkiTextBox.Size = new System.Drawing.Size(156, 20);
+            this.telNoIkiTextBox.TabIndex = 47;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(46, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "2. Telefon Numarası";
+            // 
             // musteriDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
+            this.Controls.Add(this.telNoIkiTextBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.duzenleButton);
             this.Controls.Add(this.adresTextBox);
             this.Controls.Add(this.label3);
@@ -123,6 +143,7 @@
             this.Controls.Add(this.geriDonPictureBox);
             this.Name = "musteriDuzenle";
             this.Text = "Müşteriyi Düzenle";
+            this.Load += new System.EventHandler(this.musteriDuzenle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -139,5 +160,7 @@
         private System.Windows.Forms.TextBox adresTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button duzenleButton;
+        private System.Windows.Forms.TextBox telNoIkiTextBox;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -35,27 +35,6 @@ namespace haliYikama
             this.Hide();
         }
 
-
-        private void musteriDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
-            { 
-                DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex];
-                string kimlik = row.Cells["Kimlik"].Value.ToString();
-                string adSoyad = row.Cells["adiSoyAdi"].Value.ToString(); 
-                string telNo = row.Cells["telNo"].Value.ToString();
-                string adres = row.Cells["adres"].Value.ToString();
-               
-                siparisOlustur siparisForm = new siparisOlustur(); 
-                siparisForm.Kimlik = kimlik;
-                siparisForm.AdSoyad = adSoyad;
-                siparisForm.TelNo = telNo;
-                siparisForm.Adres = adres;
-                siparisForm.Show();
-                this.Hide();
-            }
-        }
-
         private void araButton_Click(object sender, EventArgs e)
         {
             if (musteriAdiRadioButton.Checked)
@@ -74,6 +53,36 @@ namespace haliYikama
             {
                 butunMusterileriGoster();
             }
+        }
+
+        private void musteriDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
+            { 
+                DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex];
+                string kimlik = row.Cells["Kimlik"].Value.ToString();
+                string adSoyad = row.Cells["adiSoyAdi"].Value.ToString(); 
+                string telNo = row.Cells["telNo"].Value.ToString();
+                string telNo2 = row.Cells["telNo2"].Value.ToString();
+                string adres = row.Cells["adres"].Value.ToString();
+                
+                siparisOlustur siparisOlustur = new siparisOlustur(); 
+                siparisOlustur.Kimlik = kimlik;
+                siparisOlustur.AdSoyad = adSoyad;
+                siparisOlustur.TelNo = telNo;
+                siparisOlustur.Adres = adres;
+                siparisOlustur.Show();
+                this.Hide();
+
+                musteriDuzenle musteriDuzenle = new musteriDuzenle();
+                musteriDuzenle.Kimlik = int.Parse(kimlik);
+                musteriDuzenle.AdSoyad = adSoyad;
+                musteriDuzenle.TelNo = telNo;
+                musteriDuzenle.TelNo2 = telNo;
+                musteriDuzenle.Adres = adres;
+                
+            }
+            
         }
 
         void butunMusterileriGoster()
