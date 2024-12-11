@@ -52,3 +52,7 @@ C:\Users\furka\Desktop\ha\haliYikama\haliYikama\obj\Debug\haliYikama.exe
 C:\Users\furka\Desktop\ha\haliYikama\haliYikama\obj\Debug\haliYikama.pdb
 C:\Users\furka\Desktop\ha\haliYikama\haliYikama\bin\Debug\haliYikama.pdb
 C:\Users\furka\Desktop\HalıYıkamaProjesi\haliYikama\haliYikama\obj\Debug\haliYikama.musteriDuzenle.resources
+C:\Users\furka\Desktop\HalıYıkamaProjesi\haliYikama\haliYikama\bin\Debug\haliYikama.exe.manifest
+C:\Users\furka\Desktop\HalıYıkamaProjesi\haliYikama\haliYikama\bin\Debug\haliYikama.application
+C:\Users\furka\Desktop\HalıYıkamaProjesi\haliYikama\haliYikama\obj\Debug\haliYikama.exe.manifest
+C:\Users\furka\Desktop\HalıYıkamaProjesi\haliYikama\haliYikama\obj\Debug\haliYikama.application
