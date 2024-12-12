@@ -15,14 +15,11 @@ namespace haliYikama
     public partial class teslimEdilecekler : Form
     {
 
-
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
-        DateTime date= DateTime.Now;
 
-        public double toplamFiyat {  get; set; }
         public int siparisNo { get; set; }
-        
+        public double indirim { get; set; }
+        double toplamFiyat = 0;
 
         public teslimEdilecekler()
         {
@@ -39,11 +36,12 @@ namespace haliYikama
         private void teslimEdilecekler_Load(object sender, EventArgs e)
         {
             yukle();
+            toplam();
         }
 
         private void gonderButton_Click(object sender, EventArgs e)
         {
-            siparisTamamla();
+            kontrol();
         }
 
         void yukle()
@@ -69,33 +67,36 @@ namespace haliYikama
             }
         }
 
-        void siparisTamamla()
+        void toplam()
         {
-            if (!string.IsNullOrWhiteSpace(alinanTutarTextBox.Text) && !string.IsNullOrWhiteSpace(odemeSekliComboBox.Text))
+            string komut = "SELECT SUM(haliFiyat) FROM haliBilgi WHERE siparisNo=" + siparisNo;
+
+            connect.Open();
+
+            OleDbCommand cmd = new OleDbCommand(komut, connect);
+            object sonuc = cmd.ExecuteScalar();
+
+            connect.Close();
+
+            if (sonuc != DBNull.Value)
             {
-                double alinanTutar = double.Parse(alinanTutarTextBox.Text);
-
-                if (alinanTutar >= toplamFiyat)
-                {
-                    double veresiye = alinanTutar - toplamFiyat;
-
-                    string komut = "INSERT INTO odemeler (siparisNo,odemeTarih,odemeTutar,odemeYontemi) " +
-                               "VALUES(" + siparisNo + ",'" + date.ToString("yyyy-MM-dd") + "'," + alinanTutar + ",'" + odemeSekliComboBox.Text + "') ";
-
-                    connect.Open();
-
-                    OleDbCommand cmd = new OleDbCommand(komut, connect);
-                    cmd.ExecuteNonQuery();
-
-                    connect.Close();
-
-                }
-                else MessageBox.Show("Alınan tutar toplam tutardan büyük olamaz!!!");
-
+                toplamFiyat = Convert.ToDouble(sonuc) - indirim;
             }
-            else MessageBox.Show("Lütfen alınacak tutar ve ödeme yöntemi giriniz!!!");
+            else MessageBox.Show("Toplam fiyat hesaplanamadı.");
         }
 
+        void kontrol()
+        {
+            int alinanTutar = Convert.ToInt32(alinanTutarTextBox.Text);
+            if (alinanTutar>toplamFiyat)
+            {
+                MessageBox.Show("Alınan tutar toplam fiyattan büyük olamaz!!");
+            }
+            else
+            {
+                MessageBox.Show("Ödendi");
 
+            }
+        }
     }
 }

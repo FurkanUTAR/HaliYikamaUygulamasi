@@ -36,10 +36,9 @@ namespace haliYikama
 
         void musteriEklee()
         {
-            string komut = "INSERT INTO musteriler (adiSoyAdi, telNo, telNo2, adres) VALUES ('"
+            string komut = "INSERT INTO musteriler (adiSoyAdi, telNo, adres) VALUES ('"
                           + adSoyadTextBox.Text + "', '"
                           + telNoTextBox.Text + "', '"
-                          + telNoIkiTextBox.Text + "', '"
                           + mahalleComboBox.Text + " " + adresTextBox.Text + "')";
 
 
