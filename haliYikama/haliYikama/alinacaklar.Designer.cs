@@ -140,7 +140,7 @@
             // 
             // gonderButton
             // 
-            this.gonderButton.Location = new System.Drawing.Point(145, 428);
+            this.gonderButton.Location = new System.Drawing.Point(146, 428);
             this.gonderButton.Name = "gonderButton";
             this.gonderButton.Size = new System.Drawing.Size(84, 36);
             this.gonderButton.TabIndex = 46;

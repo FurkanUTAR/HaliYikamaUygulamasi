@@ -38,6 +38,7 @@
             this.yoneticiTabPage = new System.Windows.Forms.TabPage();
             this.mesajlarButton = new System.Windows.Forms.Button();
             this.fiyatButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.anaSayfaTabPage.SuspendLayout();
             this.yoneticiTabPage.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             // anaSayfaTabPage
             // 
+            this.anaSayfaTabPage.Controls.Add(this.button1);
             this.anaSayfaTabPage.Controls.Add(this.siparislerButton);
             this.anaSayfaTabPage.Controls.Add(this.gelirGiderButton);
             this.anaSayfaTabPage.Controls.Add(this.aramaGecmisiButton);
@@ -71,7 +73,7 @@
             // siparislerButton
             // 
             this.siparislerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.siparislerButton.Location = new System.Drawing.Point(8, 74);
+            this.siparislerButton.Location = new System.Drawing.Point(8, 98);
             this.siparislerButton.Name = "siparislerButton";
             this.siparislerButton.Size = new System.Drawing.Size(100, 65);
             this.siparislerButton.TabIndex = 2;
@@ -82,7 +84,7 @@
             // gelirGiderButton
             // 
             this.gelirGiderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gelirGiderButton.Location = new System.Drawing.Point(118, 145);
+            this.gelirGiderButton.Location = new System.Drawing.Point(8, 240);
             this.gelirGiderButton.Name = "gelirGiderButton";
             this.gelirGiderButton.Size = new System.Drawing.Size(100, 65);
             this.gelirGiderButton.TabIndex = 7;
@@ -93,7 +95,7 @@
             // aramaGecmisiButton
             // 
             this.aramaGecmisiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.aramaGecmisiButton.Location = new System.Drawing.Point(8, 145);
+            this.aramaGecmisiButton.Location = new System.Drawing.Point(8, 169);
             this.aramaGecmisiButton.Name = "aramaGecmisiButton";
             this.aramaGecmisiButton.Size = new System.Drawing.Size(100, 65);
             this.aramaGecmisiButton.TabIndex = 6;
@@ -104,9 +106,9 @@
             // ozetlerButton
             // 
             this.ozetlerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ozetlerButton.Location = new System.Drawing.Point(6, 216);
+            this.ozetlerButton.Location = new System.Drawing.Point(118, 240);
             this.ozetlerButton.Name = "ozetlerButton";
-            this.ozetlerButton.Size = new System.Drawing.Size(210, 65);
+            this.ozetlerButton.Size = new System.Drawing.Size(100, 65);
             this.ozetlerButton.TabIndex = 8;
             this.ozetlerButton.Text = "Özetler";
             this.ozetlerButton.UseVisualStyleBackColor = true;
@@ -115,7 +117,7 @@
             // musterilerButton
             // 
             this.musterilerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.musterilerButton.Location = new System.Drawing.Point(118, 74);
+            this.musterilerButton.Location = new System.Drawing.Point(118, 98);
             this.musterilerButton.Name = "musterilerButton";
             this.musterilerButton.Size = new System.Drawing.Size(100, 65);
             this.musterilerButton.TabIndex = 5;
@@ -158,6 +160,16 @@
             this.fiyatButton.UseVisualStyleBackColor = true;
             this.fiyatButton.Click += new System.EventHandler(this.fiyatButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button1.Location = new System.Drawing.Point(118, 169);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 65);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "İşlemdekiler";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // anaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,5 +198,6 @@
         private System.Windows.Forms.Button aramaGecmisiButton;
         private System.Windows.Forms.Button fiyatButton;
         private System.Windows.Forms.Button mesajlarButton;
+        private System.Windows.Forms.Button button1;
     }
 }

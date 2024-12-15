@@ -30,11 +30,13 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.odemeSekliComboBox = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.odemeYontemiComboBox = new System.Windows.Forms.ComboBox();
+            this.alinanTutarTextBox = new System.Windows.Forms.TextBox();
             this.gonderButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
+            this.veresiyeFiyatLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -44,9 +46,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(119, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 59;
-            this.label2.Text = "Ödeme Şekli?";
+            this.label2.Text = "Ödeme Yöntemi?";
             // 
             // label1
             // 
@@ -57,38 +59,41 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Alınan Tutar?";
             // 
-            // odemeSekliComboBox
+            // odemeYontemiComboBox
             // 
-            this.odemeSekliComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.odemeSekliComboBox.FormattingEnabled = true;
-            this.odemeSekliComboBox.Location = new System.Drawing.Point(120, 55);
-            this.odemeSekliComboBox.Name = "odemeSekliComboBox";
-            this.odemeSekliComboBox.Size = new System.Drawing.Size(102, 21);
-            this.odemeSekliComboBox.TabIndex = 57;
+            this.odemeYontemiComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.odemeYontemiComboBox.FormattingEnabled = true;
+            this.odemeYontemiComboBox.Location = new System.Drawing.Point(120, 55);
+            this.odemeYontemiComboBox.Name = "odemeYontemiComboBox";
+            this.odemeYontemiComboBox.Size = new System.Drawing.Size(102, 21);
+            this.odemeYontemiComboBox.TabIndex = 57;
             // 
-            // textBox1
+            // alinanTutarTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 55);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(102, 21);
-            this.textBox1.TabIndex = 56;
+            this.alinanTutarTextBox.Location = new System.Drawing.Point(12, 55);
+            this.alinanTutarTextBox.Multiline = true;
+            this.alinanTutarTextBox.Name = "alinanTutarTextBox";
+            this.alinanTutarTextBox.Size = new System.Drawing.Size(102, 21);
+            this.alinanTutarTextBox.TabIndex = 56;
             // 
             // gonderButton
             // 
-            this.gonderButton.Location = new System.Drawing.Point(1, 428);
+            this.gonderButton.Location = new System.Drawing.Point(146, 428);
             this.gonderButton.Name = "gonderButton";
             this.gonderButton.Size = new System.Drawing.Size(84, 36);
             this.gonderButton.TabIndex = 55;
             this.gonderButton.Text = "Gönder";
             this.gonderButton.UseVisualStyleBackColor = true;
+            this.gonderButton.Click += new System.EventHandler(this.gonderButton_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 94);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 82);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(232, 328);
+            this.dataGridView1.Size = new System.Drawing.Size(232, 297);
             this.dataGridView1.TabIndex = 54;
             // 
             // geriDonPictureBox
@@ -102,15 +107,34 @@
             this.geriDonPictureBox.TabStop = false;
             this.geriDonPictureBox.Click += new System.EventHandler(this.geriDonPictureBox_Click);
             // 
+            // veresiyeFiyatLabel
+            // 
+            this.veresiyeFiyatLabel.AutoSize = true;
+            this.veresiyeFiyatLabel.Location = new System.Drawing.Point(71, 382);
+            this.veresiyeFiyatLabel.Name = "veresiyeFiyatLabel";
+            this.veresiyeFiyatLabel.Size = new System.Drawing.Size(0, 13);
+            this.veresiyeFiyatLabel.TabIndex = 61;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(-2, 382);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 60;
+            this.label3.Text = "Toplam Fiyat :";
+            // 
             // veresiye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
+            this.Controls.Add(this.veresiyeFiyatLabel);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.odemeSekliComboBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.odemeYontemiComboBox);
+            this.Controls.Add(this.alinanTutarTextBox);
             this.Controls.Add(this.gonderButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.geriDonPictureBox);
@@ -128,10 +152,12 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox odemeSekliComboBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox odemeYontemiComboBox;
+        private System.Windows.Forms.TextBox alinanTutarTextBox;
         private System.Windows.Forms.Button gonderButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox geriDonPictureBox;
+        private System.Windows.Forms.Label veresiyeFiyatLabel;
+        private System.Windows.Forms.Label label3;
     }
 }

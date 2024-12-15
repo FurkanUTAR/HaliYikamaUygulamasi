@@ -11,6 +11,7 @@ using System.Data.OleDb;
 using System.Data.Common;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 
 namespace haliYikama
 {
@@ -94,6 +95,10 @@ namespace haliYikama
                 if (alinacakDataGridView.Columns.Contains("haliAdet"))
                 {
                     alinacakDataGridView.Columns["haliAdet"].Visible = false;
+                }
+                if (alinacakDataGridView.Columns.Contains("veresiyeTutar"))
+                {
+                    alinacakDataGridView.Columns["veresiyeTutar"].Visible = false;
                 }
             }
 
@@ -208,7 +213,7 @@ namespace haliYikama
                 if (cellValue != null && int.TryParse(cellValue.ToString(), out int siparisNo)) // Geçerli bir sayı mı?
                 {
                     veresiye veresiye = new veresiye();
-                    // veresiye.SiparisNo = siparisNo;
+                    veresiye.siparisNo = siparisNo;
                     veresiye.Show();
                     this.Hide();
                 }
@@ -222,18 +227,45 @@ namespace haliYikama
                 MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+       
+
+
+        // Çalışmıyor 
         void hepsiKontrol()
         {
+            string status = hepsiDataGridView.CurrentRow.Cells[6].ToString();
+
             if (hepsiDataGridView.CurrentRow != null) // Seçili satır var mı?
             {
                 var cellValue = hepsiDataGridView.CurrentRow.Cells[0].Value; // Hücre değeri alınır
 
                 if (cellValue != null && int.TryParse(cellValue.ToString(), out int siparisNo)) // Geçerli bir sayı mı?
                 {
-                    hepsi hepsi = new hepsi();
-                    // hepsi.SiparisNo = siparisNo;
-                    hepsi.Show();
-                    this.Hide();
+                    if (status == "Alinacak")
+                    {
+                        alinacaklar alinacaklar = new alinacaklar();
+                        alinacaklar.siparisNo = siparisNo;
+                        alinacaklar.Show();
+                        this.Hide();
+                    }
+                    else if (status == "Teslimat")
+                    {
+                        teslimEdilecekler teslimEdilecekler = new teslimEdilecekler();
+                        teslimEdilecekler.siparisNo = siparisNo;
+                        teslimEdilecekler.Show();
+                        this.Hide();
+                    }
+                    else if(status == "Veresiye")
+                    {
+                        veresiye veresiye = new veresiye();
+                        veresiye.siparisNo = siparisNo;
+                        veresiye.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("2");
+                    }
                 }
                 else
                 {

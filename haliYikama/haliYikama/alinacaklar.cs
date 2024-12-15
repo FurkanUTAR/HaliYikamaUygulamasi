@@ -19,7 +19,7 @@ namespace haliYikama
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public int siparisNo { get; set; }
-        double indirim = 0;
+        double indirimMiktari = 0;
 
         public alinacaklar()
         {
@@ -88,6 +88,24 @@ namespace haliYikama
             }
         }
 
+        private void gonderButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Siparişi tamamlamak istediğinden emin misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (result == DialogResult.Yes)
+            {
+                siparisCek();
+
+                siparisler siparisler = new siparisler();
+                siparisler.Show();
+                this.Hide();
+            }
+            else
+            {
+
+            }
+        }
+
         void siparisEkle()
         {
             if (!string.IsNullOrWhiteSpace(adetComboBox.Text) && (!string.IsNullOrWhiteSpace(metreKareTextBox.Text) || !metreKareTextBox.Enabled))
@@ -147,8 +165,8 @@ namespace haliYikama
 
                 if (string.IsNullOrWhiteSpace(urunComboBox.Text))
                 {
-                    string komutEkle = "INSERT INTO haliBilgi(siparisNo, haliCins, haliAdet, haliBoyut, haliFiyat, toplamFiyat) " +
-                    "VALUES (" + siparisNo + ", '" + "Makine" + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ", " + fiyat + ")";
+                    string komutEkle = "INSERT INTO haliBilgi(siparisNo, haliCins, haliAdet, haliBoyut, haliFiyat) " +
+                    "VALUES (" + siparisNo + ", '" + "Makine" + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ")";
 
                     connect.Open();
 
@@ -160,8 +178,8 @@ namespace haliYikama
                 }
                 else
                 {
-                    string komutEkle = "INSERT INTO haliBilgi(siparisNo, haliCins, haliAdet, haliBoyut, haliFiyat, toplamFiyat) " +
-                    "VALUES (" + siparisNo + ", '" + urunComboBox.Text + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ", " + fiyat + ")";
+                    string komutEkle = "INSERT INTO haliBilgi(siparisNo, haliCins, haliAdet, haliBoyut, haliFiyat) " +
+                    "VALUES (" + siparisNo + ", '" + urunComboBox.Text + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ")";
 
                     connect.Open();
 
@@ -187,7 +205,7 @@ namespace haliYikama
 
         void kontrol()
         {
-            if (urunComboBox.Text == "Yorgan(Tek)" || urunComboBox.Text == "Yorgan(Çift)") { metreKareTextBox.Enabled = false; }
+            if (urunComboBox.Text == "Yorgan(Tek)" || urunComboBox.Text == "Yorgan(Çift)") { metreKareTextBox.Enabled = false; metreKareTextBox.Text = ""; }
             else { metreKareTextBox.Enabled = true; }
         }
 
@@ -206,7 +224,6 @@ namespace haliYikama
 
             alinacakHaliDataGridView.Columns["Kimlik"].Visible = false;
             alinacakHaliDataGridView.Columns["siparisNo"].Visible = false;
-            alinacakHaliDataGridView.Columns["toplamFiyat"].Visible = false;
 
             connect.Close();
         }
@@ -257,9 +274,9 @@ namespace haliYikama
             if (fiyat == 0)
             {
                 toplamFiyat = 0;
-                indirim = 0;
+                indirimMiktari = 0;
             }
-            else toplamFiyat = fiyat - indirim;
+            else toplamFiyat = fiyat - indirimMiktari;
 
             toplamFiyatLabel.Text = toplamFiyat.ToString() + " ₺";
         }
@@ -292,50 +309,32 @@ namespace haliYikama
 
         void indirimEkle()
         {
-            indirim = double.Parse(indirimTextBox.Text);
+            indirimMiktari = double.Parse(indirimTextBox.Text);
 
             teslimEdilecekler teslimEdilecekler = new teslimEdilecekler();
-            teslimEdilecekler.indirim = indirim;
+            teslimEdilecekler.indirim = indirimMiktari;
         }
 
         void siparisCek()
         {
             if (double.TryParse(toplamFiyatLabel.Text.Replace(" ₺", ""), out double toplamFiyat))
             {
-                string komut = "UPDATE siparisler SET siparisDurum='Teslimat', " +
-               "siparisTutari=" + toplamFiyat.ToString().Replace(",", ".") + ", " +
-               "teslimTarihi='" + teslimTarihiDateTimePicker.Value.ToString("yyyy-MM-dd") + "', " +
-               "indirimMiktari=" + indirim.ToString().Replace(",", ".") + ", " +
-               "haliAdet='" + adetLabel.Text + "' " +
-               "WHERE siparisNo=" + siparisNo;
+                string komut = "UPDATE siparisler SET " +
+               "                siparisDurum='Teslimat', " +
+               "                siparisTutari=" + toplamFiyat.ToString().Replace(",", ".") + ", " +
+               "                teslimTarihi='" + teslimTarihiDateTimePicker.Value.ToString("yyyy-MM-dd") + "', " +
+               "                indirimMiktari=" + indirimMiktari + ", " +
+               "                haliAdet='" + adetLabel.Text + "' " +
+               "                WHERE siparisNo=" + siparisNo;
 
                 OleDbCommand cmd = new OleDbCommand(komut, connect);
                 connect.Open();
                 cmd.ExecuteNonQuery();
                 connect.Close();
-
             }
             else
             {
                 MessageBox.Show("Toplam fiyat değeri geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void gonderButton_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Siparişi tamamlamak istediğinden emin misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-
-            if (result == DialogResult.Yes)
-            {
-                siparisCek();
-
-                siparisler siparisler = new siparisler();
-                siparisler.Show();
-                this.Hide();
-            }
-            else
-            {
-
             }
         }
     }
