@@ -39,7 +39,7 @@ namespace haliYikama
             string komut = "INSERT INTO musteriler (adiSoyAdi, telNo, adres) VALUES ('"
                           + adSoyadTextBox.Text + "', '"
                           + telNoTextBox.Text + "', '"
-                          + mahalleComboBox.Text + " " + adresTextBox.Text + "')";
+                          + adresTextBox.Text + "')";
 
 
             connect.Open();
