@@ -62,8 +62,6 @@ C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikam
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.fiyat.resources
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.girisEkrani.resources
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.gelirGiderTakip.resources
-C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.hazirOlanlar.resources
-C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.hepsi.resources
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.kayitEkrani.resources
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.mesajlar.resources
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.musteriDuzenle.resources
@@ -79,3 +77,4 @@ C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikam
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.csproj.CoreCompileInputs.cache
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.exe
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.pdb
+C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.islemdekiler.resources
