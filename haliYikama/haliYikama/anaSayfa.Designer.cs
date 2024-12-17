@@ -30,6 +30,7 @@
         {
             this.TabControl = new System.Windows.Forms.TabControl();
             this.anaSayfaTabPage = new System.Windows.Forms.TabPage();
+            this.islemdekilerButton = new System.Windows.Forms.Button();
             this.siparislerButton = new System.Windows.Forms.Button();
             this.gelirGiderButton = new System.Windows.Forms.Button();
             this.aramaGecmisiButton = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.yoneticiTabPage = new System.Windows.Forms.TabPage();
             this.mesajlarButton = new System.Windows.Forms.Button();
             this.fiyatButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.anaSayfaTabPage.SuspendLayout();
             this.yoneticiTabPage.SuspendLayout();
@@ -56,7 +56,7 @@
             // 
             // anaSayfaTabPage
             // 
-            this.anaSayfaTabPage.Controls.Add(this.button1);
+            this.anaSayfaTabPage.Controls.Add(this.islemdekilerButton);
             this.anaSayfaTabPage.Controls.Add(this.siparislerButton);
             this.anaSayfaTabPage.Controls.Add(this.gelirGiderButton);
             this.anaSayfaTabPage.Controls.Add(this.aramaGecmisiButton);
@@ -69,6 +69,17 @@
             this.anaSayfaTabPage.TabIndex = 0;
             this.anaSayfaTabPage.Text = "Ana Sayfa";
             this.anaSayfaTabPage.UseVisualStyleBackColor = true;
+            // 
+            // islemdekilerButton
+            // 
+            this.islemdekilerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.islemdekilerButton.Location = new System.Drawing.Point(118, 169);
+            this.islemdekilerButton.Name = "islemdekilerButton";
+            this.islemdekilerButton.Size = new System.Drawing.Size(100, 65);
+            this.islemdekilerButton.TabIndex = 9;
+            this.islemdekilerButton.Text = "İşlemdekiler";
+            this.islemdekilerButton.UseVisualStyleBackColor = true;
+            this.islemdekilerButton.Click += new System.EventHandler(this.islemdekilerButton_Click);
             // 
             // siparislerButton
             // 
@@ -160,16 +171,6 @@
             this.fiyatButton.UseVisualStyleBackColor = true;
             this.fiyatButton.Click += new System.EventHandler(this.fiyatButton_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(118, 169);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 65);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "İşlemdekiler";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // anaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,7 +179,6 @@
             this.Controls.Add(this.TabControl);
             this.Name = "anaSayfa";
             this.Text = "Ana Sayfa";
-            this.Load += new System.EventHandler(this.anaSayfa_Load);
             this.TabControl.ResumeLayout(false);
             this.anaSayfaTabPage.ResumeLayout(false);
             this.yoneticiTabPage.ResumeLayout(false);
@@ -198,6 +198,6 @@
         private System.Windows.Forms.Button aramaGecmisiButton;
         private System.Windows.Forms.Button fiyatButton;
         private System.Windows.Forms.Button mesajlarButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button islemdekilerButton;
     }
 }

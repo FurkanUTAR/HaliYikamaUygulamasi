@@ -28,11 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.islemdekilerDataGridView = new System.Windows.Forms.DataGridView();
             this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.islemdekilerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // islemdekilerDataGridView
+            // 
+            this.islemdekilerDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.islemdekilerDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.islemdekilerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.islemdekilerDataGridView.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.islemdekilerDataGridView.Location = new System.Drawing.Point(1, 26);
+            this.islemdekilerDataGridView.Name = "islemdekilerDataGridView";
+            this.islemdekilerDataGridView.Size = new System.Drawing.Size(232, 438);
+            this.islemdekilerDataGridView.TabIndex = 40;
+            this.islemdekilerDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.islemdekilerDataGridView_CellDoubleClick);
             // 
             // geriDonPictureBox
             // 
@@ -45,25 +57,18 @@
             this.geriDonPictureBox.TabStop = false;
             this.geriDonPictureBox.Click += new System.EventHandler(this.geriDonPictureBox_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 26);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(232, 438);
-            this.dataGridView1.TabIndex = 40;
-            // 
             // islemdekiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.islemdekilerDataGridView);
             this.Controls.Add(this.geriDonPictureBox);
             this.Name = "islemdekiler";
             this.Text = "İşlemdekiler";
+            this.Load += new System.EventHandler(this.islemdekiler_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.islemdekilerDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -71,6 +76,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox geriDonPictureBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView islemdekilerDataGridView;
     }
 }

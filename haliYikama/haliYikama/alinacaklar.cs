@@ -94,7 +94,7 @@ namespace haliYikama
 
             if (result == DialogResult.Yes)
             {
-                siparisCek();
+                siparisAl();
 
                 siparisler siparisler = new siparisler();
                 siparisler.Show();
@@ -315,12 +315,12 @@ namespace haliYikama
             teslimEdilecekler.indirim = indirimMiktari;
         }
 
-        void siparisCek()
+        void siparisAl()
         {
             if (double.TryParse(toplamFiyatLabel.Text.Replace(" ₺", ""), out double toplamFiyat))
             {
                 string komut = "UPDATE siparisler SET " +
-               "                siparisDurum='Teslimat', " +
+               "                siparisDurum='İslemde', " +
                "                siparisTutari=" + toplamFiyat.ToString().Replace(",", ".") + ", " +
                "                teslimTarihi='" + teslimTarihiDateTimePicker.Value.ToString("yyyy-MM-dd") + "', " +
                "                indirimMiktari=" + indirimMiktari + ", " +

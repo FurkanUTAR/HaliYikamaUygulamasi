@@ -78,3 +78,4 @@ C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikam
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.exe
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.pdb
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.islemdekiler.resources
+C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.siparisDetay.resources

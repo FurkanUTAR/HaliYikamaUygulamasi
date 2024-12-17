@@ -127,6 +127,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="siparisDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="siparisDetay.Designer.cs">
+      <DependentUpon>siparisDetay.cs</DependentUpon>
+    </Compile>
     <Compile Include="siparisler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="siparisDetay.resx">
+      <DependentUpon>siparisDetay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="siparisler.resx">
       <DependentUpon>siparisler.cs</DependentUpon>
     </EmbeddedResource>

@@ -70,9 +70,11 @@ namespace haliYikama
             this.Hide();
         }
 
-        private void anaSayfa_Load(object sender, EventArgs e)
+        private void islemdekilerButton_Click(object sender, EventArgs e)
         {
-
+            islemdekiler islemdekiler = new islemdekiler();
+            islemdekiler.Show();
+            this.Hide();
         }
     }
 }
