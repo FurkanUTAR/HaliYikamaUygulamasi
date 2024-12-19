@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.kayitOlLabel = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -66,7 +66,6 @@
             this.parolaTextBox.Size = new System.Drawing.Size(166, 20);
             this.parolaTextBox.TabIndex = 2;
             this.parolaTextBox.UseSystemPasswordChar = true;
-            this.parolaTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // girisYapButton
             // 
@@ -114,17 +113,17 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Kayıt Olmadın Mı?";
             // 
-            // label5
+            // kayitOlLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(120, 253);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Kayıt Ol";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.kayitOlLabel.AutoSize = true;
+            this.kayitOlLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.kayitOlLabel.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.kayitOlLabel.Location = new System.Drawing.Point(120, 253);
+            this.kayitOlLabel.Name = "kayitOlLabel";
+            this.kayitOlLabel.Size = new System.Drawing.Size(43, 13);
+            this.kayitOlLabel.TabIndex = 11;
+            this.kayitOlLabel.Text = "Kayıt Ol";
+            this.kayitOlLabel.Click += new System.EventHandler(this.label5_Click);
             // 
             // pictureBox2
             // 
@@ -156,7 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.kayitOlLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -169,7 +168,6 @@
             this.Controls.Add(this.parolaTextBox);
             this.Name = "girisEkrani";
             this.Text = "Giriş Yap";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -189,7 +187,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label kayitOlLabel;
     }
 }
 

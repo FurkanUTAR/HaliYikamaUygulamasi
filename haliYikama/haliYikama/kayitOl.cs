@@ -89,7 +89,6 @@ namespace haliYikama
             }
             else
             {
-
                 if (kullaniciAdiTextBox.Text == parolaTextBox.Text || firmaAdiTextBox.Text == parolaTextBox.Text)
                 {
                     MessageBox.Show("Parolanız kulanıcı adıyla veya firma adıyla aynı olamaz!!!");
@@ -98,7 +97,6 @@ namespace haliYikama
                 {
                     if (ePostaTextBox.Text.EndsWith("@gmail.com"))
                     {
-
                         if (telNoTextBox.Text.StartsWith("05"))
                         {
                             if (telNoTextBox.Text.Length != 14)

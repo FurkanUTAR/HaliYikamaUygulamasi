@@ -28,26 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
             this.haliBilgiDataGridView = new System.Windows.Forms.DataGridView();
             this.haliEkleButton = new System.Windows.Forms.Button();
             this.teslimatCekButton = new System.Windows.Forms.Button();
             this.teslimatNotuTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
+            this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.haliBilgiDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // geriDonPictureBox
-            // 
-            this.geriDonPictureBox.Image = global::haliYikama.Properties.Resources.left;
-            this.geriDonPictureBox.Location = new System.Drawing.Point(1, 1);
-            this.geriDonPictureBox.Name = "geriDonPictureBox";
-            this.geriDonPictureBox.Size = new System.Drawing.Size(23, 19);
-            this.geriDonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.geriDonPictureBox.TabIndex = 40;
-            this.geriDonPictureBox.TabStop = false;
-            this.geriDonPictureBox.Click += new System.EventHandler(this.geriDonPictureBox_Click);
             // 
             // haliBilgiDataGridView
             // 
@@ -67,6 +56,7 @@
             this.haliEkleButton.TabIndex = 42;
             this.haliEkleButton.Text = "Halı Ekle";
             this.haliEkleButton.UseVisualStyleBackColor = true;
+            this.haliEkleButton.Click += new System.EventHandler(this.haliEkleButton_Click);
             // 
             // teslimatCekButton
             // 
@@ -95,6 +85,17 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "Teslimat Notu";
             // 
+            // geriDonPictureBox
+            // 
+            this.geriDonPictureBox.Image = global::haliYikama.Properties.Resources.left;
+            this.geriDonPictureBox.Location = new System.Drawing.Point(1, 1);
+            this.geriDonPictureBox.Name = "geriDonPictureBox";
+            this.geriDonPictureBox.Size = new System.Drawing.Size(23, 19);
+            this.geriDonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.geriDonPictureBox.TabIndex = 40;
+            this.geriDonPictureBox.TabStop = false;
+            this.geriDonPictureBox.Click += new System.EventHandler(this.geriDonPictureBox_Click);
+            // 
             // siparisDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,8 +110,8 @@
             this.Name = "siparisDetay";
             this.Text = "Sipariş Detay";
             this.Load += new System.EventHandler(this.siparisDetay_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.haliBilgiDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

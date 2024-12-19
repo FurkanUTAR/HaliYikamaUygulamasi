@@ -92,7 +92,7 @@ namespace haliYikama
 
 
                     string odemeYontemiMevcut = "";
-                    string komutGetOdemeYontemi = "SELECT odemeYontemi FROM odemeler WHERE siparisNo=" + siparisNo;
+                    string komutGetOdemeYontemi = "SELECT odemeYontem FROM odemeler WHERE siparisNo=" + siparisNo;
 
                     connect.Open();
                     OleDbCommand cmdGetOdemeYontemi = new OleDbCommand(komutGetOdemeYontemi, connect);
@@ -108,7 +108,7 @@ namespace haliYikama
 
                     string komutOdemeler = "UPDATE odemeler SET" +
                         "           odenenTutar=" + veresiyeTutar + alinanTutar + "," +
-                        "           odemeYontemi="+yeniOdemeYontemi+" " +
+                        "           odemeYontem="+yeniOdemeYontemi+" " +
                         "           WHERE siparisNo=" + siparisNo;
                     connect.Open();
 

@@ -58,6 +58,16 @@ namespace haliYikama
             databaseSiparisOlustur();
         }
 
+        private void musteriSilButton_Click(object sender, EventArgs e)
+        {
+            musteriSil();
+
+            musteriler musteriler = new musteriler();
+            musteriler.Show();
+            this.Hide();
+        }
+
+
         void databaseSiparisOlustur()
         {
             string adiSoyadi = adSoyadLabel.Text; 
@@ -67,7 +77,7 @@ namespace haliYikama
             string siparisNotu = siparisNotuTextBox.Text; 
             string siparisDurum = "Alınacak";
             
-            string komut = $"INSERT INTO siparisler (adiSoyadi, telNo, adres, siparisTarihi, siparisNotu, siparisDurum) " 
+            string komut = $"INSERT INTO siparisler (adiSoyadi, telNo, adres, siparisTarih, siparisNotu, siparisDurum) " 
                          + $"VALUES ('{adiSoyadi}', '{telNo}', '{adres}', '{siparisTarihi}', '{siparisNotu}', '{siparisDurum}')";
             connect.Open();
 
@@ -88,16 +98,5 @@ namespace haliYikama
 
             connect.Close();
         }
-
-        private void musteriSilButton_Click(object sender, EventArgs e)
-        {
-            musteriSil();
-
-            musteriler musteriler = new musteriler();
-            musteriler.Show();
-            this.Hide();
-        }
-
-
     }
 }

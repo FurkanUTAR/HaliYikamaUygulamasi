@@ -47,12 +47,11 @@ namespace haliYikama
                 siparisDetay.siparisNo = siparisNo;
                 siparisDetay.Show();
                 this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
+                haliEkle haliEkle = new haliEkle();
+                haliEkle.siparisNo = siparisNo;
+            }
+            else MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         void goster()
@@ -67,6 +66,11 @@ namespace haliYikama
             islemdekilerDataGridView.DataSource = dt;
 
             connect.Close();
+
+            islemdekilerDataGridView.Columns["siparisNotu"].Visible = false;
+            islemdekilerDataGridView.Columns["siparisDurum"].Visible = false;
+            islemdekilerDataGridView.Columns["teslimTarih"].Visible = false;
+            islemdekilerDataGridView.Columns["veresiyeTutar"].Visible = false;
         }
     }
 }

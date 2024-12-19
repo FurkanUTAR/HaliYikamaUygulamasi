@@ -62,6 +62,12 @@ namespace haliYikama
                 connect.Open();
                 cmd.ExecuteNonQuery();
                 connect.Close();
-        }   
+        }
+
+        private void haliEkleButton_Click(object sender, EventArgs e)
+        {
+            haliEkle haliEkle = new haliEkle();
+            haliEkle.ShowDialog();
+        }
     }
 }

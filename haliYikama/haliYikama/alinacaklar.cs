@@ -68,6 +68,24 @@ namespace haliYikama
             goster();
         }
 
+        private void gonderButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Siparişi tamamlamak istediğinden emin misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (result == DialogResult.Yes)
+            {
+                siparisAl();
+
+                siparisler siparisler = new siparisler();
+                siparisler.Show();
+                this.Hide();
+            }
+            else
+            {
+
+            }
+        }
+
         void yukle()
         {
             urunComboBox.Items.Add("Makine");
@@ -85,24 +103,6 @@ namespace haliYikama
             for (int i = 1; i < 1000; i++)
             {
                 adetComboBox.Items.Add(i);
-            }
-        }
-
-        private void gonderButton_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Siparişi tamamlamak istediğinden emin misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-
-            if (result == DialogResult.Yes)
-            {
-                siparisAl();
-
-                siparisler siparisler = new siparisler();
-                siparisler.Show();
-                this.Hide();
-            }
-            else
-            {
-
             }
         }
 
@@ -321,9 +321,9 @@ namespace haliYikama
             {
                 string komut = "UPDATE siparisler SET " +
                "                siparisDurum='İslemde', " +
-               "                siparisTutari=" + toplamFiyat.ToString().Replace(",", ".") + ", " +
-               "                teslimTarihi='" + teslimTarihiDateTimePicker.Value.ToString("yyyy-MM-dd") + "', " +
-               "                indirimMiktari=" + indirimMiktari + ", " +
+               "                siparisTutar=" + toplamFiyat.ToString().Replace(",", ".") + ", " +
+               "                teslimTarih='" + teslimTarihiDateTimePicker.Value.ToString("yyyy-MM-dd") + "', " +
+               "                indirimMiktar=" + indirimMiktari + ", " +
                "                haliAdet='" + adetLabel.Text + "' " +
                "                WHERE siparisNo=" + siparisNo;
 

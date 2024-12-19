@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
+            this.girisYapLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,17 +53,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // label5
+            // girisYapLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(145, 330);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Giriş Yap";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.girisYapLabel.AutoSize = true;
+            this.girisYapLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.girisYapLabel.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.girisYapLabel.Location = new System.Drawing.Point(145, 330);
+            this.girisYapLabel.Name = "girisYapLabel";
+            this.girisYapLabel.Size = new System.Drawing.Size(49, 13);
+            this.girisYapLabel.TabIndex = 22;
+            this.girisYapLabel.Text = "Giriş Yap";
+            this.girisYapLabel.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -246,7 +246,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ePostaTextBox);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.girisYapLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -273,7 +273,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label girisYapLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

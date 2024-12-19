@@ -99,7 +99,7 @@ namespace haliYikama
                 }
                 else if (alinanTutar == toplamFiyat)
                 {
-                    string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontemi)" +
+                    string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontem)" +
                         "               VALUES( " +
                         "               " + siparisNo + "," +
                         "               " + DateTime.Now.ToString("dd/MM/yyyy") + "," +
@@ -131,7 +131,7 @@ namespace haliYikama
                 }
                 else
                 {
-                    string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontemi)" +
+                    string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontem)" +
                         "               VALUES( " +
                         "               " + siparisNo + "," +
                         "               " + DateTime.Now.ToString("dd/MM/yyyy") + "," +

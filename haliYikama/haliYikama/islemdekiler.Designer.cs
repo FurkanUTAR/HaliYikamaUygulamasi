@@ -64,6 +64,7 @@
             this.ClientSize = new System.Drawing.Size(234, 476);
             this.Controls.Add(this.islemdekilerDataGridView);
             this.Controls.Add(this.geriDonPictureBox);
+            this.KeyPreview = true;
             this.Name = "islemdekiler";
             this.Text = "İşlemdekiler";
             this.Load += new System.EventHandler(this.islemdekiler_Load);
