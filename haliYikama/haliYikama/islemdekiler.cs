@@ -47,9 +47,6 @@ namespace haliYikama
                 siparisDetay.siparisNo = siparisNo;
                 siparisDetay.Show();
                 this.Hide();
-
-                haliEkle haliEkle = new haliEkle();
-                haliEkle.siparisNo = siparisNo;
             }
             else MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

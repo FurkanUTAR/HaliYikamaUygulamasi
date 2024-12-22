@@ -18,7 +18,7 @@ namespace haliYikama
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public int siparisNo { get; set; }
-        public double indirim { get; set; }
+        double indirimMiktari = 0.0;
         double toplamFiyat = 0;
 
         public teslimEdilecekler()
@@ -36,6 +36,7 @@ namespace haliYikama
         private void teslimEdilecekler_Load(object sender, EventArgs e)
         {
             yukle();
+            indirimHesap();
             toplam();
 
             toplamFiyatLabel.Text = toplamFiyat.ToString() + " ₺";
@@ -52,11 +53,11 @@ namespace haliYikama
             odemeYontemiComboBox.Items.Add("Kart");
             odemeYontemiComboBox.Items.Add("Havale");
 
-            string komut= "SELECT * FROM haliBilgi WHERE siparisNo=" + siparisNo + "";
+            string komut = "SELECT * FROM haliBilgi WHERE siparisNo=" + siparisNo + "";
 
             connect.Open();
-            
-            OleDbDataAdapter da=new OleDbDataAdapter(komut,connect);
+
+            OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
             DataTable dt = new DataTable();
             da.Fill(dt);
             haliDataGridView.DataSource = dt;
@@ -79,7 +80,7 @@ namespace haliYikama
             object sonuc = cmd.ExecuteScalar();
             if (sonuc != DBNull.Value)
             {
-                toplamFiyat = Convert.ToDouble(sonuc) - indirim;
+                toplamFiyat = Convert.ToDouble(sonuc) - indirimMiktari;
             }
             else MessageBox.Show("Toplam fiyat hesaplanamadı.");
 
@@ -99,39 +100,50 @@ namespace haliYikama
                 }
                 else if (alinanTutar == toplamFiyat)
                 {
-                    string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontem)" +
-                        "               VALUES( " +
-                        "               " + siparisNo + "," +
-                        "               " + DateTime.Now.ToString("dd/MM/yyyy") + "," +
-                        "               " + toplamFiyat + "," +
-                        "               " + alinanTutar + "," +
-                        "               '" + odemeYontemiComboBox.Text + "') ";
+                    DialogResult result = MessageBox.Show("Teslim etmek istediğinden emin misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-                    connect.Open();
+                    if (result == DialogResult.Yes)
+                    {
+                        string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontem)" +
+                    "               VALUES( " +
+                    "               " + siparisNo + "," +
+                    "               " + DateTime.Now.ToString("dd/MM/yyyy") + "," +
+                    "               " + toplamFiyat + "," +
+                    "               " + alinanTutar + "," +
+                    "               '" + odemeYontemiComboBox.Text + "') ";
 
-                    OleDbCommand ekle = new OleDbCommand(komutEkle, connect);
-                    ekle.ExecuteNonQuery();
+                        connect.Open();
 
-                    connect.Close();
+                        OleDbCommand ekle = new OleDbCommand(komutEkle, connect);
+                        ekle.ExecuteNonQuery();
 
-                    string komutGuncelle = "UPDATE siparisler SET " +
-                        "        siparisDurum='Tamamlandi'" +
-                        "        WHERE siparisNo=" + siparisNo;
+                        connect.Close();
 
-                    connect.Open();
+                        string komutGuncelle = "UPDATE siparisler SET " +
+                            "        siparisDurum='Tamamlandi'" +
+                            "        WHERE siparisNo=" + siparisNo;
 
-                    OleDbCommand guncelle = new OleDbCommand(komutGuncelle, connect);
-                    guncelle.ExecuteNonQuery();
+                        connect.Open();
 
-                    connect.Close();
+                        OleDbCommand guncelle = new OleDbCommand(komutGuncelle, connect);
+                        guncelle.ExecuteNonQuery();
 
-                    siparisler siparisler = new siparisler();
-                    siparisler.Show();
-                    this.Hide();
+                        connect.Close();
+
+                        siparisler siparisler = new siparisler();
+                        siparisler.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {
-                    string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontem)" +
+
+                    DialogResult result = MessageBox.Show("Veresiye almak ister misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                    if (result == DialogResult.Yes)
+                    {
+
+                        string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontem)" +
                         "               VALUES( " +
                         "               " + siparisNo + "," +
                         "               " + DateTime.Now.ToString("dd/MM/yyyy") + "," +
@@ -139,37 +151,67 @@ namespace haliYikama
                         "               " + alinanTutar + "," +
                         "               '" + odemeYontemiComboBox.Text + "') ";
 
-                    connect.Open();
+                        connect.Open();
 
-                    OleDbCommand ekle = new OleDbCommand(komutEkle, connect);
-                    ekle.ExecuteNonQuery();
+                        OleDbCommand ekle = new OleDbCommand(komutEkle, connect);
+                        ekle.ExecuteNonQuery();
 
-                    connect.Close();
+                        connect.Close();
 
-                    string komutGuncelle = "UPDATE siparisler SET " +
-                        "                   siparisDurum='Veresiye'," +
-                        "                   veresiyeTutar=" + veresiyeTutar + "" +
-                        "                   WHERE siparisNo=" + siparisNo;
+                        string komutGuncelle = "UPDATE siparisler SET " +
+                            "                   siparisDurum='Veresiye'," +
+                            "                   veresiyeTutar=" + veresiyeTutar + "" +
+                            "                   WHERE siparisNo=" + siparisNo;
 
-                    connect.Open();
+                        connect.Open();
 
-                    OleDbCommand guncelle = new OleDbCommand(komutGuncelle, connect);
-                    guncelle.ExecuteNonQuery();
+                        OleDbCommand guncelle = new OleDbCommand(komutGuncelle, connect);
+                        guncelle.ExecuteNonQuery();
 
-                    connect.Close();
+                        connect.Close();
 
-                    siparisler siparisler = new siparisler();
-                    siparisler.Show();
-                    this.Hide();
+                        siparisler siparisler = new siparisler();
+                        siparisler.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        string komutGuncelle = "UPDATE siparisler SET " +
+                        "        siparisDurum='Tamamlandi'" +
+                        "        WHERE siparisNo=" + siparisNo;
 
-                    veresiye veresiye = new veresiye();
-                    veresiye.veresiyeTutar = veresiyeTutar;
+                        connect.Open();
+
+                        OleDbCommand guncelle = new OleDbCommand(komutGuncelle, connect);
+                        guncelle.ExecuteNonQuery();
+
+                        connect.Close();
+
+                        siparisler siparisler = new siparisler();
+                        siparisler.Show();
+                        this.Hide();
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Alınan Tutar veya Ödeme Yöntemi kısmı boş bırakılamaz!!!");
-            } 
+            }
+        }
+
+        void indirimHesap()
+        {
+            string komut = "SELECT indirimMiktar FROM siparisler WHERE siparisNo =" + siparisNo;
+
+            connect.Open();
+
+            OleDbCommand cmd = new OleDbCommand(komut, connect);
+            OleDbDataReader oku = cmd.ExecuteReader();
+            if (oku.Read())
+            {
+                indirimMiktari = oku["indirimMiktar"] != DBNull.Value ? Convert.ToDouble(oku["indirimMiktar"]) : 0.0;
+            }
+            connect.Close();
         }
     }
 }

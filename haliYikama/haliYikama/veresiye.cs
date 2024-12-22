@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
 
 namespace haliYikama
 {
@@ -17,8 +16,8 @@ namespace haliYikama
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public int siparisNo { get; set; }
-        public double veresiyeTutar { get; set; }
-        double veresiyeKalan = 0;
+        double veresiyeKalan = 0.0;
+        double veresiyeTutar = 0.0;
 
         public veresiye()
         {
@@ -28,6 +27,9 @@ namespace haliYikama
         private void veresiye_Load(object sender, EventArgs e)
         {
             yukle();
+            goster();
+            veresiyeHesap();
+
             veresiyeFiyatLabel.Text = veresiyeTutar.ToString() + " ₺";
         }
 
@@ -50,6 +52,22 @@ namespace haliYikama
             kontrol();
         }
 
+        void goster()
+        {
+            string komut = "SELECT * FROM haliBilgi WHERE siparisNo=" + siparisNo;
+
+            connect.Open();
+
+            OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            veresiyeDataGridView.DataSource = dt;
+
+            connect.Close();
+
+            veresiyeDataGridView.Columns["Kimlik"].Visible = false;
+        }
+
         void kontrol()
         {
             if (!string.IsNullOrWhiteSpace(alinanTutarTextBox.Text) && !string.IsNullOrWhiteSpace(odemeYontemiComboBox.Text))
@@ -62,35 +80,72 @@ namespace haliYikama
                 }
                 else if (alinanTutar == veresiyeTutar)
                 {
-                    string komut = "UPDATE siparisler SET" +
+                    DialogResult result = MessageBox.Show("Teslim etmek istediğinden emin misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        string komut = "UPDATE siparisler SET" +
                         "        siparisDurum='Tamamlandi'," +
                         "        veresiyeTutar=0" +
                         "        WHERE siparisNo=" + siparisNo;
 
-                    connect.Open();
+                        connect.Open();
 
-                    OleDbCommand cmd = new OleDbCommand(komut, connect);
-                    cmd.ExecuteNonQuery();
+                        OleDbCommand cmd = new OleDbCommand(komut, connect);
+                        cmd.ExecuteNonQuery();
 
-                    connect.Close();
+                        connect.Close();
 
-                    siparisler siparisler = new siparisler();
-                    siparisler.Show();
-                    this.Hide();
+                        siparisler siparisler = new siparisler();
+                        siparisler.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+
+                    }
                 }
                 else
                 {
-                    string komut = "UPDATE siparisler SET" +
-                        "           veresiyeTutar=" + veresiyeKalan + " " +
-                        "           WHERE siparisNo=" + siparisNo;
-                    connect.Open();
+                    DialogResult result = MessageBox.Show("Veresiye almak ister misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-                    OleDbCommand cmd = new OleDbCommand(komut, connect);
-                    cmd.ExecuteNonQuery();
+                    if (result == DialogResult.Yes)
+                    {
+                        string komut = "UPDATE siparisler SET" +
+                           "           veresiyeTutar=" + veresiyeKalan + " " +
+                           "           WHERE siparisNo=" + siparisNo;
+                        connect.Open();
 
-                    connect.Close();
+                        OleDbCommand cmd = new OleDbCommand(komut, connect);
+                        cmd.ExecuteNonQuery();
+
+                        connect.Close();
+
+                        siparisler siparisler = new siparisler();
+                        siparisler.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        string komutGuncelle = "UPDATE siparisler SET " +
+                        "        siparisDurum='Tamamlandi'" +
+                        "        WHERE siparisNo=" + siparisNo;
+
+                        connect.Open();
+
+                        OleDbCommand guncelle = new OleDbCommand(komutGuncelle, connect);
+                        guncelle.ExecuteNonQuery();
+
+                        connect.Close();
+
+                        siparisler siparisler = new siparisler();
+                        siparisler.Show();
+                        this.Hide();
+                    }
 
 
+
+                    /*
                     string odemeYontemiMevcut = "";
                     string komutGetOdemeYontemi = "SELECT odemeYontem FROM odemeler WHERE siparisNo=" + siparisNo;
 
@@ -108,7 +163,7 @@ namespace haliYikama
 
                     string komutOdemeler = "UPDATE odemeler SET" +
                         "           odenenTutar=" + veresiyeTutar + alinanTutar + "," +
-                        "           odemeYontem="+yeniOdemeYontemi+" " +
+                        "           odemeYontem='" + yeniOdemeYontemi + "' " +
                         "           WHERE siparisNo=" + siparisNo;
                     connect.Open();
 
@@ -116,16 +171,28 @@ namespace haliYikama
                     cmdOdemeler.ExecuteNonQuery();
 
                     connect.Close();
-
-                    siparisler siparisler = new siparisler();
-                    siparisler.Show();
-                    this.Hide();
+                    */
                 }
             }
             else
             {
                 MessageBox.Show("Alınan Tutar veya Ödeme Yöntemi kısmı boş bırakılamaz!!!");
             }
+        }
+
+        void veresiyeHesap()
+        {
+            string komut = "SELECT veresiyeTutar FROM siparisler WHERE siparisNo =" + siparisNo;
+
+            connect.Open();
+
+            OleDbCommand cmd = new OleDbCommand(komut, connect);
+            OleDbDataReader oku = cmd.ExecuteReader();
+            if (oku.Read())
+            {
+                veresiyeTutar = oku["veresiyeTutar"] != DBNull.Value ? Convert.ToDouble(oku["veresiyeTutar"]) : 0.0;
+            }
+            connect.Close();
         }
     }
 }

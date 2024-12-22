@@ -42,11 +42,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.indirimEklePictureBox = new System.Windows.Forms.PictureBox();
             this.cıkarButton = new System.Windows.Forms.Button();
-            this.adetLabel = new System.Windows.Forms.Label();
-            this.toplamFiyatLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.teslimTarihiDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.toplamFiyatLabel = new System.Windows.Forms.Label();
+            this.adetLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.alinacakHaliDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eklePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
@@ -185,33 +185,6 @@
             this.cıkarButton.UseVisualStyleBackColor = true;
             this.cıkarButton.Click += new System.EventHandler(this.cıkarButton_Click);
             // 
-            // adetLabel
-            // 
-            this.adetLabel.AutoSize = true;
-            this.adetLabel.Location = new System.Drawing.Point(8, 354);
-            this.adetLabel.Name = "adetLabel";
-            this.adetLabel.Size = new System.Drawing.Size(29, 13);
-            this.adetLabel.TabIndex = 51;
-            this.adetLabel.Text = "Adet";
-            // 
-            // toplamFiyatLabel
-            // 
-            this.toplamFiyatLabel.AutoSize = true;
-            this.toplamFiyatLabel.Location = new System.Drawing.Point(58, 354);
-            this.toplamFiyatLabel.Name = "toplamFiyatLabel";
-            this.toplamFiyatLabel.Size = new System.Drawing.Size(32, 13);
-            this.toplamFiyatLabel.TabIndex = 52;
-            this.toplamFiyatLabel.Text = " Fiyat";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 354);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(9, 13);
-            this.label6.TabIndex = 53;
-            this.label6.Text = "|";
-            // 
             // teslimTarihiDateTimePicker
             // 
             this.teslimTarihiDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -230,16 +203,43 @@
             this.label5.TabIndex = 55;
             this.label5.Text = "Teslim Tarihi";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(45, 354);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(9, 13);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "|";
+            // 
+            // toplamFiyatLabel
+            // 
+            this.toplamFiyatLabel.AutoSize = true;
+            this.toplamFiyatLabel.Location = new System.Drawing.Point(52, 354);
+            this.toplamFiyatLabel.Name = "toplamFiyatLabel";
+            this.toplamFiyatLabel.Size = new System.Drawing.Size(32, 13);
+            this.toplamFiyatLabel.TabIndex = 58;
+            this.toplamFiyatLabel.Text = " Fiyat";
+            // 
+            // adetLabel
+            // 
+            this.adetLabel.AutoSize = true;
+            this.adetLabel.Location = new System.Drawing.Point(8, 354);
+            this.adetLabel.Name = "adetLabel";
+            this.adetLabel.Size = new System.Drawing.Size(29, 13);
+            this.adetLabel.TabIndex = 57;
+            this.adetLabel.Text = "Adet";
+            // 
             // alinacaklar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.teslimTarihiDateTimePicker);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.toplamFiyatLabel);
             this.Controls.Add(this.adetLabel);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.teslimTarihiDateTimePicker);
             this.Controls.Add(this.cıkarButton);
             this.Controls.Add(this.indirimEklePictureBox);
             this.Controls.Add(this.indirimTextBox);
@@ -282,10 +282,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox indirimEklePictureBox;
         private System.Windows.Forms.Button cıkarButton;
-        private System.Windows.Forms.Label adetLabel;
-        private System.Windows.Forms.Label toplamFiyatLabel;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker teslimTarihiDateTimePicker;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label toplamFiyatLabel;
+        private System.Windows.Forms.Label adetLabel;
     }
 }

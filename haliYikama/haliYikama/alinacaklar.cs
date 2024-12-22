@@ -310,9 +310,6 @@ namespace haliYikama
         void indirimEkle()
         {
             indirimMiktari = double.Parse(indirimTextBox.Text);
-
-            teslimEdilecekler teslimEdilecekler = new teslimEdilecekler();
-            teslimEdilecekler.indirim = indirimMiktari;
         }
 
         void siparisAl()

@@ -33,11 +33,11 @@
             this.odemeYontemiComboBox = new System.Windows.Forms.ComboBox();
             this.alinanTutarTextBox = new System.Windows.Forms.TextBox();
             this.gonderButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.veresiyeDataGridView = new System.Windows.Forms.DataGridView();
             this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
             this.veresiyeFiyatLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veresiyeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,15 +86,15 @@
             this.gonderButton.UseVisualStyleBackColor = true;
             this.gonderButton.Click += new System.EventHandler(this.gonderButton_Click);
             // 
-            // dataGridView1
+            // veresiyeDataGridView
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 82);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(232, 297);
-            this.dataGridView1.TabIndex = 54;
+            this.veresiyeDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.veresiyeDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.veresiyeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.veresiyeDataGridView.Location = new System.Drawing.Point(1, 82);
+            this.veresiyeDataGridView.Name = "veresiyeDataGridView";
+            this.veresiyeDataGridView.Size = new System.Drawing.Size(232, 297);
+            this.veresiyeDataGridView.TabIndex = 54;
             // 
             // geriDonPictureBox
             // 
@@ -136,12 +136,12 @@
             this.Controls.Add(this.odemeYontemiComboBox);
             this.Controls.Add(this.alinanTutarTextBox);
             this.Controls.Add(this.gonderButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.veresiyeDataGridView);
             this.Controls.Add(this.geriDonPictureBox);
             this.Name = "veresiye";
             this.Text = "Veresiye";
             this.Load += new System.EventHandler(this.veresiye_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veresiyeDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -155,7 +155,7 @@
         private System.Windows.Forms.ComboBox odemeYontemiComboBox;
         private System.Windows.Forms.TextBox alinanTutarTextBox;
         private System.Windows.Forms.Button gonderButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView veresiyeDataGridView;
         private System.Windows.Forms.PictureBox geriDonPictureBox;
         private System.Windows.Forms.Label veresiyeFiyatLabel;
         private System.Windows.Forms.Label label3;

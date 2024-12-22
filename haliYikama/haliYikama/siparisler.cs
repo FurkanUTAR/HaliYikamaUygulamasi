@@ -19,7 +19,7 @@ namespace haliYikama
     {
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
-       public siparisler()
+        public siparisler()
         {
             InitializeComponent();
         }
@@ -43,7 +43,7 @@ namespace haliYikama
 
         private void teslimatDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            teslimatKontrol();    
+            teslimatKontrol();
         }
 
         private void veresiyeDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -76,30 +76,12 @@ namespace haliYikama
 
                 connect.Close();
 
-                if (alinacakDataGridView.Columns.Contains("siparisDurum"))
-                {
-                    alinacakDataGridView.Columns["siparisDurum"].Visible = false;
-                }
-                if (alinacakDataGridView.Columns.Contains("teslimTarihi"))
-                {
-                    alinacakDataGridView.Columns["teslimTarihi"].Visible = false;
-                }
-                if (alinacakDataGridView.Columns.Contains("siparisTutari"))
-                {
-                    alinacakDataGridView.Columns["siparisTutari"].Visible = false;
-                }
-                if (alinacakDataGridView.Columns.Contains("indirimMiktari"))
-                {
-                    alinacakDataGridView.Columns["indirimMiktari"].Visible = false;
-                }
-                if (alinacakDataGridView.Columns.Contains("haliAdet"))
-                {
-                    alinacakDataGridView.Columns["haliAdet"].Visible = false;
-                }
-                if (alinacakDataGridView.Columns.Contains("veresiyeTutar"))
-                {
-                    alinacakDataGridView.Columns["veresiyeTutar"].Visible = false;
-                }
+                alinacakDataGridView.Columns["siparisDurum"].Visible = false;
+                alinacakDataGridView.Columns["teslimTarih"].Visible = false;
+                alinacakDataGridView.Columns["siparisTutar"].Visible = false;
+                alinacakDataGridView.Columns["indirimMiktar"].Visible = false;
+                alinacakDataGridView.Columns["haliAdet"].Visible = false;
+                alinacakDataGridView.Columns["veresiyeTutar"].Visible = false;
             }
 
             void teslimatGoster()
@@ -124,7 +106,7 @@ namespace haliYikama
                     teslimatDataGridView.Columns["siparisTarihi"].Visible = false;
                 }
             }
-        
+
 
             void veresiyeGoster()
             {
@@ -227,7 +209,7 @@ namespace haliYikama
                 MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-       
+
 
 
         // Çalışmıyor 
@@ -255,7 +237,7 @@ namespace haliYikama
                         teslimEdilecekler.Show();
                         this.Hide();
                     }
-                    else if(status == "Veresiye")
+                    else if (status == "Veresiye")
                     {
                         veresiye veresiye = new veresiye();
                         veresiye.siparisNo = siparisNo;

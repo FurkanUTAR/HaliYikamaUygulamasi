@@ -36,7 +36,6 @@
             this.siparisNotuTextBox = new System.Windows.Forms.TextBox();
             this.siparisOlusturButton = new System.Windows.Forms.Button();
             this.adresLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.musteriDuzenleButton = new System.Windows.Forms.Button();
             this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
             this.musteriSilButton = new System.Windows.Forms.Button();
@@ -108,19 +107,11 @@
             // 
             // adresLabel
             // 
-            this.adresLabel.Location = new System.Drawing.Point(35, 90);
+            this.adresLabel.Location = new System.Drawing.Point(35, 74);
             this.adresLabel.Name = "adresLabel";
-            this.adresLabel.Size = new System.Drawing.Size(152, 73);
+            this.adresLabel.Size = new System.Drawing.Size(152, 98);
             this.adresLabel.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Adres";
+            this.adresLabel.Text = "Adres";
             // 
             // musteriDuzenleButton
             // 
@@ -161,7 +152,6 @@
             this.Controls.Add(this.musteriSilButton);
             this.Controls.Add(this.musteriDuzenleButton);
             this.Controls.Add(this.adresLabel);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.siparisOlusturButton);
             this.Controls.Add(this.siparisNotuTextBox);
             this.Controls.Add(this.siparisTarihiDateTimePicker);
@@ -188,7 +178,6 @@
         private System.Windows.Forms.TextBox siparisNotuTextBox;
         private System.Windows.Forms.Button siparisOlusturButton;
         private System.Windows.Forms.Label adresLabel;
-        private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label adSoyadLabel;
         private System.Windows.Forms.Button musteriDuzenleButton;
         private System.Windows.Forms.Button musteriSilButton;

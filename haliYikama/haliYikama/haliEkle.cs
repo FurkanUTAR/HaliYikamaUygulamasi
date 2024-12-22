@@ -9,7 +9,6 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
 
 namespace haliYikama
 {
@@ -23,7 +22,7 @@ namespace haliYikama
         {
             InitializeComponent();
         }
-        
+
         private void haliEkle_Load(object sender, EventArgs e)
         {
             yukle();
