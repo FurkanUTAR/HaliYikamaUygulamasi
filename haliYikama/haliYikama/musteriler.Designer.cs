@@ -48,9 +48,9 @@
             this.musteriAdiRadioButton.Name = "musteriAdiRadioButton";
             this.musteriAdiRadioButton.Size = new System.Drawing.Size(77, 17);
             this.musteriAdiRadioButton.TabIndex = 0;
-            this.musteriAdiRadioButton.TabStop = true;
             this.musteriAdiRadioButton.Text = "Müşteri Adı";
             this.musteriAdiRadioButton.UseVisualStyleBackColor = true;
+            this.musteriAdiRadioButton.CheckedChanged += new System.EventHandler(this.musteriAdiRadioButton_CheckedChanged);
             // 
             // telNoRadioButton
             // 
@@ -59,9 +59,9 @@
             this.telNoRadioButton.Name = "telNoRadioButton";
             this.telNoRadioButton.Size = new System.Drawing.Size(57, 17);
             this.telNoRadioButton.TabIndex = 1;
-            this.telNoRadioButton.TabStop = true;
             this.telNoRadioButton.Text = "Tel No";
             this.telNoRadioButton.UseVisualStyleBackColor = true;
+            this.telNoRadioButton.CheckedChanged += new System.EventHandler(this.telNoRadioButton_CheckedChanged);
             // 
             // siparisNoRadioButton
             // 
@@ -70,9 +70,9 @@
             this.siparisNoRadioButton.Name = "siparisNoRadioButton";
             this.siparisNoRadioButton.Size = new System.Drawing.Size(73, 17);
             this.siparisNoRadioButton.TabIndex = 2;
-            this.siparisNoRadioButton.TabStop = true;
             this.siparisNoRadioButton.Text = "Sipariş No";
             this.siparisNoRadioButton.UseVisualStyleBackColor = true;
+            this.siparisNoRadioButton.CheckedChanged += new System.EventHandler(this.siparisNoRadioButton_CheckedChanged);
             // 
             // araTextBox
             // 
@@ -80,6 +80,7 @@
             this.araTextBox.Name = "araTextBox";
             this.araTextBox.Size = new System.Drawing.Size(151, 20);
             this.araTextBox.TabIndex = 3;
+            this.araTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.araTextBox_KeyPress);
             // 
             // araButton
             // 

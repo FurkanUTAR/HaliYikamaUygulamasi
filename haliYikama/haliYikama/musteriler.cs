@@ -35,18 +35,17 @@ namespace haliYikama
             this.Hide();
         }
 
-
         private void musteriDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
-            { 
+            {
                 DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex];
                 string kimlik = row.Cells["Kimlik"].Value.ToString();
-                string adSoyad = row.Cells["adiSoyAdi"].Value.ToString(); 
+                string adSoyad = row.Cells["adiSoyAdi"].Value.ToString();
                 string telNo = row.Cells["telNo"].Value.ToString();
                 string adres = row.Cells["adres"].Value.ToString();
-               
-                siparisOlustur siparisForm = new siparisOlustur(); 
+
+                siparisOlustur siparisForm = new siparisOlustur();
                 siparisForm.Kimlik = kimlik;
                 siparisForm.AdSoyad = adSoyad;
                 siparisForm.TelNo = telNo;
@@ -56,23 +55,49 @@ namespace haliYikama
             }
         }
 
+        private void musteriAdiRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (musteriAdiRadioButton.Checked) araTextBox.KeyPress -= araTextBox_KeyPress;
+        }
+
+        private void telNoRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (telNoRadioButton.Checked) araTextBox.KeyPress += araTextBox_KeyPress;
+            else araTextBox.KeyPress -= araTextBox_KeyPress;
+        }
+
+        private void siparisNoRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (siparisNoRadioButton.Checked) araTextBox.KeyPress += araTextBox_KeyPress;
+            else araTextBox.KeyPress -= araTextBox_KeyPress;
+        }
+
         private void araButton_Click(object sender, EventArgs e)
         {
             if (musteriAdiRadioButton.Checked)
             {
                 musteriAdiAra();
             }
-            if (telNoRadioButton.Checked)
+            else if (telNoRadioButton.Checked)
             {
                 telNoAra();
             }
-            if (siparisNoRadioButton.Checked)
+            else if (siparisNoRadioButton.Checked)
             {
                 siparisNoAra();
             }
+
             if (string.IsNullOrWhiteSpace(araTextBox.Text))
             {
                 butunMusterileriGoster();
+            }
+        }
+
+        private void araTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
 
@@ -82,18 +107,19 @@ namespace haliYikama
 
             connect.Open();
 
-            OleDbDataAdapter da= new OleDbDataAdapter(komut,connect);
-            DataTable dt = new DataTable(); 
+            OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
+            DataTable dt = new DataTable();
             da.Fill(dt);
 
             connect.Close();
             musteriDataGridView.DataSource = dt;
+            musteriDataGridView.Columns["Kimlik"].Visible = false;
         }
-        
+
         void musteriAdiAra()
         {
             string arama = "%" + araTextBox.Text + "%";
-            string komut = "SELECT * FROM musteriler WHERE adiSoyAdi LIKE '"+arama+"'";
+            string komut = "SELECT * FROM musteriler WHERE adiSoyAdi LIKE '" + arama + "'";
 
             connect.Open();
 
@@ -102,7 +128,7 @@ namespace haliYikama
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            if (dt.Rows.Count==0)
+            if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
             }
@@ -126,7 +152,7 @@ namespace haliYikama
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            if (dt.Rows.Count==0)
+            if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
             }
@@ -141,8 +167,8 @@ namespace haliYikama
 
         void siparisNoAra()
         {
-            string arama = "%" + araTextBox.Text + "%";
-            string komut = "SELECT * FROM siparisler WHERE siparisNo LIKE " + arama +"";
+            int arama = int.Parse(araTextBox.Text);
+            string komut = "SELECT * FROM siparisler WHERE siparisNo LIKE '%" + arama + "%'";
 
             connect.Open();
 
@@ -150,7 +176,7 @@ namespace haliYikama
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            if (dt.Rows.Count==0)
+            if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
             }

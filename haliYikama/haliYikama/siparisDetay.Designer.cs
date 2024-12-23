@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.haliBilgiDataGridView = new System.Windows.Forms.DataGridView();
             this.haliEkleButton = new System.Windows.Forms.Button();
             this.teslimatCekButton = new System.Windows.Forms.Button();
             this.teslimatNotuTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.yenilePictureBox = new System.Windows.Forms.PictureBox();
             this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -93,10 +91,6 @@
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 45;
             this.label1.Text = "Teslimat Notu";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // yenilePictureBox
             // 
@@ -192,7 +186,6 @@
         private System.Windows.Forms.Button teslimatCekButton;
         private System.Windows.Forms.TextBox teslimatNotuTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox yenilePictureBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label toplamFiyatLabel;

@@ -60,13 +60,16 @@ namespace haliYikama
 
         private void musteriSilButton_Click(object sender, EventArgs e)
         {
-            musteriSil();
+            DialogResult result = MessageBox.Show("Müşteriyi silmek istediğinden emin misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-            musteriler musteriler = new musteriler();
-            musteriler.Show();
-            this.Hide();
+            if (result == DialogResult.Yes)
+            {
+                musteriSil();
+                musteriler musteriler = new musteriler();
+                musteriler.Show();
+                this.Hide();
+            }
         }
-
 
         void databaseSiparisOlustur()
         {

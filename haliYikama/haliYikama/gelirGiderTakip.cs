@@ -27,5 +27,19 @@ namespace haliYikama
             anaSayfa.Show();
             this.Hide();
         }
+
+        private void gelirGiderEkleButton_Click(object sender, EventArgs e)
+        {
+            gelirGiderEkle gelirGiderEkle = new gelirGiderEkle();
+            gelirGiderEkle.Show();
+            this.Hide();
+        }
+
+        private void gelirGiderTablosuButton_Click(object sender, EventArgs e)
+        {
+            gelirGiderTablo gelirGiderTablo = new gelirGiderTablo();
+            gelirGiderTablo.Show();
+            this.Hide();
+        }
     }
 }

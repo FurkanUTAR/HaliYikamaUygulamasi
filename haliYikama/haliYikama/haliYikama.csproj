@@ -77,6 +77,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="gelirGiderEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gelirGiderEkle.Designer.cs">
+      <DependentUpon>gelirGiderEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gelirGiderTablo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gelirGiderTablo.Designer.cs">
+      <DependentUpon>gelirGiderTablo.cs</DependentUpon>
+    </Compile>
     <Compile Include="gelirGiderTakip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gelirGiderEkle.resx">
+      <DependentUpon>gelirGiderEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gelirGiderTablo.resx">
+      <DependentUpon>gelirGiderTablo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gelirGiderTakip.resx">
       <DependentUpon>gelirGiderTakip.cs</DependentUpon>
