@@ -82,3 +82,4 @@ C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikam
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.haliEkle.resources
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.gelirGiderEkle.resources
 C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.gelirGiderTablo.resources
+C:\Users\furka\Desktop\HalıYıkamaApp\haliYikama\haliYikama\obj\Debug\haliYikama.tamamlandi.resources
