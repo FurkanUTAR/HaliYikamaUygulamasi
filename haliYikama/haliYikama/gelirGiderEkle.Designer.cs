@@ -73,11 +73,13 @@
             // 
             // turComboBox
             // 
+            this.turComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.turComboBox.FormattingEnabled = true;
             this.turComboBox.Location = new System.Drawing.Point(42, 97);
             this.turComboBox.Name = "turComboBox";
             this.turComboBox.Size = new System.Drawing.Size(135, 21);
             this.turComboBox.TabIndex = 39;
+            this.turComboBox.SelectedIndexChanged += new System.EventHandler(this.turComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -99,6 +101,7 @@
             // 
             // kategoriComboBox
             // 
+            this.kategoriComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kategoriComboBox.FormattingEnabled = true;
             this.kategoriComboBox.Location = new System.Drawing.Point(42, 151);
             this.kategoriComboBox.Name = "kategoriComboBox";
@@ -120,6 +123,7 @@
             this.miktarTextBox.Name = "miktarTextBox";
             this.miktarTextBox.Size = new System.Drawing.Size(135, 20);
             this.miktarTextBox.TabIndex = 45;
+            this.miktarTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.miktarTextBox_KeyPress);
             // 
             // aciklamaTextBox
             // 
@@ -146,6 +150,7 @@
             this.ekleButton.TabIndex = 48;
             this.ekleButton.Text = "Ekle";
             this.ekleButton.UseVisualStyleBackColor = true;
+            this.ekleButton.Click += new System.EventHandler(this.ekleButton_Click);
             // 
             // gelirGiderEkle
             // 
@@ -166,6 +171,7 @@
             this.Controls.Add(this.geriDonPictureBox);
             this.Name = "gelirGiderEkle";
             this.Text = "Gelir-Gider Ekle";
+            this.Load += new System.EventHandler(this.gelirGiderEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

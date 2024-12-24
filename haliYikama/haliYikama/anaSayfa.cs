@@ -76,5 +76,12 @@ namespace haliYikama
             islemdekiler.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tamamlandi tamamlandi = new tamamlandi();
+            tamamlandi.Show();
+            this.Hide();
+        }
     }
 }

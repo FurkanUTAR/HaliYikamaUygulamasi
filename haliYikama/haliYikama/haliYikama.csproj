@@ -163,6 +163,12 @@
     <Compile Include="siparisOlustur.Designer.cs">
       <DependentUpon>siparisOlustur.cs</DependentUpon>
     </Compile>
+    <Compile Include="tamamlandi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tamamlandi.Designer.cs">
+      <DependentUpon>tamamlandi.cs</DependentUpon>
+    </Compile>
     <Compile Include="teslimEdilecekler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="siparisOlustur.resx">
       <DependentUpon>siparisOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tamamlandi.resx">
+      <DependentUpon>tamamlandi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="teslimEdilecekler.resx">
       <DependentUpon>teslimEdilecekler.cs</DependentUpon>

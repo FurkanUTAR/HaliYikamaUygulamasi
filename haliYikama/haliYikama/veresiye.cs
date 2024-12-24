@@ -142,36 +142,6 @@ namespace haliYikama
                         siparisler.Show();
                         this.Hide();
                     }
-
-
-
-                    /*
-                    string odemeYontemiMevcut = "";
-                    string komutGetOdemeYontemi = "SELECT odemeYontem FROM odemeler WHERE siparisNo=" + siparisNo;
-
-                    connect.Open();
-                    OleDbCommand cmdGetOdemeYontemi = new OleDbCommand(komutGetOdemeYontemi, connect);
-                    object sonuc = cmdGetOdemeYontemi.ExecuteScalar();
-                    if (sonuc != DBNull.Value)
-                    {
-                        odemeYontemiMevcut = sonuc.ToString();
-                    }
-                    connect.Close();
-
-
-                    string yeniOdemeYontemi = odemeYontemiMevcut + ", " + odemeYontemiComboBox.Text;
-
-                    string komutOdemeler = "UPDATE odemeler SET" +
-                        "           odenenTutar=" + veresiyeTutar + alinanTutar + "," +
-                        "           odemeYontem='" + yeniOdemeYontemi + "' " +
-                        "           WHERE siparisNo=" + siparisNo;
-                    connect.Open();
-
-                    OleDbCommand cmdOdemeler = new OleDbCommand(komutOdemeler, connect);
-                    cmdOdemeler.ExecuteNonQuery();
-
-                    connect.Close();
-                    */
                 }
             }
             else
