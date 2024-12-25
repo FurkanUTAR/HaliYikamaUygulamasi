@@ -36,10 +36,11 @@ namespace haliYikama
 
         void musteriEklee()
         {
-            string komut = "INSERT INTO musteriler (adiSoyAdi, telNo, adres) VALUES ('"
-                          + adSoyadTextBox.Text + "', '"
-                          + telNoTextBox.Text + "', '"
-                          + adresTextBox.Text + "')";
+            string komut = "INSERT INTO musteriler (adiSoyAdi, telNo, adres, eklemeTarih) VALUES ('"
+              + adSoyadTextBox.Text + "', '"
+              + telNoTextBox.Text + "', '"
+              + adresTextBox.Text + "', '"
+              + DateTime.Now.ToString("yyyy-MM-dd") + "')";
 
 
             connect.Open();
