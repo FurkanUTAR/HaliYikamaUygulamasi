@@ -49,7 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.aylikGiderLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.aylikGelirGider = new System.Windows.Forms.Label();
+            this.aylikGelirLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.aylikMusteriGroupBox = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -136,9 +136,9 @@
             this.gunlukKarLabel.AutoSize = true;
             this.gunlukKarLabel.Location = new System.Drawing.Point(94, 72);
             this.gunlukKarLabel.Name = "gunlukKarLabel";
-            this.gunlukKarLabel.Size = new System.Drawing.Size(41, 13);
+            this.gunlukKarLabel.Size = new System.Drawing.Size(13, 13);
             this.gunlukKarLabel.TabIndex = 14;
-            this.gunlukKarLabel.Text = "label22";
+            this.gunlukKarLabel.Text = "0";
             // 
             // label8
             // 
@@ -154,9 +154,9 @@
             this.gunlukGiderLabel.AutoSize = true;
             this.gunlukGiderLabel.Location = new System.Drawing.Point(94, 49);
             this.gunlukGiderLabel.Name = "gunlukGiderLabel";
-            this.gunlukGiderLabel.Size = new System.Drawing.Size(41, 13);
+            this.gunlukGiderLabel.Size = new System.Drawing.Size(13, 13);
             this.gunlukGiderLabel.TabIndex = 13;
-            this.gunlukGiderLabel.Text = "label23";
+            this.gunlukGiderLabel.Text = "0";
             // 
             // label10
             // 
@@ -172,9 +172,9 @@
             this.gunlukGelirLabel.AutoSize = true;
             this.gunlukGelirLabel.Location = new System.Drawing.Point(94, 26);
             this.gunlukGelirLabel.Name = "gunlukGelirLabel";
-            this.gunlukGelirLabel.Size = new System.Drawing.Size(41, 13);
+            this.gunlukGelirLabel.Size = new System.Drawing.Size(13, 13);
             this.gunlukGelirLabel.TabIndex = 12;
-            this.gunlukGelirLabel.Text = "label24";
+            this.gunlukGelirLabel.Text = "0";
             // 
             // label12
             // 
@@ -212,18 +212,18 @@
             this.gunlukYeniMusteriLabel.AutoSize = true;
             this.gunlukYeniMusteriLabel.Location = new System.Drawing.Point(94, 48);
             this.gunlukYeniMusteriLabel.Name = "gunlukYeniMusteriLabel";
-            this.gunlukYeniMusteriLabel.Size = new System.Drawing.Size(41, 13);
+            this.gunlukYeniMusteriLabel.Size = new System.Drawing.Size(13, 13);
             this.gunlukYeniMusteriLabel.TabIndex = 10;
-            this.gunlukYeniMusteriLabel.Text = "label20";
+            this.gunlukYeniMusteriLabel.Text = "0";
             // 
             // gunlukToplamSiparisLabel
             // 
             this.gunlukToplamSiparisLabel.AutoSize = true;
             this.gunlukToplamSiparisLabel.Location = new System.Drawing.Point(94, 26);
             this.gunlukToplamSiparisLabel.Name = "gunlukToplamSiparisLabel";
-            this.gunlukToplamSiparisLabel.Size = new System.Drawing.Size(41, 13);
+            this.gunlukToplamSiparisLabel.Size = new System.Drawing.Size(13, 13);
             this.gunlukToplamSiparisLabel.TabIndex = 9;
-            this.gunlukToplamSiparisLabel.Text = "label21";
+            this.gunlukToplamSiparisLabel.Text = "0";
             // 
             // label23
             // 
@@ -252,7 +252,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.aylikGiderLabel);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.aylikGelirGider);
+            this.groupBox1.Controls.Add(this.aylikGelirLabel);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(7, 165);
             this.groupBox1.Name = "groupBox1";
@@ -266,9 +266,9 @@
             this.aylikKarLabel.AutoSize = true;
             this.aylikKarLabel.Location = new System.Drawing.Point(94, 72);
             this.aylikKarLabel.Name = "aylikKarLabel";
-            this.aylikKarLabel.Size = new System.Drawing.Size(41, 13);
+            this.aylikKarLabel.Size = new System.Drawing.Size(13, 13);
             this.aylikKarLabel.TabIndex = 14;
-            this.aylikKarLabel.Text = "label22";
+            this.aylikKarLabel.Text = "0";
             // 
             // label1
             // 
@@ -284,9 +284,9 @@
             this.aylikGiderLabel.AutoSize = true;
             this.aylikGiderLabel.Location = new System.Drawing.Point(94, 49);
             this.aylikGiderLabel.Name = "aylikGiderLabel";
-            this.aylikGiderLabel.Size = new System.Drawing.Size(41, 13);
+            this.aylikGiderLabel.Size = new System.Drawing.Size(13, 13);
             this.aylikGiderLabel.TabIndex = 13;
-            this.aylikGiderLabel.Text = "label23";
+            this.aylikGiderLabel.Text = "0";
             // 
             // label2
             // 
@@ -297,14 +297,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Kâr :";
             // 
-            // aylikGelirGider
+            // aylikGelirLabel
             // 
-            this.aylikGelirGider.AutoSize = true;
-            this.aylikGelirGider.Location = new System.Drawing.Point(94, 26);
-            this.aylikGelirGider.Name = "aylikGelirGider";
-            this.aylikGelirGider.Size = new System.Drawing.Size(41, 13);
-            this.aylikGelirGider.TabIndex = 12;
-            this.aylikGelirGider.Text = "label24";
+            this.aylikGelirLabel.AutoSize = true;
+            this.aylikGelirLabel.Location = new System.Drawing.Point(94, 26);
+            this.aylikGelirLabel.Name = "aylikGelirLabel";
+            this.aylikGelirLabel.Size = new System.Drawing.Size(13, 13);
+            this.aylikGelirLabel.TabIndex = 12;
+            this.aylikGelirLabel.Text = "0";
             // 
             // label3
             // 
@@ -342,18 +342,18 @@
             this.aylikYeniMusteriLabel.AutoSize = true;
             this.aylikYeniMusteriLabel.Location = new System.Drawing.Point(94, 48);
             this.aylikYeniMusteriLabel.Name = "aylikYeniMusteriLabel";
-            this.aylikYeniMusteriLabel.Size = new System.Drawing.Size(41, 13);
+            this.aylikYeniMusteriLabel.Size = new System.Drawing.Size(13, 13);
             this.aylikYeniMusteriLabel.TabIndex = 10;
-            this.aylikYeniMusteriLabel.Text = "label20";
+            this.aylikYeniMusteriLabel.Text = "0";
             // 
             // aylikToplamSiprarisLabel
             // 
             this.aylikToplamSiprarisLabel.AutoSize = true;
             this.aylikToplamSiprarisLabel.Location = new System.Drawing.Point(94, 26);
             this.aylikToplamSiprarisLabel.Name = "aylikToplamSiprarisLabel";
-            this.aylikToplamSiprarisLabel.Size = new System.Drawing.Size(41, 13);
+            this.aylikToplamSiprarisLabel.Size = new System.Drawing.Size(13, 13);
             this.aylikToplamSiprarisLabel.TabIndex = 9;
-            this.aylikToplamSiprarisLabel.Text = "label21";
+            this.aylikToplamSiprarisLabel.Text = "0";
             // 
             // label6
             // 
@@ -396,9 +396,9 @@
             this.yillikKarLabel.AutoSize = true;
             this.yillikKarLabel.Location = new System.Drawing.Point(94, 72);
             this.yillikKarLabel.Name = "yillikKarLabel";
-            this.yillikKarLabel.Size = new System.Drawing.Size(41, 13);
+            this.yillikKarLabel.Size = new System.Drawing.Size(13, 13);
             this.yillikKarLabel.TabIndex = 14;
-            this.yillikKarLabel.Text = "label22";
+            this.yillikKarLabel.Text = "0";
             // 
             // label14
             // 
@@ -414,9 +414,9 @@
             this.yillikGiderLabel.AutoSize = true;
             this.yillikGiderLabel.Location = new System.Drawing.Point(94, 49);
             this.yillikGiderLabel.Name = "yillikGiderLabel";
-            this.yillikGiderLabel.Size = new System.Drawing.Size(41, 13);
+            this.yillikGiderLabel.Size = new System.Drawing.Size(13, 13);
             this.yillikGiderLabel.TabIndex = 13;
-            this.yillikGiderLabel.Text = "label23";
+            this.yillikGiderLabel.Text = "0";
             // 
             // label16
             // 
@@ -432,9 +432,9 @@
             this.yillikGelirLabel.AutoSize = true;
             this.yillikGelirLabel.Location = new System.Drawing.Point(94, 26);
             this.yillikGelirLabel.Name = "yillikGelirLabel";
-            this.yillikGelirLabel.Size = new System.Drawing.Size(41, 13);
+            this.yillikGelirLabel.Size = new System.Drawing.Size(13, 13);
             this.yillikGelirLabel.TabIndex = 12;
-            this.yillikGelirLabel.Text = "label24";
+            this.yillikGelirLabel.Text = "0";
             // 
             // label18
             // 
@@ -472,18 +472,18 @@
             this.yillikYeniMusteriLabel.AutoSize = true;
             this.yillikYeniMusteriLabel.Location = new System.Drawing.Point(94, 48);
             this.yillikYeniMusteriLabel.Name = "yillikYeniMusteriLabel";
-            this.yillikYeniMusteriLabel.Size = new System.Drawing.Size(41, 13);
+            this.yillikYeniMusteriLabel.Size = new System.Drawing.Size(13, 13);
             this.yillikYeniMusteriLabel.TabIndex = 10;
-            this.yillikYeniMusteriLabel.Text = "label20";
+            this.yillikYeniMusteriLabel.Text = "0";
             // 
             // yillikToplamSiparisLabel
             // 
             this.yillikToplamSiparisLabel.AutoSize = true;
             this.yillikToplamSiparisLabel.Location = new System.Drawing.Point(94, 26);
             this.yillikToplamSiparisLabel.Name = "yillikToplamSiparisLabel";
-            this.yillikToplamSiparisLabel.Size = new System.Drawing.Size(41, 13);
+            this.yillikToplamSiparisLabel.Size = new System.Drawing.Size(13, 13);
             this.yillikToplamSiparisLabel.TabIndex = 9;
-            this.yillikToplamSiparisLabel.Text = "label21";
+            this.yillikToplamSiparisLabel.Text = "0";
             // 
             // label24
             // 
@@ -561,7 +561,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label aylikGiderLabel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label aylikGelirGider;
+        private System.Windows.Forms.Label aylikGelirLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox aylikMusteriGroupBox;
         private System.Windows.Forms.Label label4;

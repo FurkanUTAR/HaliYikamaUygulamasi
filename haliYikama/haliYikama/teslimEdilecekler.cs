@@ -104,13 +104,13 @@ namespace haliYikama
 
                     if (result == DialogResult.Yes)
                     {
-                        string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontem)" +
-                    "               VALUES( " +
-                    "               " + siparisNo + "," +
-                    "               " + DateTime.Now.ToString("dd/MM/yyyy") + "," +
-                    "               " + toplamFiyat + "," +
-                    "               " + alinanTutar + "," +
-                    "               '" + odemeYontemiComboBox.Text + "') ";
+                        string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontem) " +
+                                           "VALUES( " +
+                                            siparisNo + ", #" +
+                                            DateTime.Now.ToString("yyyy-MM-dd") + "#, " +
+                                            toplamFiyat + ", " +
+                                            alinanTutar + ", '" +
+                                            odemeYontemiComboBox.Text + "')";
 
                         connect.Open();
 
@@ -118,6 +118,7 @@ namespace haliYikama
                         ekle.ExecuteNonQuery();
 
                         connect.Close();
+
 
                         string komutGuncelle = "UPDATE siparisler SET " +
                             "        siparisDurum='Tamamlandi'" +
@@ -143,13 +144,13 @@ namespace haliYikama
                     if (result == DialogResult.Yes)
                     {
 
-                        string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontem)" +
-                        "               VALUES( " +
-                        "               " + siparisNo + "," +
-                        "               " + DateTime.Now.ToString("dd/MM/yyyy") + "," +
-                        "               " + toplamFiyat + "," +
-                        "               " + alinanTutar + "," +
-                        "               '" + odemeYontemiComboBox.Text + "') ";
+                        string komutEkle = "INSERT INTO odemeler(siparisNo, odemeTarih, odenecekTutar, odenenTutar, odemeYontem) " +
+                                           "VALUES( " +
+                                            siparisNo + ", #" +
+                                            DateTime.Now.ToString("yyyy-MM-dd") + "#, " +
+                                            toplamFiyat + ", " +
+                                            alinanTutar + ", '" +
+                                            odemeYontemiComboBox.Text + "')";
 
                         connect.Open();
 
