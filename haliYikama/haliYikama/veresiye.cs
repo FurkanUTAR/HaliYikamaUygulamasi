@@ -18,6 +18,7 @@ namespace haliYikama
         public int siparisNo { get; set; }
         double veresiyeKalan = 0.0;
         double veresiyeTutar = 0.0;
+        double odenenTutar = 0;
 
         public veresiye()
         {
@@ -29,6 +30,7 @@ namespace haliYikama
             yukle();
             goster();
             veresiyeHesap();
+            odenenTutarBul();
 
             veresiyeFiyatLabel.Text = veresiyeTutar.ToString() + " ₺";
         }
@@ -40,16 +42,16 @@ namespace haliYikama
             this.Hide();
         }
 
+        private void gonderButton_Click(object sender, EventArgs e)
+        {
+            kontrol();
+        }
+        
         void yukle()
         {
             odemeYontemiComboBox.Items.Add("Nakit");
             odemeYontemiComboBox.Items.Add("Kart");
             odemeYontemiComboBox.Items.Add("Havale");
-        }
-
-        private void gonderButton_Click(object sender, EventArgs e)
-        {
-            kontrol();
         }
 
         void goster()
@@ -73,7 +75,7 @@ namespace haliYikama
             if (!string.IsNullOrWhiteSpace(alinanTutarTextBox.Text) && !string.IsNullOrWhiteSpace(odemeYontemiComboBox.Text))
             {
                 int alinanTutar = Convert.ToInt32(alinanTutarTextBox.Text);
-                double veresiyeKalan = veresiyeTutar - alinanTutar;
+                veresiyeKalan = veresiyeTutar - alinanTutar;
                 if (alinanTutar > veresiyeTutar)
                 {
                     MessageBox.Show("Alınan tutar toplam fiyattan büyük olamaz!!");
@@ -84,15 +86,21 @@ namespace haliYikama
 
                     if (result == DialogResult.Yes)
                     {
-                        string komut = "UPDATE siparisler SET" +
+                        string komutSiparis = "UPDATE siparisler SET" +
                         "        siparisDurum='Tamamlandi'," +
                         "        veresiyeTutar=0" +
                         "        WHERE siparisNo=" + siparisNo;
 
+                        string komutOdeme = "UPDATE odemeler SET " +
+                        "        odenenTutar=" + (odenenTutar + alinanTutar) + "" +
+                        "        WHERE siparisNo=" + siparisNo;
+
                         connect.Open();
 
-                        OleDbCommand cmd = new OleDbCommand(komut, connect);
-                        cmd.ExecuteNonQuery();
+                        OleDbCommand cmdSiparis = new OleDbCommand(komutSiparis, connect);
+                        OleDbCommand cmdOdeme = new OleDbCommand(komutOdeme, connect);
+                        cmdSiparis.ExecuteNonQuery();
+                        cmdOdeme.ExecuteNonQuery();
 
                         connect.Close();
 
@@ -111,13 +119,20 @@ namespace haliYikama
 
                     if (result == DialogResult.Yes)
                     {
-                        string komut = "UPDATE siparisler SET" +
+                        string komutSiparis = "UPDATE siparisler SET" +
                            "           veresiyeTutar=" + veresiyeKalan + " " +
                            "           WHERE siparisNo=" + siparisNo;
+
+                        string komutOdeme = "UPDATE odemeler SET " +
+                        "        odenenTutar=" + (odenenTutar + alinanTutar) + "" +
+                        "        WHERE siparisNo=" + siparisNo;
+
                         connect.Open();
 
-                        OleDbCommand cmd = new OleDbCommand(komut, connect);
-                        cmd.ExecuteNonQuery();
+                        OleDbCommand cmdSiparis = new OleDbCommand(komutSiparis, connect);
+                        OleDbCommand cmdOdeme = new OleDbCommand(komutOdeme, connect);
+                        cmdSiparis.ExecuteNonQuery();
+                        cmdOdeme.ExecuteNonQuery();
 
                         connect.Close();
 
@@ -131,10 +146,16 @@ namespace haliYikama
                         "        siparisDurum='Tamamlandi'" +
                         "        WHERE siparisNo=" + siparisNo;
 
+                        string komutOdeme = "UPDATE odemeler SET " +
+                        "        odenenTutar=" + (odenenTutar + alinanTutar) + "" +
+                        "        WHERE siparisNo=" + siparisNo;
+
                         connect.Open();
 
                         OleDbCommand guncelle = new OleDbCommand(komutGuncelle, connect);
+                        OleDbCommand cmdOdeme = new OleDbCommand(komutOdeme, connect);
                         guncelle.ExecuteNonQuery();
+                        cmdOdeme.ExecuteNonQuery();
 
                         connect.Close();
 
@@ -162,6 +183,28 @@ namespace haliYikama
             {
                 veresiyeTutar = oku["veresiyeTutar"] != DBNull.Value ? Convert.ToDouble(oku["veresiyeTutar"]) : 0.0;
             }
+            connect.Close();
+        }
+
+        void odenenTutarBul()
+        {
+            string komut = "SELECT * FROM odemeler WHERE siparisNo = " + siparisNo;
+
+            connect.Open();
+
+            OleDbCommand cmd = new OleDbCommand(komut, connect);
+            OleDbDataReader oku = cmd.ExecuteReader();
+
+            if (oku.Read())
+            {
+                if (!oku.IsDBNull(4))
+                {
+                    decimal tutar = oku.GetDecimal(4);
+                    odenenTutar = (double)tutar;
+                }
+                else odenenTutar = 0;
+            }
+
             connect.Close();
         }
     }

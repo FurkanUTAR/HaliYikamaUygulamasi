@@ -40,8 +40,8 @@ namespace haliYikama
             if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
             {
                 DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex];
-                string kimlik = row.Cells["Kimlik"].Value.ToString();
-                string adSoyad = row.Cells["adiSoyAdi"].Value.ToString();
+                int kimlik = int.Parse(row.Cells["Kimlik"].Value.ToString());
+                string adSoyad = row.Cells["adiSoyadi"].Value.ToString();
                 string telNo = row.Cells["telNo"].Value.ToString();
                 string adres = row.Cells["adres"].Value.ToString();
 
@@ -76,20 +76,20 @@ namespace haliYikama
         {
             if (musteriAdiRadioButton.Checked)
             {
-                musteriAdiAra();
+                if (string.IsNullOrWhiteSpace(araTextBox.Text)) butunMusterileriGoster();
+                else musteriAdiAra();
+               
             }
             else if (telNoRadioButton.Checked)
             {
-                telNoAra();
+                if (string.IsNullOrWhiteSpace(araTextBox.Text)) butunMusterileriGoster();
+                else telNoAra();
             }
             else if (siparisNoRadioButton.Checked)
             {
-                siparisNoAra();
-            }
-
-            if (string.IsNullOrWhiteSpace(araTextBox.Text))
-            {
-                butunMusterileriGoster();
+                if (string.IsNullOrWhiteSpace(araTextBox.Text)) butunSiparisleriGoster();
+                else siparisNoAra(); 
+               
             }
         }
 
@@ -160,6 +160,29 @@ namespace haliYikama
             {
                 musteriDataGridView.DataSource = dt;
                 musteriDataGridView.Columns["Kimlik"].Visible = false;
+            }
+
+            connect.Close();
+        }
+
+
+        void butunSiparisleriGoster()
+        {
+            string komut = "SELECT * FROM siparisler WHERE siparisNo ";
+
+            connect.Open();
+
+            OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
+            }
+            else
+            {
+                musteriDataGridView.DataSource = dt;
             }
 
             connect.Close();

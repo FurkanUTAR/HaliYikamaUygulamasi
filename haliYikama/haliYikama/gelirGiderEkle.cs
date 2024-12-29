@@ -69,6 +69,7 @@ namespace haliYikama
         {
             turComboBox.Items.Add("Gelir");
             turComboBox.Items.Add("Gider");
+            tarihDateTimePicker.Value = DateTime.Now;
         }
 
         void gelirGiderEkleme()

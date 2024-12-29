@@ -110,7 +110,7 @@ namespace haliYikama
             object sonuc = cmd.ExecuteScalar();
             if (sonuc != DBNull.Value)
             {
-                toplamFiyat = Convert.ToDouble(sonuc)-indirimMiktari;
+                toplamFiyat = Convert.ToDouble(sonuc) - indirimMiktari;
             }
             else MessageBox.Show("Toplam fiyat hesaplanamadı.");
 
@@ -140,7 +140,7 @@ namespace haliYikama
 
         void teslimatCek()
         {
-            string komut = "UPDATE siparisler SET siparisDurum='Teslimat', siparisNotu='" + teslimatNotuTextBox.Text + "',siparisTutar="+toplamFiyat+",haliAdet='"+adetLabel.Text+"' WHERE siparisNo=" + siparisNo;
+            string komut = "UPDATE siparisler SET siparisDurum='Teslimat', siparisNotu='" + teslimatNotuTextBox.Text + "',siparisTutar=" + toplamFiyat + ",haliAdet='" + adetLabel.Text + "' WHERE siparisNo=" + siparisNo;
 
             OleDbCommand cmd = new OleDbCommand(komut, connect);
             connect.Open();

@@ -162,6 +162,7 @@
             this.Controls.Add(this.geriDonPictureBox);
             this.Name = "siparisOlustur";
             this.Text = "Müşteri";
+            this.Load += new System.EventHandler(this.siparisOlustur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

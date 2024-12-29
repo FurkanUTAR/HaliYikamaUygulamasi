@@ -317,7 +317,7 @@ namespace haliYikama
             if (double.TryParse(toplamFiyatLabel.Text.Replace(" ₺", ""), out double toplamFiyat))
             {
                 string komut = "UPDATE siparisler SET " +
-               "                siparisDurum='İslemde', " +
+               "                siparisDurum='Islemde', " +
                "                siparisTutar=" + toplamFiyat.ToString().Replace(",", ".") + ", " +
                "                teslimTarih='" + teslimTarihiDateTimePicker.Value.ToString("yyyy-MM-dd") + "', " +
                "                indirimMiktar=" + indirimMiktari + ", " +

@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace haliYikama
 {
     public partial class tamamlandi : Form
     {
+        OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
+
         public tamamlandi()
         {
             InitializeComponent();
@@ -22,6 +19,25 @@ namespace haliYikama
             anaSayfa anaSayfa = new anaSayfa();
             anaSayfa.Show();
             this.Hide();
+        }
+
+        void veriGoster()
+        {
+            string komut = "SELECT * FROM siparisler WHERE siparisDurum='Tamamlandi'";
+
+            connect.Open();
+
+            OleDbDataAdapter da=new OleDbDataAdapter(komut,connect);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            tamamlandiDataGridView.DataSource = dt;
+
+            connect.Close();
+        }
+
+        private void tamamlandi_Load(object sender, EventArgs e)
+        {
+            veriGoster();
         }
     }
 }

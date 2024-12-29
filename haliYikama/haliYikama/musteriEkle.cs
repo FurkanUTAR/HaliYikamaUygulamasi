@@ -31,12 +31,19 @@ namespace haliYikama
 
         private void musteriEkleButton_Click(object sender, EventArgs e)
         {
-            musteriEklee();
+            if (!string.IsNullOrWhiteSpace(adSoyadTextBox.Text) && !string.IsNullOrWhiteSpace(telNoTextBox.Text) && !string.IsNullOrWhiteSpace(adresTextBox.Text))
+            {
+                musteriEklee();
+            }
+            else
+            {
+                MessageBox.Show("Boş yer bırakmayınız");
+            }
         }
 
         void musteriEklee()
         {
-            string komut = "INSERT INTO musteriler (adiSoyAdi, telNo, adres, eklemeTarih) VALUES ('"
+            string komut = "INSERT INTO musteriler (adiSoyadi, telNo, adres, eklemeTarih) VALUES ('"
               + adSoyadTextBox.Text + "', '"
               + telNoTextBox.Text + "', '"
               + adresTextBox.Text + "', '"
@@ -49,6 +56,10 @@ namespace haliYikama
             ekle.ExecuteNonQuery();
 
             connect.Close();
+
+            musteriler musteriler = new musteriler();
+            musteriler.Show();
+            this.Hide();
         }
     }
 }

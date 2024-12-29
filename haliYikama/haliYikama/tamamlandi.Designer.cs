@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
+            this.tamamlandiDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tamamlandiDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // geriDonPictureBox
@@ -43,15 +45,28 @@
             this.geriDonPictureBox.TabStop = false;
             this.geriDonPictureBox.Click += new System.EventHandler(this.geriDonPictureBox_Click);
             // 
+            // tamamlandiDataGridView
+            // 
+            this.tamamlandiDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.tamamlandiDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tamamlandiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tamamlandiDataGridView.Location = new System.Drawing.Point(1, 41);
+            this.tamamlandiDataGridView.Name = "tamamlandiDataGridView";
+            this.tamamlandiDataGridView.Size = new System.Drawing.Size(232, 423);
+            this.tamamlandiDataGridView.TabIndex = 38;
+            // 
             // tamamlandi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
+            this.Controls.Add(this.tamamlandiDataGridView);
             this.Controls.Add(this.geriDonPictureBox);
             this.Name = "tamamlandi";
             this.Text = "Tamamlandı";
+            this.Load += new System.EventHandler(this.tamamlandi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tamamlandiDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -59,5 +74,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox geriDonPictureBox;
+        private System.Windows.Forms.DataGridView tamamlandiDataGridView;
     }
 }

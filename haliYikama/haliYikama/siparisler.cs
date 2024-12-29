@@ -65,7 +65,7 @@ namespace haliYikama
 
             void alinacakGoster()
             {
-                string komut = "SELECT * FROM siparisler WHERE siparisDurum = 'Alınacak'";
+                string komut = "SELECT * FROM siparisler WHERE siparisDurum = 'Alinacak'";
 
                 connect.Open();
 
@@ -97,16 +97,10 @@ namespace haliYikama
 
                 connect.Close();
 
-                if (teslimatDataGridView.Columns.Contains("siparisDurum"))
-                {
-                    teslimatDataGridView.Columns["siparisDurum"].Visible = false;
-                }
-                if (teslimatDataGridView.Columns.Contains("siparisTarihi"))
-                {
-                    teslimatDataGridView.Columns["siparisTarihi"].Visible = false;
-                }
-            }
 
+                teslimatDataGridView.Columns["siparisDurum"].Visible = false;
+                teslimatDataGridView.Columns["siparisTarih"].Visible = false;
+            }
 
             void veresiyeGoster()
             {
@@ -120,11 +114,14 @@ namespace haliYikama
                 veresiyeDataGridView.DataSource = dt;
 
                 connect.Close();
+
+                teslimatDataGridView.Columns["siparisDurum"].Visible = false;
+                teslimatDataGridView.Columns["siparisTarih"].Visible = false;
             }
 
             void hepsiGoster()
             {
-                string komut = "SELECT * FROM siparisler WHERE siparisDurum = 'Alınacak' OR siparisDurum = 'Teslimat' OR siparisDurum = 'Veresiye'";
+                string komut = "SELECT * FROM siparisler WHERE siparisDurum = 'Alinacak' OR siparisDurum = 'Teslimat' OR siparisDurum = 'Veresiye'";
 
                 connect.Open();
 
@@ -150,15 +147,9 @@ namespace haliYikama
                     alinacaklar.Show();
                     this.Hide();
                 }
-                else
-                {
-                    MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                else MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            else MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         void teslimatKontrol()
@@ -174,15 +165,9 @@ namespace haliYikama
                     teslimEdilecekler.Show();
                     this.Hide();
                 }
-                else
-                {
-                    MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                else MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            else MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         void veresiyeKontrol()
@@ -199,65 +184,47 @@ namespace haliYikama
                     veresiye.Show();
                     this.Hide();
                 }
-                else
-                {
-                    MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                else MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            else MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-
-
-        // Çalışmıyor 
         void hepsiKontrol()
         {
-            string status = hepsiDataGridView.CurrentRow.Cells[6].ToString();
-
             if (hepsiDataGridView.CurrentRow != null) // Seçili satır var mı?
             {
                 var cellValue = hepsiDataGridView.CurrentRow.Cells[0].Value; // Hücre değeri alınır
 
                 if (cellValue != null && int.TryParse(cellValue.ToString(), out int siparisNo)) // Geçerli bir sayı mı?
                 {
-                    if (status == "Alinacak")
+                    string durum = hepsiDataGridView.CurrentRow.Cells["siparisDurum"].Value.ToString();
+
+                    if (durum == "Alinacak")
                     {
                         alinacaklar alinacaklar = new alinacaklar();
                         alinacaklar.siparisNo = siparisNo;
                         alinacaklar.Show();
                         this.Hide();
                     }
-                    else if (status == "Teslimat")
+                    else if (durum == "Teslimat")
                     {
                         teslimEdilecekler teslimEdilecekler = new teslimEdilecekler();
                         teslimEdilecekler.siparisNo = siparisNo;
                         teslimEdilecekler.Show();
                         this.Hide();
                     }
-                    else if (status == "Veresiye")
+                    else if (durum == "Veresiye")
                     {
                         veresiye veresiye = new veresiye();
                         veresiye.siparisNo = siparisNo;
                         veresiye.Show();
                         this.Hide();
                     }
-                    else
-                    {
-                        MessageBox.Show("2");
-                    }
+                    else MessageBox.Show($"Geçersiz durum: {durum}");
                 }
-                else
-                {
-                    MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                else MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            else MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

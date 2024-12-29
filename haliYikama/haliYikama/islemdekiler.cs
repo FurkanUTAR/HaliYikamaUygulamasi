@@ -53,7 +53,7 @@ namespace haliYikama
 
         void goster()
         {
-            string komut = "SELECT * FROM siparisler WHERE siparisDurum='İslemde'";
+            string komut = "SELECT * FROM siparisler WHERE siparisDurum='Islemde'";
 
             connect.Open();
 
