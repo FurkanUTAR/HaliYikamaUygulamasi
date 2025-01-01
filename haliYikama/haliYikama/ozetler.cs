@@ -16,7 +16,6 @@ namespace haliYikama
 {
     public partial class ozetler : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         double gunlukGelir;
@@ -50,7 +49,6 @@ namespace haliYikama
             anaSayfa.Show();
             this.Hide();
         }
-
 
         void gunlukOzet()
         {
@@ -150,9 +148,11 @@ namespace haliYikama
                 string aylıkSiparisKomut = "SELECT COUNT(*) FROM siparisler WHERE FORMAT(siparisTarih, 'yyyy-MM') = ?";
 
                 connect.Open();
+
                 OleDbCommand cmd = new OleDbCommand(aylıkSiparisKomut, connect);
                 cmd.Parameters.AddWithValue("?", DateTime.Now.ToString("yyyy-MM"));
                 int aylıkSiparisSayisi = (int)cmd.ExecuteScalar();
+
                 connect.Close();
 
                 aylikToplamSiprarisLabel.Text = aylıkSiparisSayisi.ToString();
@@ -163,9 +163,11 @@ namespace haliYikama
                 string aylikYeniMusteriKomut = "SELECT COUNT(*) FROM musteriler WHERE FORMAT(eklemeTarih, 'yyyy-MM') = ?";
 
                 connect.Open();
+
                 OleDbCommand cmd = new OleDbCommand(aylikYeniMusteriKomut, connect);
                 cmd.Parameters.AddWithValue("?", DateTime.Now.ToString("yyyy-MM"));
                 int aylikYeniMusteri = (int)cmd.ExecuteScalar();
+
                 connect.Close();
 
                 aylikYeniMusteriLabel.Text = aylikYeniMusteri.ToString();
@@ -176,9 +178,9 @@ namespace haliYikama
                 string aylikGelirKomut = "SELECT SUM(odenenTutar) FROM odemeler WHERE FORMAT(odemeTarih, 'yyyy-MM') = ?";
 
                 connect.Open();
+
                 OleDbCommand cmd = new OleDbCommand(aylikGelirKomut, connect);
                 cmd.Parameters.AddWithValue("?", DateTime.Now.ToString("yyyy-MM"));
-
                 object sonuc = cmd.ExecuteScalar();
                 aylikGelir = sonuc != DBNull.Value && sonuc != null ? Convert.ToDouble(sonuc) : 0;
 
@@ -187,9 +189,9 @@ namespace haliYikama
                 string aylikGelirKomut2 = "SELECT SUM(miktar) FROM gelirGiderTakip WHERE tur='Gelir' AND FORMAT(tarih, 'yyyy-MM') = ?";
 
                 connect.Open();
+
                 OleDbCommand cmd2 = new OleDbCommand(aylikGelirKomut2, connect);
                 cmd2.Parameters.AddWithValue("?", DateTime.Now.ToString("yyyy-MM"));
-
                 object sonuc2 = cmd2.ExecuteScalar();
                 aylikGelir += sonuc2 != DBNull.Value && sonuc2 != null ? Convert.ToDouble(sonuc2) : 0;
 
@@ -203,9 +205,9 @@ namespace haliYikama
                 string aylikGiderKomut = "SELECT SUM(miktar) FROM gelirGiderTakip WHERE tur='Gider' AND FORMAT(tarih, 'yyyy-MM') = ?";
 
                 connect.Open();
+
                 OleDbCommand cmd = new OleDbCommand(aylikGiderKomut, connect);
                 cmd.Parameters.AddWithValue("?", DateTime.Now.ToString("yyyy-MM"));
-
                 object sonuc = cmd.ExecuteScalar();
                 aylikGider = sonuc != DBNull.Value && sonuc != null ? Convert.ToDouble(sonuc) : 0;
 
@@ -234,9 +236,11 @@ namespace haliYikama
                 string yıllıkSiparisKomut = "SELECT COUNT(*) FROM siparisler WHERE FORMAT(siparisTarih, 'yyyy') = ?";
 
                 connect.Open();
+
                 OleDbCommand cmd = new OleDbCommand(yıllıkSiparisKomut, connect);
                 cmd.Parameters.AddWithValue("?", DateTime.Now.ToString("yyyy"));
                 int yıllıkSiparisSayisi = (int)cmd.ExecuteScalar();
+
                 connect.Close();
 
                 yillikToplamSiparisLabel.Text = yıllıkSiparisSayisi.ToString();
@@ -247,9 +251,11 @@ namespace haliYikama
                 string yillikYeniMusteriKomut = "SELECT COUNT(*) FROM musteriler WHERE FORMAT(eklemeTarih, 'yyyy') = ?";
 
                 connect.Open();
+
                 OleDbCommand cmd = new OleDbCommand(yillikYeniMusteriKomut, connect);
                 cmd.Parameters.AddWithValue("?", DateTime.Now.ToString("yyyy"));
                 int yillikYeniMusteri = (int)cmd.ExecuteScalar();
+
                 connect.Close();
 
                 yillikYeniMusteriLabel.Text = yillikYeniMusteri.ToString();
@@ -260,9 +266,9 @@ namespace haliYikama
                 string yillikGelirKomut = "SELECT SUM(odenenTutar) FROM odemeler WHERE FORMAT(odemeTarih, 'yyyy') = ?";
 
                 connect.Open();
+
                 OleDbCommand cmd = new OleDbCommand(yillikGelirKomut, connect);
                 cmd.Parameters.AddWithValue("?", DateTime.Now.ToString("yyyy"));
-
                 object sonuc = cmd.ExecuteScalar();
                 yillikGelir = sonuc != DBNull.Value && sonuc != null ? Convert.ToDouble(sonuc) : 0;
 
@@ -271,9 +277,9 @@ namespace haliYikama
                 string yillikGelirKomut2 = "SELECT SUM(miktar) FROM gelirGiderTakip WHERE tur='Gelir' AND FORMAT(tarih, 'yyyy') = ?";
 
                 connect.Open();
+
                 OleDbCommand cmd2 = new OleDbCommand(yillikGelirKomut2, connect);
                 cmd2.Parameters.AddWithValue("?", DateTime.Now.ToString("yyyy"));
-
                 object sonuc2 = cmd2.ExecuteScalar();
                 yillikGelir += sonuc2 != DBNull.Value && sonuc2 != null ? Convert.ToDouble(sonuc2) : 0;
 
@@ -287,9 +293,9 @@ namespace haliYikama
                 string yillikGiderKomut = "SELECT SUM(miktar) FROM gelirGiderTakip WHERE tur='Gider' AND FORMAT(tarih, 'yyyy') = ?";
 
                 connect.Open();
+
                 OleDbCommand cmd = new OleDbCommand(yillikGiderKomut, connect);
                 cmd.Parameters.AddWithValue("?", DateTime.Now.ToString("yyyy"));
-
                 object sonuc = cmd.ExecuteScalar();
                 yillikGider = sonuc != DBNull.Value && sonuc != null ? Convert.ToDouble(sonuc) : 0;
 

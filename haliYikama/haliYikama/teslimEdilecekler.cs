@@ -121,7 +121,7 @@ namespace haliYikama
 
 
                         string komutGuncelle = "UPDATE siparisler SET " +
-                            "        siparisDurum='Tamamlandi'" +
+                            "        siparisDurum='Tamamlandı'" +
                             "        WHERE siparisNo=" + siparisNo;
 
                         connect.Open();
@@ -178,7 +178,7 @@ namespace haliYikama
                     else
                     {
                         string komutGuncelle = "UPDATE siparisler SET " +
-                        "        siparisDurum='Tamamlandi'" +
+                        "        siparisDurum='Tamamlandı'" +
                         "        WHERE siparisNo=" + siparisNo;
 
                         connect.Open();

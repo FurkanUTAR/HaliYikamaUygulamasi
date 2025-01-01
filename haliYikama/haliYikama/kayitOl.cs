@@ -15,7 +15,6 @@ namespace haliYikama
 {
     public partial class kayitEkrani : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public kayitEkrani()
@@ -89,13 +88,10 @@ namespace haliYikama
             }
             else
             {
-                if (kullaniciAdiTextBox.Text == parolaTextBox.Text || firmaAdiTextBox.Text == parolaTextBox.Text)
-                {
-                    MessageBox.Show("Parolanız kulanıcı adıyla veya firma adıyla aynı olamaz!!!");
-                }
+                if (kullaniciAdiTextBox.Text == parolaTextBox.Text || firmaAdiTextBox.Text == parolaTextBox.Text) MessageBox.Show("Parolanız kulanıcı adıyla veya firma adıyla aynı olamaz!!!");
                 else
                 {
-                    if (ePostaTextBox.Text.EndsWith("@gmail.com"))
+                    if (ePostaTextBox.Text.EndsWith("@"))
                     {
                         if (telNoTextBox.Text.StartsWith("05"))
                         {
@@ -108,26 +104,16 @@ namespace haliYikama
                             {
                                 if (parolaTextBox.Text == parolaDogrulaTextBox.Text)
                                 {
-                                    if (string.IsNullOrEmpty(parolaTextBox.Text)) { }
-                                    ekle();
+                                    if (!string.IsNullOrEmpty(parolaTextBox.Text)) ekle();
                                 }
-                                else
-                                {
-                                    MessageBox.Show("Parolalar Uyuşmuyor");
-                                }
+                                else MessageBox.Show("Parolalar Uyuşmuyor");
                             }
                         }
-                        else
-                        {
-                            MessageBox.Show("Telefon Numarası "+05+" ile başlamalıdır!!!");
-                        }
+                        else MessageBox.Show("Telefon Numarası " + 05 + " ile başlamalıdır!!!");
                     }
-                    else
-                    {
-                        MessageBox.Show("e-Posta Adresini doğru girdiğinizden emin olun!!!");
-                    }
+                    else MessageBox.Show("e-Posta Adresini doğru girdiğinizden emin olun!!!");
                 }
-            }   
+            }
         }
     }
 }

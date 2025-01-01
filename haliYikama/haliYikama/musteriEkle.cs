@@ -13,9 +13,7 @@ namespace haliYikama
 {
     public partial class musteriEkle : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
-
 
         public musteriEkle()
         {
@@ -29,16 +27,18 @@ namespace haliYikama
             this.Hide();
         }
 
+        private void telNoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
+        }
+
         private void musteriEkleButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(adSoyadTextBox.Text) && !string.IsNullOrWhiteSpace(telNoTextBox.Text) && !string.IsNullOrWhiteSpace(adresTextBox.Text))
             {
                 musteriEklee();
             }
-            else
-            {
-                MessageBox.Show("Boş yer bırakmayınız");
-            }
+            else MessageBox.Show("Boş yer bırakmayınız");
         }
 
         void musteriEklee()
@@ -48,7 +48,6 @@ namespace haliYikama
               + telNoTextBox.Text + "', '"
               + adresTextBox.Text + "', '"
               + DateTime.Now.ToString("yyyy-MM-dd") + "')";
-
 
             connect.Open();
 

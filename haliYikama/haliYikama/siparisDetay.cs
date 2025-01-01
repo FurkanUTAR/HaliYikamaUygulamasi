@@ -89,15 +89,16 @@ namespace haliYikama
             OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            haliBilgiDataGridView.DataSource = dt;
 
-            connect.Close();
+            haliBilgiDataGridView.DataSource = dt;
             haliBilgiDataGridView.Columns["Kimlik"].Visible = false;
             haliBilgiDataGridView.Columns["siparisNo"].Visible = false;
             haliBilgiDataGridView.Columns["haliCins"].HeaderText = "Cins";
             haliBilgiDataGridView.Columns["haliAdet"].HeaderText = "Adet";
             haliBilgiDataGridView.Columns["haliBoyut"].HeaderText = "Boyut";
             haliBilgiDataGridView.Columns["haliFiyat"].HeaderText = "Fiyat";
+
+            connect.Close();
         }
 
         void toplam()
@@ -108,10 +109,7 @@ namespace haliYikama
 
             OleDbCommand cmd = new OleDbCommand(komut, connect);
             object sonuc = cmd.ExecuteScalar();
-            if (sonuc != DBNull.Value)
-            {
-                toplamFiyat = Convert.ToDouble(sonuc) - indirimMiktari;
-            }
+            if (sonuc != DBNull.Value) toplamFiyat = Convert.ToDouble(sonuc) - indirimMiktari;
             else MessageBox.Show("Toplam fiyat hesaplanamadı.");
 
             connect.Close();
@@ -127,10 +125,7 @@ namespace haliYikama
 
             OleDbCommand cmd = new OleDbCommand(komut, connect);
             object sonuc = cmd.ExecuteScalar();
-            if (sonuc != DBNull.Value)
-            {
-                haliAdet = Convert.ToDouble(sonuc);
-            }
+            if (sonuc != DBNull.Value) haliAdet = Convert.ToDouble(sonuc);
             else MessageBox.Show("Halı adet hesaplanamadı.");
 
             connect.Close();
@@ -142,9 +137,11 @@ namespace haliYikama
         {
             string komut = "UPDATE siparisler SET siparisDurum='Teslimat', siparisNotu='" + teslimatNotuTextBox.Text + "',siparisTutar=" + toplamFiyat + ",haliAdet='" + adetLabel.Text + "' WHERE siparisNo=" + siparisNo;
 
-            OleDbCommand cmd = new OleDbCommand(komut, connect);
             connect.Open();
+
+            OleDbCommand cmd = new OleDbCommand(komut, connect);
             cmd.ExecuteNonQuery();
+
             connect.Close();
         }
 
@@ -173,10 +170,8 @@ namespace haliYikama
 
             OleDbCommand cmd = new OleDbCommand(komut, connect);
             OleDbDataReader oku = cmd.ExecuteReader();
-            if (oku.Read())
-            {
-                indirimMiktari = oku["indirimMiktar"] != DBNull.Value ? Convert.ToDouble(oku["indirimMiktar"]) : 0.0;
-            }
+            if (oku.Read()) indirimMiktari = oku["indirimMiktar"] != DBNull.Value ? Convert.ToDouble(oku["indirimMiktar"]) : 0.0;
+
             connect.Close();
         }
     }

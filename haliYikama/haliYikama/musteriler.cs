@@ -13,12 +13,16 @@ namespace haliYikama
 {
     public partial class musteriler : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public musteriler()
         {
             InitializeComponent();
+        }
+
+        private void musteriler_Load(object sender, EventArgs e)
+        {
+            butunMusterileriGoster();
         }
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
@@ -37,22 +41,46 @@ namespace haliYikama
 
         private void musteriDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
+            if (siparisNoRadioButton.Checked)
             {
-                DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex];
-                int kimlik = int.Parse(row.Cells["Kimlik"].Value.ToString());
-                string adSoyad = row.Cells["adiSoyadi"].Value.ToString();
-                string telNo = row.Cells["telNo"].Value.ToString();
-                string adres = row.Cells["adres"].Value.ToString();
+                if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
+                {
+                    DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex];
+                    int siparisNo = int.Parse(row.Cells["siparisnO"].Value.ToString());
+                    string adSoyad = row.Cells["adiSoyadi"].Value.ToString();
+                    string telNo = row.Cells["telNo"].Value.ToString();
+                    string adres = row.Cells["adres"].Value.ToString();
 
-                siparisOlustur siparisForm = new siparisOlustur();
-                siparisForm.Kimlik = kimlik;
-                siparisForm.AdSoyad = adSoyad;
-                siparisForm.TelNo = telNo;
-                siparisForm.Adres = adres;
-                siparisForm.Show();
-                this.Hide();
+                    siparisOlustur siparisForm = new siparisOlustur();
+                    siparisForm.Kimlik = siparisNo;
+                    siparisForm.adSoyad = adSoyad;
+                    siparisForm.telNo = telNo;
+                    siparisForm.adres = adres;
+                    siparisForm.islem =  "siparis";
+                    siparisForm.Show();
+                    this.Hide();
+                }
             }
+            else
+            {
+                if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
+                {
+                    DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex];
+                    int kimlik = int.Parse(row.Cells["Kimlik"].Value.ToString());
+                    string adSoyad = row.Cells["adiSoyadi"].Value.ToString();
+                    string telNo = row.Cells["telNo"].Value.ToString();
+                    string adres = row.Cells["adres"].Value.ToString();
+
+                    siparisOlustur siparisForm = new siparisOlustur();
+                    siparisForm.Kimlik = kimlik;
+                    siparisForm.adSoyad = adSoyad;
+                    siparisForm.telNo = telNo;
+                    siparisForm.adres = adres;
+                    siparisForm.islem = "musteri";
+                    siparisForm.Show();
+                    this.Hide();
+                }
+            } 
         }
 
         private void musteriAdiRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -78,7 +106,7 @@ namespace haliYikama
             {
                 if (string.IsNullOrWhiteSpace(araTextBox.Text)) butunMusterileriGoster();
                 else musteriAdiAra();
-               
+
             }
             else if (telNoRadioButton.Checked)
             {
@@ -88,17 +116,14 @@ namespace haliYikama
             else if (siparisNoRadioButton.Checked)
             {
                 if (string.IsNullOrWhiteSpace(araTextBox.Text)) butunSiparisleriGoster();
-                else siparisNoAra(); 
-               
+                else siparisNoAra();
             }
+            else butunMusterileriGoster();
         }
 
         private void araTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
         }
 
         void butunMusterileriGoster()
@@ -119,7 +144,7 @@ namespace haliYikama
         void musteriAdiAra()
         {
             string arama = "%" + araTextBox.Text + "%";
-            string komut = "SELECT * FROM musteriler WHERE adiSoyAdi LIKE '" + arama + "'";
+            string komut = "SELECT * FROM musteriler WHERE adiSoyadi LIKE '" + arama + "'";
 
             connect.Open();
 
@@ -164,7 +189,6 @@ namespace haliYikama
 
             connect.Close();
         }
-
 
         void butunSiparisleriGoster()
         {

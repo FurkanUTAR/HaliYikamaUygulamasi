@@ -15,7 +15,6 @@ namespace haliYikama
 {
     public partial class alinacaklar : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public int siparisNo { get; set; }
@@ -75,14 +74,9 @@ namespace haliYikama
             if (result == DialogResult.Yes)
             {
                 siparisAl();
-
                 siparisler siparisler = new siparisler();
                 siparisler.Show();
                 this.Hide();
-            }
-            else
-            {
-
             }
         }
 
@@ -100,17 +94,13 @@ namespace haliYikama
             urunComboBox.Items.Add("Yorgan(Tek)");
             urunComboBox.Items.Add("Yorgan(Çift)");
 
-            for (int i = 1; i < 1000; i++)
-            {
-                adetComboBox.Items.Add(i);
-            }
+            for (int i = 1; i < 1000; i++) adetComboBox.Items.Add(i);
         }
 
         void siparisEkle()
         {
             if (!string.IsNullOrWhiteSpace(adetComboBox.Text) && (!string.IsNullOrWhiteSpace(metreKareTextBox.Text) || !metreKareTextBox.Enabled))
             {
-
                 double metreKare = metreKareTextBox.Enabled ? Convert.ToDouble(metreKareTextBox.Text) : 1;
                 double adet = Convert.ToDouble(adetComboBox.Text);
                 double fiyat = 0;
@@ -139,10 +129,6 @@ namespace haliYikama
                     yorganTek = Convert.ToDouble(oku["yorganTek"]);
                     yorganCift = Convert.ToDouble(oku["yorganCift"]);
                 }
-                else
-                {
-
-                }
 
                 switch (urunComboBox.Text)
                 {
@@ -161,7 +147,6 @@ namespace haliYikama
                 }
 
                 connect.Close();
-
 
                 if (string.IsNullOrWhiteSpace(urunComboBox.Text))
                 {
@@ -192,36 +177,29 @@ namespace haliYikama
             }
             else
             {
-                if (metreKareTextBox.Enabled && string.IsNullOrWhiteSpace(metreKareTextBox.Text))
-                {
-                    MessageBox.Show("Lütfen 'm²' kısmını boş bırakmayınız!!!");
-                }
-                if (string.IsNullOrWhiteSpace(adetComboBox.Text))
-                {
-                    MessageBox.Show("Lütfen 'Adet' kısmını boş bırakmayınız!!!");
-                }
+                if (metreKareTextBox.Enabled && string.IsNullOrWhiteSpace(metreKareTextBox.Text)) MessageBox.Show("Lütfen 'm²' kısmını boş bırakmayınız!!!");
+
+                if (string.IsNullOrWhiteSpace(adetComboBox.Text)) MessageBox.Show("Lütfen 'Adet' kısmını boş bırakmayınız!!!");
             }
         }
 
         void kontrol()
         {
             if (urunComboBox.Text == "Yorgan(Tek)" || urunComboBox.Text == "Yorgan(Çift)") { metreKareTextBox.Enabled = false; metreKareTextBox.Text = ""; }
-            else { metreKareTextBox.Enabled = true; }
+            else metreKareTextBox.Enabled = true;
         }
 
         void goster()
         {
             string komut = "SELECT * FROM haliBilgi WHERE siparisNo=" + siparisNo + "";
 
-
-
             connect.Open();
 
             OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            alinacakHaliDataGridView.DataSource = dt;
 
+            alinacakHaliDataGridView.DataSource = dt;
             alinacakHaliDataGridView.Columns["Kimlik"].Visible = false;
             alinacakHaliDataGridView.Columns["siparisNo"].Visible = false;
 
@@ -258,24 +236,12 @@ namespace haliYikama
 
             while (oku.Read())
             {
-
-                if (double.TryParse(oku["haliFiyat"].ToString(), out double haliFiyat))
-                {
-                    fiyat += haliFiyat;
-                }
-                else
-                {
-                    MessageBox.Show("Geçersiz haliFiyat değeri: " + oku["haliFiyat"].ToString());
-                }
+                if (double.TryParse(oku["haliFiyat"].ToString(), out double haliFiyat)) fiyat += haliFiyat;
+                else MessageBox.Show("Geçersiz haliFiyat değeri: " + oku["haliFiyat"].ToString());
             }
             connect.Close();
 
-
-            if (fiyat == 0)
-            {
-                toplamFiyat = 0;
-                indirimMiktari = 0;
-            }
+            if (fiyat == 0) { toplamFiyat = 0; indirimMiktari = 0; }
             else toplamFiyat = fiyat - indirimMiktari;
 
             toplamFiyatLabel.Text = toplamFiyat.ToString() + " ₺";
@@ -293,15 +259,10 @@ namespace haliYikama
 
             while (oku.Read())
             {
-                if (double.TryParse(oku["haliAdet"].ToString(), out double haliAdet))
-                {
-                    adet += haliAdet;
-                }
-                else
-                {
-                    MessageBox.Show("Geçersiz haliAdet değeri: " + oku["haliAdet"].ToString());
-                }
+                if (double.TryParse(oku["haliAdet"].ToString(), out double haliAdet)) adet += haliAdet;
+                else MessageBox.Show("Geçersiz haliAdet değeri: " + oku["haliAdet"].ToString());
             }
+
             connect.Close();
 
             adetLabel.Text = adet.ToString() + " Adet";
@@ -324,15 +285,14 @@ namespace haliYikama
                "                haliAdet='" + adetLabel.Text + "' " +
                "                WHERE siparisNo=" + siparisNo;
 
-                OleDbCommand cmd = new OleDbCommand(komut, connect);
                 connect.Open();
+
+                OleDbCommand cmd = new OleDbCommand(komut, connect);
                 cmd.ExecuteNonQuery();
+
                 connect.Close();
             }
-            else
-            {
-                MessageBox.Show("Toplam fiyat değeri geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else MessageBox.Show("Toplam fiyat değeri geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

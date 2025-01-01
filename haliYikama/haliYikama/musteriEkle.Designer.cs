@@ -81,6 +81,7 @@
             this.telNoTextBox.Name = "telNoTextBox";
             this.telNoTextBox.Size = new System.Drawing.Size(207, 20);
             this.telNoTextBox.TabIndex = 2;
+            this.telNoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telNoTextBox_KeyPress);
             // 
             // label5
             // 

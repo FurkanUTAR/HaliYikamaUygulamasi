@@ -65,23 +65,24 @@ namespace haliYikama
 
             void alinacakGoster()
             {
-                string komut = "SELECT * FROM siparisler WHERE siparisDurum = 'Alinacak'";
+                string komut = "SELECT * FROM siparisler WHERE siparisDurum = 'Alınacak'";
 
                 connect.Open();
 
                 OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+
                 alinacakDataGridView.DataSource = dt;
-
-                connect.Close();
-
                 alinacakDataGridView.Columns["siparisDurum"].Visible = false;
                 alinacakDataGridView.Columns["teslimTarih"].Visible = false;
                 alinacakDataGridView.Columns["siparisTutar"].Visible = false;
                 alinacakDataGridView.Columns["indirimMiktar"].Visible = false;
                 alinacakDataGridView.Columns["haliAdet"].Visible = false;
                 alinacakDataGridView.Columns["veresiyeTutar"].Visible = false;
+
+                connect.Close();
+
             }
 
             void teslimatGoster()
@@ -93,13 +94,13 @@ namespace haliYikama
                 OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+
                 teslimatDataGridView.DataSource = dt;
+                teslimatDataGridView.Columns["siparisDurum"].Visible = false;
+                teslimatDataGridView.Columns["siparisTarih"].Visible = false;
 
                 connect.Close();
 
-
-                teslimatDataGridView.Columns["siparisDurum"].Visible = false;
-                teslimatDataGridView.Columns["siparisTarih"].Visible = false;
             }
 
             void veresiyeGoster()
@@ -111,17 +112,17 @@ namespace haliYikama
                 OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+
                 veresiyeDataGridView.DataSource = dt;
-
-                connect.Close();
-
                 teslimatDataGridView.Columns["siparisDurum"].Visible = false;
                 teslimatDataGridView.Columns["siparisTarih"].Visible = false;
+
+                connect.Close();
             }
 
             void hepsiGoster()
             {
-                string komut = "SELECT * FROM siparisler WHERE siparisDurum = 'Alinacak' OR siparisDurum = 'Teslimat' OR siparisDurum = 'Veresiye'";
+                string komut = "SELECT * FROM siparisler WHERE siparisDurum = 'Alınacak' OR siparisDurum = 'Teslimat' OR siparisDurum = 'Veresiye'";
 
                 connect.Open();
 

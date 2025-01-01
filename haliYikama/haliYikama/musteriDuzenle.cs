@@ -19,7 +19,7 @@ namespace haliYikama
         public string telNo { get; set; }
         public string adres { get; set; }
         public int kimlik { get; set; }
-
+        public string islem { get; set; }
 
         public musteriDuzenle()
         {
@@ -40,28 +40,61 @@ namespace haliYikama
 
         private void duzenleButton_Click(object sender, EventArgs e)
         {
-            guncelle();
-            geriDon();
+            DialogResult result = MessageBox.Show("Düzenlemek istediğinizden emin misiniz?", "Sorgu", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (result == DialogResult.Yes) guncelle();
         }
 
         void guncelle()
         {
-            string komut = "UPDATE musteriler SET adiSoyadi='" + adSoyadTextBox.Text + "', telNo='" + telNoTextBox.Text + "', adres='" + adresTextBox.Text + "' WHERE Kimlik=" + kimlik;
 
-            connect.Open();
+            if (islem == "musteri")
+            {
+                if (!string.IsNullOrWhiteSpace(adSoyadTextBox.Text) && !string.IsNullOrWhiteSpace(telNoTextBox.Text) && !string.IsNullOrWhiteSpace(adresTextBox.Text))
+                {
+                    string komut = "UPDATE musteriler SET adiSoyadi='" + adSoyadTextBox.Text + "', telNo='" + telNoTextBox.Text + "', adres='" + adresTextBox.Text + "' WHERE Kimlik=" + kimlik;
 
-            OleDbCommand cmd=new OleDbCommand(komut,connect);
-            cmd.ExecuteNonQuery();
+                    connect.Open();
 
-            connect.Close();
+                    OleDbCommand cmd = new OleDbCommand(komut, connect);
+                    cmd.ExecuteNonQuery();
+
+                    connect.Close();
+                    geriDon();
+                }
+                else
+                {
+                    MessageBox.Show("Boş alan bırakmayınız");
+                }
+            }
+            else
+            {
+                if (!string.IsNullOrWhiteSpace(adSoyadTextBox.Text) && !string.IsNullOrWhiteSpace(telNoTextBox.Text) && !string.IsNullOrWhiteSpace(adresTextBox.Text))
+                {
+                    string komut = "UPDATE siparisler SET adiSoyadi='" + adSoyadTextBox.Text + "', telNo='" + telNoTextBox.Text + "', adres='" + adresTextBox.Text + "' WHERE siparisNo=" + kimlik;
+
+                    connect.Open();
+
+                    OleDbCommand cmd = new OleDbCommand(komut, connect);
+                    cmd.ExecuteNonQuery();
+
+                    connect.Close();
+                    geriDon();
+                }
+                else
+                {
+                    MessageBox.Show("Boş alan bırakmayınız");
+                }
+            }
+
         }
 
         void geriDon()
         {
             siparisOlustur siparisOlustur = new siparisOlustur();
-            siparisOlustur.AdSoyad = adSoyad;
-            siparisOlustur.TelNo = telNo;
-            siparisOlustur.Adres = adres;
+            siparisOlustur.adSoyad = adSoyad;
+            siparisOlustur.telNo = telNo;
+            siparisOlustur.adres = adres;
             siparisOlustur.Kimlik = kimlik;
             siparisOlustur.Show();
             this.Hide();

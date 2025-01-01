@@ -13,7 +13,6 @@ namespace haliYikama
 {
     public partial class islemdekiler : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public islemdekiler()
@@ -60,14 +59,15 @@ namespace haliYikama
             OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
             DataTable dt = new DataTable();
             da.Fill(dt);
+
             islemdekilerDataGridView.DataSource = dt;
-
-            connect.Close();
-
             islemdekilerDataGridView.Columns["siparisNotu"].Visible = false;
             islemdekilerDataGridView.Columns["siparisDurum"].Visible = false;
             islemdekilerDataGridView.Columns["teslimTarih"].Visible = false;
             islemdekilerDataGridView.Columns["veresiyeTutar"].Visible = false;
+
+            connect.Close();
+
         }
     }
 }

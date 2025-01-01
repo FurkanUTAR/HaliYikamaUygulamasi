@@ -39,6 +39,7 @@
             this.karLabel = new System.Windows.Forms.Label();
             this.filtreComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tarihDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gelirGiderDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -59,10 +60,10 @@
             this.gelirGiderDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.gelirGiderDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gelirGiderDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gelirGiderDataGridView.Location = new System.Drawing.Point(1, 69);
+            this.gelirGiderDataGridView.Location = new System.Drawing.Point(1, 74);
             this.gelirGiderDataGridView.Name = "gelirGiderDataGridView";
             this.gelirGiderDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gelirGiderDataGridView.Size = new System.Drawing.Size(232, 290);
+            this.gelirGiderDataGridView.Size = new System.Drawing.Size(232, 285);
             this.gelirGiderDataGridView.TabIndex = 38;
             // 
             // silButton
@@ -133,7 +134,7 @@
             // 
             this.filtreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.filtreComboBox.FormattingEnabled = true;
-            this.filtreComboBox.Location = new System.Drawing.Point(101, 42);
+            this.filtreComboBox.Location = new System.Drawing.Point(12, 47);
             this.filtreComboBox.Name = "filtreComboBox";
             this.filtreComboBox.Size = new System.Drawing.Size(121, 21);
             this.filtreComboBox.TabIndex = 47;
@@ -142,17 +143,27 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(100, 26);
+            this.label4.Location = new System.Drawing.Point(11, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 48;
             this.label4.Text = "Filtrele";
+            // 
+            // tarihDateTimePicker
+            // 
+            this.tarihDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.tarihDateTimePicker.Location = new System.Drawing.Point(141, 48);
+            this.tarihDateTimePicker.Name = "tarihDateTimePicker";
+            this.tarihDateTimePicker.Size = new System.Drawing.Size(81, 20);
+            this.tarihDateTimePicker.TabIndex = 49;
+            this.tarihDateTimePicker.ValueChanged += new System.EventHandler(this.tarihDateTimePicker_ValueChanged);
             // 
             // gelirGiderTablo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
+            this.Controls.Add(this.tarihDateTimePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.filtreComboBox);
             this.Controls.Add(this.karLabel);
@@ -187,5 +198,6 @@
         private System.Windows.Forms.Label karLabel;
         private System.Windows.Forms.ComboBox filtreComboBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker tarihDateTimePicker;
     }
 }

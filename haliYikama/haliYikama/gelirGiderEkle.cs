@@ -14,7 +14,6 @@ namespace haliYikama
 {
     public partial class gelirGiderEkle : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public gelirGiderEkle()
@@ -54,10 +53,7 @@ namespace haliYikama
 
         private void miktarTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
         }
 
         private void ekleButton_Click(object sender, EventArgs e)
@@ -74,23 +70,26 @@ namespace haliYikama
 
         void gelirGiderEkleme()
         {
+            if (!string.IsNullOrWhiteSpace(tarihDateTimePicker.Text) && !string.IsNullOrWhiteSpace(turComboBox.Text) && !string.IsNullOrWhiteSpace(kategoriComboBox.Text) && !string.IsNullOrWhiteSpace(miktarTextBox.Text))
+            {
+                string tarih = tarihDateTimePicker.Value.ToString("yyyy-MM-dd");
+                string tur = turComboBox.Text;
+                string kategori = kategoriComboBox.Text;
+                int miktar = int.Parse(miktarTextBox.Text);
+                string aciklama = aciklamaTextBox.Text;
 
-            string tarih = tarihDateTimePicker.Value.ToString("yyyy-MM-dd");
-            string tur = turComboBox.Text;
-            string kategori = kategoriComboBox.Text;
-            int miktar = int.Parse(miktarTextBox.Text);
-            string aciklama = aciklamaTextBox.Text;
+                string komut = $"INSERT INTO gelirGiderTakip (tarih, tur, kategori, miktar, aciklama)" +
+                               $"VALUES ('{tarih}', '{tur}', '{kategori}', {miktar}, '{aciklama}')";
 
-            string komut = $"INSERT INTO gelirGiderTakip (tarih, tur, kategori, miktar, aciklama)" +
-                           $"VALUES ('{tarih}', '{tur}', '{kategori}', {miktar}, '{aciklama}')";
+                OleDbCommand cmd = new OleDbCommand(komut, connect);
 
-            OleDbCommand cmd = new OleDbCommand(komut, connect);
+                connect.Open();
+                cmd.ExecuteNonQuery();
+                connect.Close();
 
-            connect.Open();
-            cmd.ExecuteNonQuery();
-            connect.Close();
-
-            MessageBox.Show("Gelir/Gider başarıyla kaydedildi!");
+                MessageBox.Show("Gelir/Gider başarıyla kaydedildi!");
+            }
+            else MessageBox.Show("Boş Alan Bırakmayınız");
         }
     }
 }

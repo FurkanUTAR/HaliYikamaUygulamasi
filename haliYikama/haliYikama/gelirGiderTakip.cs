@@ -13,7 +13,6 @@ namespace haliYikama
 {
     public partial class gelirGiderTakip : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public gelirGiderTakip()

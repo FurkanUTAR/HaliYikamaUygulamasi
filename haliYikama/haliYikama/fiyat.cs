@@ -13,9 +13,7 @@ namespace haliYikama
 {
     public partial class fiyat : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
-
 
         public fiyat()
         {
@@ -39,18 +37,17 @@ namespace haliYikama
             fiyatKaydet();
         }
 
-        
         void fiyatGoster()
         {
-            string komut ="SELECT * FROM haliFiyat WHERE Kimlik=11";
+            string komut = "SELECT * FROM haliFiyat WHERE Kimlik=11";
 
             connect.Open();
 
-            OleDbDataAdapter da = new OleDbDataAdapter(komut,connect);
-            DataTable dt=new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
+            DataTable dt = new DataTable();
             da.Fill(dt);
 
-            if (dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0];
                 makineFiyatTextBox.Text = row["makine"].ToString();
@@ -68,11 +65,12 @@ namespace haliYikama
 
             connect.Close();
         }
-        
 
         void fiyatKaydet()
         {
-            string komut =   "UPDATE haliFiyat SET " +
+            if (!string.IsNullOrWhiteSpace(makineFiyatTextBox.Text) && !string.IsNullOrWhiteSpace(akrilikFiyatTextBox.Text) && !string.IsNullOrWhiteSpace(shaggyFiyatTextBox.Text) && !string.IsNullOrWhiteSpace(plastikFiyatTextBox.Text) && !string.IsNullOrWhiteSpace(bambuFiyatTextBox.Text) && !string.IsNullOrWhiteSpace(yunFiyatTextBox.Text) && !string.IsNullOrWhiteSpace(ipekFiyatTextBox.Text) && !string.IsNullOrWhiteSpace(storPerdeTextBox.Text) && !string.IsNullOrWhiteSpace(overlokFiyatTextBox.Text) && !string.IsNullOrWhiteSpace(yorganTekFiyatTextBox.Text) && !string.IsNullOrWhiteSpace(yorganCiftFiyatTextBox.Text))
+            {
+                string komut = "UPDATE haliFiyat SET " +
                              "makine=" + makineFiyatTextBox.Text + ", " +
                              "akrilik=" + akrilikFiyatTextBox.Text + ", " +
                              "shaggy=" + shaggyFiyatTextBox.Text + ", " +
@@ -85,12 +83,14 @@ namespace haliYikama
                              "yorganTek=" + yorganTekFiyatTextBox.Text + ", " +
                              "yorganCift=" + yorganCiftFiyatTextBox.Text + " " +
                              "WHERE Kimlik=11";
-            connect.Open(); 
+                connect.Open();
 
-            OleDbCommand kaydet=new OleDbCommand(komut,connect);
-            kaydet.ExecuteNonQuery();
+                OleDbCommand kaydet = new OleDbCommand(komut, connect);
+                kaydet.ExecuteNonQuery();
 
-            connect.Close();
+                connect.Close();
+            }
+            else MessageBox.Show("Boş alan bırakmayınız!!");
         }
     }
 }

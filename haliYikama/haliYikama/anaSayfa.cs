@@ -13,7 +13,6 @@ namespace haliYikama
 {
     public partial class anaSayfa : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public anaSayfa()
@@ -77,7 +76,7 @@ namespace haliYikama
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void tamamlandiButton_Click(object sender, EventArgs e)
         {
             tamamlandi tamamlandi = new tamamlandi();
             tamamlandi.Show();

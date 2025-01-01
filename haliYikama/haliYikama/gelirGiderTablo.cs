@@ -14,7 +14,6 @@ namespace haliYikama
 {
     public partial class gelirGiderTablo : Form
     {
-
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
         public gelirGiderTablo()
@@ -38,22 +37,24 @@ namespace haliYikama
 
         private void filtreComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (filtreComboBox.SelectedIndex == 0) tarihAzalan();
-            else if (filtreComboBox.SelectedIndex == 1) tarihArtan();
-            else if (filtreComboBox.SelectedIndex == 2) fiyatAzalan();
-            else if (filtreComboBox.SelectedIndex == 3) fiyatArtan();
-            else if (filtreComboBox.SelectedIndex == 4) gelirGoster();
-            else if (filtreComboBox.SelectedIndex == 5) giderGoster();
+            if (filtreComboBox.SelectedIndex == 0) secilenTarih();
+            else if (filtreComboBox.SelectedIndex == 1) tarihAzalan();
+            else if (filtreComboBox.SelectedIndex == 2) tarihArtan();
+            else if (filtreComboBox.SelectedIndex == 3) fiyatAzalan();
+            else if (filtreComboBox.SelectedIndex == 4) fiyatArtan();
+            else if (filtreComboBox.SelectedIndex == 5) gelirGoster();
+            else if (filtreComboBox.SelectedIndex == 6) giderGoster();
             else goster();
         }
 
-        private void silButton_Click(object sender, EventArgs e) 
+        private void silButton_Click(object sender, EventArgs e)
         {
             sil();
         }
 
         void yukle()
         {
+            filtreComboBox.Items.Add("Seçilen Tarihe Göre");
             filtreComboBox.Items.Add("Tarih Azalan");
             filtreComboBox.Items.Add("Tarih Artan");
             filtreComboBox.Items.Add("Fiyat Azalan");
@@ -106,6 +107,25 @@ namespace haliYikama
         {
             string komut = "SELECT * FROM gelirGiderTakip";
             OleDbCommand cmd = new OleDbCommand(komut, connect);
+
+            connect.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            connect.Close();
+
+            gelirGiderDataGridView.DataSource = dt;
+            gelirGiderDataGridView.Columns["Kimlik"].Visible = false;
+        }
+
+        void secilenTarih()
+        {
+
+            string tarih = tarihDateTimePicker.Value.ToString("yyyy-MM-dd");
+
+            string komut = "SELECT * FROM gelirGiderTakip WHERE tarih = ?";
+            OleDbCommand cmd = new OleDbCommand(komut, connect);
+            cmd.Parameters.AddWithValue("?", tarihDateTimePicker.Value.Date);
 
             connect.Open();
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
@@ -206,6 +226,11 @@ namespace haliYikama
 
             gelirGiderDataGridView.DataSource = dt;
             gelirGiderDataGridView.Columns["Kimlik"].Visible = false;
+        }
+
+        private void tarihDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (filtreComboBox.SelectedIndex == 0) secilenTarih();
         }
     }
 }

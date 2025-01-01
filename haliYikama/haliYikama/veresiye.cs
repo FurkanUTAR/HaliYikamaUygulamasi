@@ -87,7 +87,7 @@ namespace haliYikama
                     if (result == DialogResult.Yes)
                     {
                         string komutSiparis = "UPDATE siparisler SET" +
-                        "        siparisDurum='Tamamlandi'," +
+                        "        siparisDurum='Tamamlandı'," +
                         "        veresiyeTutar=0" +
                         "        WHERE siparisNo=" + siparisNo;
 
@@ -143,7 +143,7 @@ namespace haliYikama
                     else
                     {
                         string komutGuncelle = "UPDATE siparisler SET " +
-                        "        siparisDurum='Tamamlandi'" +
+                        "        siparisDurum='Tamamlandı'" +
                         "        WHERE siparisNo=" + siparisNo;
 
                         string komutOdeme = "UPDATE odemeler SET " +

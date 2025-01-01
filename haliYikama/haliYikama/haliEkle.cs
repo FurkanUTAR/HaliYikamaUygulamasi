@@ -48,10 +48,7 @@ namespace haliYikama
             urunComboBox.Items.Add("Yorgan(Tek)");
             urunComboBox.Items.Add("Yorgan(Çift)");
 
-            for (int i = 1; i < 1000; i++)
-            {
-                adetComboBox.Items.Add(i);
-            }
+            for (int i = 1; i < 1000; i++) adetComboBox.Items.Add(i);
         }
 
         void siparisEkle()
@@ -67,6 +64,7 @@ namespace haliYikama
                 double ipek = 0; double storPerde = 0; double overlok = 0; double yorganTek = 0; double yorganCift = 0;
 
                 string komut = "SELECT * FROM haliFiyat WHERE Kimlik=11";
+
                 connect.Open();
 
                 OleDbCommand command = new OleDbCommand(komut, connect);
@@ -109,6 +107,7 @@ namespace haliYikama
                 {
                     string komutEkle = "INSERT INTO haliBilgi(siparisNo, haliCins, haliAdet, haliBoyut, haliFiyat) " +
                     "VALUES (" + siparisNo + ", '" + "Makine" + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ")";
+
                     connect.Open();
 
                     OleDbCommand cmd = new OleDbCommand(komutEkle, connect);
@@ -120,6 +119,7 @@ namespace haliYikama
                 {
                     string komutEkle = "INSERT INTO haliBilgi(siparisNo, haliCins, haliAdet, haliBoyut, haliFiyat) " +
                     "VALUES (" + siparisNo + ", '" + urunComboBox.Text + "', " + adet + ", " + (metreKare * adet) + ", " + fiyat + ")";
+
                     connect.Open();
 
                     OleDbCommand cmd = new OleDbCommand(komutEkle, connect);
@@ -130,14 +130,8 @@ namespace haliYikama
             }
             else
             {
-                if (metreKareTextBox.Enabled && string.IsNullOrWhiteSpace(metreKareTextBox.Text))
-                {
-                    MessageBox.Show("Lütfen 'm²' kısmını boş bırakmayınız!!!");
-                }
-                if (string.IsNullOrWhiteSpace(adetComboBox.Text))
-                {
-                    MessageBox.Show("Lütfen 'Adet' kısmını boş bırakmayınız!!!");
-                }
+                if (metreKareTextBox.Enabled && string.IsNullOrWhiteSpace(metreKareTextBox.Text)) MessageBox.Show("Lütfen 'm²' kısmını boş bırakmayınız!!!");
+                if (string.IsNullOrWhiteSpace(adetComboBox.Text)) MessageBox.Show("Lütfen 'Adet' kısmını boş bırakmayınız!!!");
             }
         }
     }

@@ -16,22 +16,11 @@ namespace haliYikama
     {
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
-        public string AdSoyad { get; set; }
-        public string TelNo { get; set; }
-        public string Adres { get; set; }
+        public string adSoyad { get; set; }
+        public string telNo { get; set; }
+        public string adres { get; set; }
         public int Kimlik { get; set; }
-
-        /*
-        return adSoyadLabel.Text;
-        adSoyadLabel.Text = value;
-
-        return telNoLabel.Text;
-        telNoLabel.Text = value; 
-
-        return adresLabel.Text; 
-        adresLabel.Text = value;
-        */
-
+        public string islem { get; set; }
 
         public siparisOlustur()
         {
@@ -40,11 +29,7 @@ namespace haliYikama
 
         private void siparisOlustur_Load(object sender, EventArgs e)
         {
-
             veriGuncelle();
-            //adSoyadLabel.Text = AdSoyad;
-            //telNoLabel.Text = TelNo;
-            //adresLabel.Text = Adres;
         }
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
@@ -57,17 +42,26 @@ namespace haliYikama
         private void musteriDuzenleButton_Click(object sender, EventArgs e)
         {
             musteriDuzenle musteriDuzenle = new musteriDuzenle();
-            musteriDuzenle.adSoyad = AdSoyad;
-            musteriDuzenle.telNo = TelNo;
-            musteriDuzenle.adres = Adres;
+            musteriDuzenle.adSoyad = adSoyad;
+            musteriDuzenle.telNo = telNo;
+            musteriDuzenle.adres = adres;
             musteriDuzenle.kimlik = Kimlik;
+            musteriDuzenle.islem = islem;
             musteriDuzenle.Show();
             this.Hide();
         }
 
         private void siparisOlusturButton_Click(object sender, EventArgs e)
         {
-            databaseSiparisOlustur();
+            DialogResult result = MessageBox.Show("Sipariş oluşturmak istediğinden emin misin?", "Sorgu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (result == DialogResult.Yes)
+            {
+                databaseSiparisOlustur();
+                musteriler musteriler = new musteriler();
+                musteriler.Show();
+                this.Hide();
+            }
         }
 
         private void musteriSilButton_Click(object sender, EventArgs e)
@@ -114,30 +108,57 @@ namespace haliYikama
             connect.Close();
         }
 
-
         void veriGuncelle()
         {
-            string komut = "SELECT * FROM musteriler WHERE Kimlik = " + Kimlik;
-
-            connect.Open();
-
-            OleDbCommand cmd = new OleDbCommand(komut, connect);
-            OleDbDataReader oku = cmd.ExecuteReader();
-
-            if (oku.Read())
+            if (islem=="musteri")
             {
-                adSoyadLabel.Text = oku.GetString(1).ToString();
-                telNoLabel.Text = oku.GetString(2).ToString();
-                adresLabel.Text = oku.GetString(3).ToString();
+                string komut = "SELECT * FROM musteriler WHERE Kimlik = " + Kimlik;
+
+                connect.Open();
+
+                OleDbCommand cmd = new OleDbCommand(komut, connect);
+                OleDbDataReader oku = cmd.ExecuteReader();
+
+                if (oku.Read())
+                {
+                    adSoyadLabel.Text = oku.GetString(1).ToString();
+                    telNoLabel.Text = oku.GetString(2).ToString();
+                    adresLabel.Text = oku.GetString(3).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Hata!!");
+                }
+
+                connect.Close();
+
+                siparisTarihiDateTimePicker.Value = DateTime.Now;
             }
             else
             {
-                MessageBox.Show("Hata!!");
-            }
+                string komut = "SELECT * FROM siparisler WHERE siparisNo = " + Kimlik;
 
-            connect.Close();
+                connect.Open();
+
+                OleDbCommand cmd = new OleDbCommand(komut, connect);
+                OleDbDataReader oku = cmd.ExecuteReader();
+
+                if (oku.Read())
+                {
+                    adSoyadLabel.Text = oku.GetString(1).ToString();
+                    telNoLabel.Text = oku.GetString(2).ToString();
+                    adresLabel.Text = oku.GetString(3).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Hata!!");
+                }
+
+                connect.Close();
+
+                siparisTarihiDateTimePicker.Value = DateTime.Now;
+            }
             
-            siparisTarihiDateTimePicker.Value = DateTime.Now;
         }
     }
 }

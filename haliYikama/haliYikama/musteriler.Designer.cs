@@ -140,6 +140,7 @@
             this.Controls.Add(this.musteriAdiRadioButton);
             this.Name = "musteriler";
             this.Text = "Müşteriler";
+            this.Load += new System.EventHandler(this.musteriler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.musteriEklePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.musteriDataGridView)).EndInit();

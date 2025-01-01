@@ -13,9 +13,7 @@ namespace haliYikama
 {
     public partial class girisEkrani : Form
     {
-
         OleDbConnection connect=new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
-
 
         public girisEkrani()
         {
@@ -64,10 +62,7 @@ namespace haliYikama
                 this.Hide();
                 anaSayfa.Show();
             }
-            else
-            {
-                MessageBox.Show("Hatalı Giriş Yaptınız");
-            }
+            else MessageBox.Show("Hatalı Giriş Yaptınız");
 
             kontrol.ExecuteNonQuery();
 
@@ -76,10 +71,6 @@ namespace haliYikama
             if (string.IsNullOrEmpty(firmaAdiTextBox.Text) || string.IsNullOrEmpty(kullaniciAdiTextBox.Text) || string.IsNullOrEmpty(parolaTextBox.Text))
             {
                 MessageBox.Show("Lütfen Boş Alan Bırakmayınız");
-            }
-            else
-            {
-
             }
         }
     }
