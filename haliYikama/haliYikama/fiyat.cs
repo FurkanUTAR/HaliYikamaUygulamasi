@@ -56,6 +56,7 @@ namespace haliYikama
                 plastikFiyatTextBox.Text = row["plastik"].ToString();
                 bambuFiyatTextBox.Text = row["bambu"].ToString();
                 yunFiyatTextBox.Text = row["yun"].ToString();
+                ispartaTextBox.Text = row["isparta"].ToString();
                 ipekFiyatTextBox.Text = row["ipek"].ToString();
                 storPerdeTextBox.Text = row["storPerde"].ToString();
                 overlokFiyatTextBox.Text = row["overlok"].ToString();
@@ -77,6 +78,7 @@ namespace haliYikama
                              "plastik=" + plastikFiyatTextBox.Text + ", " +
                              "bambu=" + bambuFiyatTextBox.Text + ", " +
                              "yun=" + yunFiyatTextBox.Text + ", " +
+                             "isparta=" + ispartaTextBox.Text + ", " +
                              "ipek=" + ipekFiyatTextBox.Text + ", " +
                              "storPerde=" + storPerdeTextBox.Text + ", " +
                              "overlok=" + overlokFiyatTextBox.Text + ", " +
@@ -87,6 +89,8 @@ namespace haliYikama
 
                 OleDbCommand kaydet = new OleDbCommand(komut, connect);
                 kaydet.ExecuteNonQuery();
+
+                MessageBox.Show("Fiyatlar Güncellendi!!");
 
                 connect.Close();
             }

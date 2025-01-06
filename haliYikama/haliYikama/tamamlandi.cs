@@ -33,7 +33,7 @@ namespace haliYikama
 
         private void araTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) e.Handled = true;
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
         }
 
         private void telNoRadioButton_CheckedChanged(object sender, EventArgs e)

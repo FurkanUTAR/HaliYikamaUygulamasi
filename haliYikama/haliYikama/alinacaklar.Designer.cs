@@ -118,7 +118,6 @@
             // 
             // eklePictureBox
             // 
-            this.eklePictureBox.Image = global::haliYikama.Properties.Resources.addOrder;
             this.eklePictureBox.Location = new System.Drawing.Point(199, 44);
             this.eklePictureBox.Name = "eklePictureBox";
             this.eklePictureBox.Size = new System.Drawing.Size(23, 19);
@@ -166,7 +165,6 @@
             // 
             // indirimEklePictureBox
             // 
-            this.indirimEklePictureBox.Image = global::haliYikama.Properties.Resources.addOrder;
             this.indirimEklePictureBox.Location = new System.Drawing.Point(112, 84);
             this.indirimEklePictureBox.Name = "indirimEklePictureBox";
             this.indirimEklePictureBox.Size = new System.Drawing.Size(23, 19);

@@ -92,7 +92,6 @@
             // 
             // eklePictureBox
             // 
-            this.eklePictureBox.Image = global::haliYikama.Properties.Resources.addOrder;
             this.eklePictureBox.Location = new System.Drawing.Point(200, 54);
             this.eklePictureBox.Name = "eklePictureBox";
             this.eklePictureBox.Size = new System.Drawing.Size(23, 19);

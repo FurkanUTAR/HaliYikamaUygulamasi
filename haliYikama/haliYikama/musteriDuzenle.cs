@@ -40,19 +40,22 @@ namespace haliYikama
 
         private void duzenleButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Düzenlemek istediğinizden emin misiniz?", "Sorgu", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (!string.IsNullOrWhiteSpace(adSoyadTextBox.Text) && !string.IsNullOrWhiteSpace(telNoTextBox.Text) && !string.IsNullOrWhiteSpace(adresTextBox.Text))
+            {
+                DialogResult result = MessageBox.Show("Düzenlemek istediğinizden emin misiniz?", "Sorgu", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-            if (result == DialogResult.Yes) guncelle();
+                if (result == DialogResult.Yes) guncelle();
+            }
+            else MessageBox.Show("Boş alan bırakmayınız");
         }
 
         void guncelle()
         {
-
             if (islem == "musteri")
             {
                 if (!string.IsNullOrWhiteSpace(adSoyadTextBox.Text) && !string.IsNullOrWhiteSpace(telNoTextBox.Text) && !string.IsNullOrWhiteSpace(adresTextBox.Text))
                 {
-                    string komut = "UPDATE musteriler SET adiSoyadi='" + adSoyadTextBox.Text + "', telNo='" + telNoTextBox.Text + "', adres='" + adresTextBox.Text + "' WHERE Kimlik=" + kimlik;
+                    string komut = "UPDATE musteriler SET adSoyad = '" + adSoyadTextBox.Text + "', telNo = '" + telNoTextBox.Text + "', adres = '" + adresTextBox.Text + "' WHERE Kimlik=" + kimlik;
 
                     connect.Open();
 
@@ -60,18 +63,22 @@ namespace haliYikama
                     cmd.ExecuteNonQuery();
 
                     connect.Close();
-                    geriDon();
+
+                    siparisOlustur siparisOlustur = new siparisOlustur();
+                    siparisOlustur.Kimlik = kimlik;
+                    siparisOlustur.islem = islem;
+                    siparisOlustur.ShowDialog();
+                    this.Hide();
+
+                    //geriDon();
                 }
-                else
-                {
-                    MessageBox.Show("Boş alan bırakmayınız");
-                }
+                else MessageBox.Show("Boş alan bırakmayınız");
             }
             else
             {
                 if (!string.IsNullOrWhiteSpace(adSoyadTextBox.Text) && !string.IsNullOrWhiteSpace(telNoTextBox.Text) && !string.IsNullOrWhiteSpace(adresTextBox.Text))
                 {
-                    string komut = "UPDATE siparisler SET adiSoyadi='" + adSoyadTextBox.Text + "', telNo='" + telNoTextBox.Text + "', adres='" + adresTextBox.Text + "' WHERE siparisNo=" + kimlik;
+                    string komut = "UPDATE siparisler SET adSoyad = '" + adSoyadTextBox.Text + "', telNo = '" + telNoTextBox.Text + "', adres = '" + adresTextBox.Text + "' WHERE siparisNo=" + kimlik;
 
                     connect.Open();
 
@@ -79,14 +86,17 @@ namespace haliYikama
                     cmd.ExecuteNonQuery();
 
                     connect.Close();
-                    geriDon();
-                }
-                else
-                {
-                    MessageBox.Show("Boş alan bırakmayınız");
-                }
-            }
 
+                    siparisOlustur siparisOlustur = new siparisOlustur();
+                    siparisOlustur.Kimlik = kimlik;
+                    siparisOlustur.islem = islem;
+                    siparisOlustur.ShowDialog();
+                    this.Hide();
+
+                    //geriDon();
+                }
+                else MessageBox.Show("Boş alan bırakmayınız");
+            }
         }
 
         void geriDon()
@@ -96,7 +106,8 @@ namespace haliYikama
             siparisOlustur.telNo = telNo;
             siparisOlustur.adres = adres;
             siparisOlustur.Kimlik = kimlik;
-            siparisOlustur.Show();
+            siparisOlustur.islem = islem;
+            siparisOlustur.ShowDialog();
             this.Hide();
         }
     }

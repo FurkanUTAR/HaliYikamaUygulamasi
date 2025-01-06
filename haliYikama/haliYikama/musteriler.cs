@@ -22,7 +22,9 @@ namespace haliYikama
 
         private void musteriler_Load(object sender, EventArgs e)
         {
+            araTextBox.KeyPress -= araTextBox_KeyPress;
             butunMusterileriGoster();
+            yukle();
         }
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace haliYikama
         private void musteriEklePictureBox_Click(object sender, EventArgs e)
         {
             musteriEkle musteriEkle = new musteriEkle();
-            musteriEkle.Show();
+            musteriEkle.ShowDialog();
             this.Hide();
         }
 
@@ -43,49 +45,68 @@ namespace haliYikama
         {
             if (siparisNoRadioButton.Checked)
             {
-                if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
+                try
                 {
-                    DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex];
-                    int siparisNo = int.Parse(row.Cells["siparisnO"].Value.ToString());
-                    string adSoyad = row.Cells["adiSoyadi"].Value.ToString();
-                    string telNo = row.Cells["telNo"].Value.ToString();
-                    string adres = row.Cells["adres"].Value.ToString();
+                    if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
+                    {
+                        DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex];
+                        int siparisNo = int.Parse(row.Cells["siparisNo"].Value.ToString());
+                        string adSoyad = row.Cells["adSoyad"].Value.ToString();
+                        string telNo = row.Cells["telNo"].Value.ToString();
+                        string adres = row.Cells["adres"].Value.ToString();
 
-                    siparisOlustur siparisForm = new siparisOlustur();
-                    siparisForm.Kimlik = siparisNo;
-                    siparisForm.adSoyad = adSoyad;
-                    siparisForm.telNo = telNo;
-                    siparisForm.adres = adres;
-                    siparisForm.islem =  "siparis";
-                    siparisForm.Show();
-                    this.Hide();
+                        siparisOlustur siparisOlustur = new siparisOlustur();
+                        siparisOlustur.Kimlik = siparisNo;
+                        siparisOlustur.adSoyad = adSoyad;
+                        siparisOlustur.telNo = telNo;
+                        siparisOlustur.adres = adres;
+                        siparisOlustur.islem = "siparis";
+                        siparisOlustur.ShowDialog();
+                        this.Hide();
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
+                try
                 {
-                    DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex];
-                    int kimlik = int.Parse(row.Cells["Kimlik"].Value.ToString());
-                    string adSoyad = row.Cells["adiSoyadi"].Value.ToString();
-                    string telNo = row.Cells["telNo"].Value.ToString();
-                    string adres = row.Cells["adres"].Value.ToString();
+                    if (e.RowIndex >= 0) // Tıkladığın satırın geçerli bir satır olduğundan emin ol
+                    {
+                        DataGridViewRow row = musteriDataGridView.Rows[e.RowIndex];
+                        int kimlik = int.Parse(row.Cells["Kimlik"].Value.ToString());
+                        string adSoyad = row.Cells["adSoyad"].Value.ToString();
+                        string telNo = row.Cells["telNo"].Value.ToString();
+                        string adres = row.Cells["adres"].Value.ToString();
 
-                    siparisOlustur siparisForm = new siparisOlustur();
-                    siparisForm.Kimlik = kimlik;
-                    siparisForm.adSoyad = adSoyad;
-                    siparisForm.telNo = telNo;
-                    siparisForm.adres = adres;
-                    siparisForm.islem = "musteri";
-                    siparisForm.Show();
-                    this.Hide();
+                        siparisOlustur siparisOlustur = new siparisOlustur();
+                        siparisOlustur.Kimlik = kimlik;
+                        siparisOlustur.adSoyad = adSoyad;
+                        siparisOlustur.telNo = telNo;
+                        siparisOlustur.adres = adres;
+                        siparisOlustur.islem = "musteri";
+                        siparisOlustur.ShowDialog();
+                        this.Hide();
+                    }
                 }
-            } 
+                catch (Exception)
+                {
+                    MessageBox.Show("Lütfen geçerli bir kayıt seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void musteriAdiRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (musteriAdiRadioButton.Checked) araTextBox.KeyPress -= araTextBox_KeyPress;
+        }
+
+        private void adresRadiobutton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (adresRadiobutton.Checked) araTextBox.KeyPress -= araTextBox_KeyPress;
         }
 
         private void telNoRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -100,6 +121,16 @@ namespace haliYikama
             else araTextBox.KeyPress -= araTextBox_KeyPress;
         }
 
+        private void araButton_MouseEnter(object sender, EventArgs e)
+        {
+            araButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
+        private void araButton_MouseLeave(object sender, EventArgs e)
+        {
+            araButton.BackColor = Color.FromArgb(190, 210, 225);
+        }
+
         private void araButton_Click(object sender, EventArgs e)
         {
             if (musteriAdiRadioButton.Checked)
@@ -107,6 +138,11 @@ namespace haliYikama
                 if (string.IsNullOrWhiteSpace(araTextBox.Text)) butunMusterileriGoster();
                 else musteriAdiAra();
 
+            }
+            else if (adresRadiobutton.Checked)
+            {
+                if (string.IsNullOrWhiteSpace(araTextBox.Text)) butunMusterileriGoster();
+                else adresAra();
             }
             else if (telNoRadioButton.Checked)
             {
@@ -144,7 +180,28 @@ namespace haliYikama
         void musteriAdiAra()
         {
             string arama = "%" + araTextBox.Text + "%";
-            string komut = "SELECT * FROM musteriler WHERE adiSoyadi LIKE '" + arama + "'";
+            string komut = "SELECT * FROM musteriler WHERE adSoyad LIKE '" + arama + "'";
+
+            connect.Open();
+
+            OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            if (dt.Rows.Count == 0) MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
+            else
+            {
+                musteriDataGridView.DataSource = dt;
+                musteriDataGridView.Columns["Kimlik"].Visible = false;
+            }
+
+            connect.Close();
+        }
+
+        void adresAra()
+        {
+            string arama = "%" + araTextBox.Text + "%";
+            string komut = "SELECT * FROM musteriler WHERE adres LIKE '" + arama + "'";
 
             connect.Open();
 
@@ -153,10 +210,7 @@ namespace haliYikama
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            if (dt.Rows.Count == 0)
-            {
-                MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
-            }
+            if (dt.Rows.Count == 0) MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
             else
             {
                 musteriDataGridView.DataSource = dt;
@@ -177,10 +231,7 @@ namespace haliYikama
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            if (dt.Rows.Count == 0)
-            {
-                MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
-            }
+            if (dt.Rows.Count == 0) MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
             else
             {
                 musteriDataGridView.DataSource = dt;
@@ -200,16 +251,12 @@ namespace haliYikama
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            if (dt.Rows.Count == 0)
-            {
-                MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
-            }
-            else
-            {
-                musteriDataGridView.DataSource = dt;
-            }
+            if (dt.Rows.Count == 0) MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
+            else musteriDataGridView.DataSource = dt;
 
             connect.Close();
+
+            yukle();
         }
 
         void siparisNoAra()
@@ -223,16 +270,43 @@ namespace haliYikama
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            if (dt.Rows.Count == 0)
-            {
-                MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
-            }
-            else
-            {
-                musteriDataGridView.DataSource = dt;
-            }
+            if (dt.Rows.Count == 0) MessageBox.Show("Aradığını kriterlere uygun müşteri bulunamadı!!");
+            else musteriDataGridView.DataSource = dt;
 
             connect.Close();
         }
+
+        void yukle()
+        {
+            if (musteriDataGridView != null && musteriDataGridView.Columns.Count > 0)
+            {
+                if (musteriDataGridView.Columns.Contains("adSoyad")) musteriDataGridView.Columns["adSoyad"].HeaderText = "Adı Soyadı";
+                if (musteriDataGridView.Columns.Contains("telNo")) musteriDataGridView.Columns["telNo"].HeaderText = "Telefon Numarası";
+                if (musteriDataGridView.Columns.Contains("adres")) musteriDataGridView.Columns["adres"].HeaderText = "Adresi";
+                if (musteriDataGridView.Columns.Contains("eklemeTarih")) musteriDataGridView.Columns["eklemeTarih"].HeaderText = "Kayıt Olma Tarihi";
+
+                if (musteriDataGridView.Columns.Contains("siparisNo")) musteriDataGridView.Columns["siparisNo"].HeaderText = "Sipariş Numarası";
+                if (musteriDataGridView.Columns.Contains("siparisTarih")) musteriDataGridView.Columns["siparisTarih"].HeaderText = "Alınma Tarihi";
+                if (musteriDataGridView.Columns.Contains("siparisNotu")) musteriDataGridView.Columns["siparisNotu"].HeaderText = "Sipariş Notu";
+                if (musteriDataGridView.Columns.Contains("siparisDurum")) musteriDataGridView.Columns["siparisDurum"].HeaderText = "Sipariş Durumu";
+                if (musteriDataGridView.Columns.Contains("teslimTarih")) musteriDataGridView.Columns["teslimTarih"].HeaderText = "Teslim Edilme Tarihi";
+                if (musteriDataGridView.Columns.Contains("haliAdet")) musteriDataGridView.Columns["haliAdet"].HeaderText = "Halı Adeti";
+                if (musteriDataGridView.Columns.Contains("siparisTutar")) musteriDataGridView.Columns["siparisTutar"].HeaderText = "Sipariş Tutarı";
+                if (musteriDataGridView.Columns.Contains("veresiyeTutar")) musteriDataGridView.Columns["veresiyeTutar"].Visible = false;
+                if (musteriDataGridView.Columns.Contains("indirimMiktar")) musteriDataGridView.Columns["indirimMiktar"].HeaderText = "İndirim Miktarı";
+            }
+            else MessageBox.Show("DataGridView başlatılmadı veya sütunları yok.");
+
+            musteriDataGridView.BackgroundColor = Color.FromArgb(240, 245, 250);
+            musteriDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 245, 250);
+            musteriDataGridView.EnableHeadersVisualStyles = false;
+            musteriDataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 245, 250);
+            musteriDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 235, 245);
+            musteriDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            musteriDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            musteriDataGridView.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+        }
+
+    
     }
 }

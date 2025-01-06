@@ -37,13 +37,33 @@ namespace haliYikama
         private void label5_Click(object sender, EventArgs e)
         {
             kayitEkrani kayitOl = new kayitEkrani();
+            kayitOl.Show(); 
             this.Hide();
-            kayitOl.Show();
         }
 
         private void girisYapButton_Click(object sender, EventArgs e)
         {
             kontrol();
+        }
+
+        private void girisYapButton_MouseEnter(object sender, EventArgs e)
+        {
+            girisYapButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
+        private void girisYapButton_MouseLeave(object sender, EventArgs e)
+        {
+            girisYapButton.BackColor = Color.FromArgb(190, 210, 225);
+        }
+
+        private void kayitOlLabel_MouseEnter(object sender, EventArgs e)
+        {
+            kayitOlLabel.ForeColor = Color.FromArgb(170, 170, 195);
+        }
+
+        private void kayitOlLabel_MouseLeave(object sender, EventArgs e)
+        {
+            kayitOlLabel.ForeColor = Color.FromArgb(34, 34, 34);
         }
 
         void kontrol()
@@ -52,7 +72,7 @@ namespace haliYikama
 
             connect.Open();
 
-            OleDbCommand kontrol = new OleDbCommand(komut,connect);
+            OleDbCommand kontrol = new OleDbCommand(komut, connect);
 
             int deger = (int)kontrol.ExecuteScalar();
 

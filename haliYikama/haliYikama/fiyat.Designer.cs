@@ -64,6 +64,9 @@
             this.label22 = new System.Windows.Forms.Label();
             this.storPerdeTextBox = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.ispartaTextBox = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,7 +236,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label13.Location = new System.Drawing.Point(192, 214);
+            this.label13.Location = new System.Drawing.Point(192, 240);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(25, 17);
             this.label13.TabIndex = 21;
@@ -241,7 +244,7 @@
             // 
             // ipekFiyatTextBox
             // 
-            this.ipekFiyatTextBox.Location = new System.Drawing.Point(115, 213);
+            this.ipekFiyatTextBox.Location = new System.Drawing.Point(115, 239);
             this.ipekFiyatTextBox.Name = "ipekFiyatTextBox";
             this.ipekFiyatTextBox.Size = new System.Drawing.Size(71, 20);
             this.ipekFiyatTextBox.TabIndex = 8;
@@ -250,7 +253,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.Location = new System.Drawing.Point(17, 214);
+            this.label14.Location = new System.Drawing.Point(17, 240);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(34, 17);
             this.label14.TabIndex = 19;
@@ -260,7 +263,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label15.Location = new System.Drawing.Point(192, 266);
+            this.label15.Location = new System.Drawing.Point(192, 292);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(25, 17);
             this.label15.TabIndex = 24;
@@ -268,7 +271,7 @@
             // 
             // overlokFiyatTextBox
             // 
-            this.overlokFiyatTextBox.Location = new System.Drawing.Point(115, 265);
+            this.overlokFiyatTextBox.Location = new System.Drawing.Point(115, 291);
             this.overlokFiyatTextBox.Name = "overlokFiyatTextBox";
             this.overlokFiyatTextBox.Size = new System.Drawing.Size(71, 20);
             this.overlokFiyatTextBox.TabIndex = 10;
@@ -277,7 +280,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label16.Location = new System.Drawing.Point(17, 292);
+            this.label16.Location = new System.Drawing.Point(17, 318);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(92, 17);
             this.label16.TabIndex = 22;
@@ -287,7 +290,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label17.Location = new System.Drawing.Point(192, 292);
+            this.label17.Location = new System.Drawing.Point(192, 318);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(25, 17);
             this.label17.TabIndex = 27;
@@ -295,7 +298,7 @@
             // 
             // yorganTekFiyatTextBox
             // 
-            this.yorganTekFiyatTextBox.Location = new System.Drawing.Point(115, 291);
+            this.yorganTekFiyatTextBox.Location = new System.Drawing.Point(115, 317);
             this.yorganTekFiyatTextBox.Name = "yorganTekFiyatTextBox";
             this.yorganTekFiyatTextBox.Size = new System.Drawing.Size(71, 20);
             this.yorganTekFiyatTextBox.TabIndex = 11;
@@ -304,7 +307,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label18.Location = new System.Drawing.Point(17, 318);
+            this.label18.Location = new System.Drawing.Point(17, 344);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(88, 17);
             this.label18.TabIndex = 25;
@@ -314,7 +317,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label19.Location = new System.Drawing.Point(192, 318);
+            this.label19.Location = new System.Drawing.Point(192, 344);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(25, 17);
             this.label19.TabIndex = 30;
@@ -322,7 +325,7 @@
             // 
             // yorganCiftFiyatTextBox
             // 
-            this.yorganCiftFiyatTextBox.Location = new System.Drawing.Point(115, 317);
+            this.yorganCiftFiyatTextBox.Location = new System.Drawing.Point(115, 343);
             this.yorganCiftFiyatTextBox.Name = "yorganCiftFiyatTextBox";
             this.yorganCiftFiyatTextBox.Size = new System.Drawing.Size(71, 20);
             this.yorganCiftFiyatTextBox.TabIndex = 12;
@@ -331,7 +334,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label20.Location = new System.Drawing.Point(17, 266);
+            this.label20.Location = new System.Drawing.Point(17, 292);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(57, 17);
             this.label20.TabIndex = 28;
@@ -340,7 +343,7 @@
             // kaydetButton
             // 
             this.kaydetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kaydetButton.Location = new System.Drawing.Point(19, 369);
+            this.kaydetButton.Location = new System.Drawing.Point(20, 395);
             this.kaydetButton.Name = "kaydetButton";
             this.kaydetButton.Size = new System.Drawing.Size(197, 50);
             this.kaydetButton.TabIndex = 13;
@@ -373,7 +376,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label22.Location = new System.Drawing.Point(192, 240);
+            this.label22.Location = new System.Drawing.Point(192, 266);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(25, 17);
             this.label22.TabIndex = 37;
@@ -381,7 +384,7 @@
             // 
             // storPerdeTextBox
             // 
-            this.storPerdeTextBox.Location = new System.Drawing.Point(115, 239);
+            this.storPerdeTextBox.Location = new System.Drawing.Point(115, 265);
             this.storPerdeTextBox.Name = "storPerdeTextBox";
             this.storPerdeTextBox.Size = new System.Drawing.Size(71, 20);
             this.storPerdeTextBox.TabIndex = 9;
@@ -390,17 +393,47 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label23.Location = new System.Drawing.Point(17, 240);
+            this.label23.Location = new System.Drawing.Point(17, 266);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(76, 17);
             this.label23.TabIndex = 35;
             this.label23.Text = "Stor Perde";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label24.Location = new System.Drawing.Point(192, 214);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(25, 17);
+            this.label24.TabIndex = 40;
+            this.label24.Text = "TL";
+            // 
+            // ispartaTextBox
+            // 
+            this.ispartaTextBox.Location = new System.Drawing.Point(115, 213);
+            this.ispartaTextBox.Name = "ispartaTextBox";
+            this.ispartaTextBox.Size = new System.Drawing.Size(71, 20);
+            this.ispartaTextBox.TabIndex = 8;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label25.Location = new System.Drawing.Point(17, 214);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(51, 17);
+            this.label25.TabIndex = 39;
+            this.label25.Text = "Isparta";
             // 
             // fiyat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 476);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.ispartaTextBox);
+            this.Controls.Add(this.label25);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.storPerdeTextBox);
             this.Controls.Add(this.label23);
@@ -483,5 +516,8 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox storPerdeTextBox;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox ispartaTextBox;
+        private System.Windows.Forms.Label label25;
     }
 }

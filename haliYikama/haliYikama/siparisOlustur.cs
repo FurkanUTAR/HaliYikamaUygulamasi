@@ -47,7 +47,7 @@ namespace haliYikama
             musteriDuzenle.adres = adres;
             musteriDuzenle.kimlik = Kimlik;
             musteriDuzenle.islem = islem;
-            musteriDuzenle.Show();
+            musteriDuzenle.ShowDialog();
             this.Hide();
         }
 
@@ -79,15 +79,15 @@ namespace haliYikama
 
         void databaseSiparisOlustur()
         {
-            string adiSoyadi = adSoyadLabel.Text;
+            string adSoyad = adSoyadLabel.Text;
             string telNo = telNoLabel.Text;
             string adres = adresLabel.Text;
             string siparisTarihi = siparisTarihiDateTimePicker.Value.ToString("yyyy-MM-dd");
             string siparisNotu = siparisNotuTextBox.Text;
             string siparisDurum = "Alınacak";
 
-            string komut = $"INSERT INTO siparisler (adiSoyadi, telNo, adres, siparisTarih, siparisNotu, siparisDurum) "
-                         + $"VALUES ('{adiSoyadi}', '{telNo}', '{adres}', '{siparisTarihi}', '{siparisNotu}', '{siparisDurum}')";
+            string komut = $"INSERT INTO siparisler (adSoyad, telNo, adres, siparisTarih, siparisNotu, siparisDurum) "
+                         + $"VALUES ('{adSoyad}', '{telNo}', '{adres}', '{siparisTarihi}', '{siparisNotu}', '{siparisDurum}')";
             connect.Open();
 
             OleDbCommand cmd = new OleDbCommand(komut, connect);
@@ -110,7 +110,7 @@ namespace haliYikama
 
         void veriGuncelle()
         {
-            if (islem=="musteri")
+            if (islem == "musteri")
             {
                 string komut = "SELECT * FROM musteriler WHERE Kimlik = " + Kimlik;
 
@@ -125,12 +125,13 @@ namespace haliYikama
                     telNoLabel.Text = oku.GetString(2).ToString();
                     adresLabel.Text = oku.GetString(3).ToString();
                 }
-                else
-                {
-                    MessageBox.Show("Hata!!");
-                }
+                else MessageBox.Show("Hata!!");
 
                 connect.Close();
+
+                //adSoyadLabel.Text = adSoyad;
+                //telNoLabel.Text = telNo;
+                //adresLabel.Text = adres;
 
                 siparisTarihiDateTimePicker.Value = DateTime.Now;
             }
@@ -149,16 +150,16 @@ namespace haliYikama
                     telNoLabel.Text = oku.GetString(2).ToString();
                     adresLabel.Text = oku.GetString(3).ToString();
                 }
-                else
-                {
-                    MessageBox.Show("Hata!!");
-                }
+                else MessageBox.Show("Hata!!");
 
                 connect.Close();
 
+                //adSoyadLabel.Text = adSoyad;
+                //telNoLabel.Text = telNo;
+                //adresLabel.Text = adres;
+
                 siparisTarihiDateTimePicker.Value = DateTime.Now;
             }
-            
         }
     }
 }

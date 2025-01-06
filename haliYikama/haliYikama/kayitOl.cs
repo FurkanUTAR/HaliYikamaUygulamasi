@@ -68,6 +68,26 @@ namespace haliYikama
             telNoTextBox.SelectionLength = 0;
         }
 
+        private void kayitOlButton_MouseEnter(object sender, EventArgs e)
+        {
+            kayitOlButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
+        private void kayitOlButton_MouseLeave(object sender, EventArgs e)
+        {
+            kayitOlButton.BackColor = Color.FromArgb(190, 210, 225);
+        }
+
+        private void girisYapLabel_MouseEnter(object sender, EventArgs e)
+        {
+            girisYapLabel.ForeColor = Color.FromArgb(170, 170, 195);
+        }
+
+        private void girisYapLabel_MouseLeave(object sender, EventArgs e)
+        {
+            girisYapLabel.ForeColor = Color.FromArgb(34, 34, 34);
+        }
+
         void ekle()
         {
             string komut = "INSERT INTO kullanicilar (firmaAdi,kullaniciAdi,parola,ePosta,telNo) VALUES ('" + firmaAdiTextBox.Text + "','" + kullaniciAdiTextBox.Text + "','" + parolaTextBox.Text + "','" + ePostaTextBox.Text + "','" + telNoTextBox.Text + "') ";
