@@ -43,6 +43,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.alinacaklarButton = new System.Windows.Forms.Button();
             this.anaSayfaPanel = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.siparisDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -51,6 +53,7 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.anaSayfaPanel.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // siparisDataGridView
@@ -78,6 +81,7 @@
             this.siparisDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.siparisDataGridView.Location = new System.Drawing.Point(10, 12);
             this.siparisDataGridView.Name = "siparisDataGridView";
+            this.siparisDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -88,7 +92,7 @@
             this.siparisDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.siparisDataGridView.RowHeadersVisible = false;
             this.siparisDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.siparisDataGridView.Size = new System.Drawing.Size(755, 560);
+            this.siparisDataGridView.Size = new System.Drawing.Size(755, 521);
             this.siparisDataGridView.TabIndex = 49;
             this.siparisDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.alinacakDataGridView_CellDoubleClick);
             // 
@@ -110,11 +114,9 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.geriDonPictureBox);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(205, 584);
+            this.panel1.Size = new System.Drawing.Size(205, 545);
             this.panel1.TabIndex = 52;
             // 
             // panel5
@@ -205,21 +207,43 @@
             // 
             this.anaSayfaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.anaSayfaPanel.Controls.Add(this.siparisDataGridView);
-            this.anaSayfaPanel.Location = new System.Drawing.Point(205, 0);
+            this.anaSayfaPanel.Location = new System.Drawing.Point(205, 39);
             this.anaSayfaPanel.Name = "anaSayfaPanel";
-            this.anaSayfaPanel.Size = new System.Drawing.Size(777, 584);
+            this.anaSayfaPanel.Size = new System.Drawing.Size(777, 545);
             this.anaSayfaPanel.TabIndex = 53;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.geriDonPictureBox);
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(982, 41);
+            this.panel6.TabIndex = 54;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label1.Location = new System.Drawing.Point(430, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 31);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Siparişler";
             // 
             // siparisler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 584);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.anaSayfaPanel);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "siparisler";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Siparişler";
             this.Load += new System.EventHandler(this.siparisler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.siparisDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
@@ -229,6 +253,8 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.anaSayfaPanel.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -246,5 +272,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button teslimatButton;
         private System.Windows.Forms.Panel anaSayfaPanel;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -114,7 +114,7 @@
             // 
             // musteriEkleButton
             // 
-            this.musteriEkleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.musteriEkleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.musteriEkleButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.musteriEkleButton.Location = new System.Drawing.Point(-5, -4);
             this.musteriEkleButton.Name = "musteriEkleButton";
@@ -123,6 +123,8 @@
             this.musteriEkleButton.Text = "Müşteri  Ekle";
             this.musteriEkleButton.UseVisualStyleBackColor = false;
             this.musteriEkleButton.Click += new System.EventHandler(this.musteriEkleButton_Click);
+            this.musteriEkleButton.MouseEnter += new System.EventHandler(this.musteriEkleButton_MouseEnter);
+            this.musteriEkleButton.MouseLeave += new System.EventHandler(this.musteriEkleButton_MouseLeave);
             // 
             // panel1
             // 

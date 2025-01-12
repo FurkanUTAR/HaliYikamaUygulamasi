@@ -32,6 +32,16 @@ namespace haliYikama
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
         }
 
+        private void musteriEkleButton_MouseEnter(object sender, EventArgs e)
+        {
+            musteriEkleButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void musteriEkleButton_MouseLeave(object sender, EventArgs e)
+        {
+            musteriEkleButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
         private void musteriEkleButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(adSoyadTextBox.Text) && !string.IsNullOrWhiteSpace(telNoTextBox.Text) && !string.IsNullOrWhiteSpace(adresTextBox.Text))

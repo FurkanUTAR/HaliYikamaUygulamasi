@@ -22,23 +22,39 @@ namespace haliYikama
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
         {
-            anaSayfa anaSayfa = new anaSayfa();
-            anaSayfa.Show();
             this.Hide();
         }
 
         private void gelirGiderEkleButton_Click(object sender, EventArgs e)
         {
             gelirGiderEkle gelirGiderEkle = new gelirGiderEkle();
-            gelirGiderEkle.Show();
-            this.Hide();
+            gelirGiderEkle.ShowDialog();
         }
 
         private void gelirGiderTablosuButton_Click(object sender, EventArgs e)
         {
             gelirGiderTablo gelirGiderTablo = new gelirGiderTablo();
-            gelirGiderTablo.Show();
-            this.Hide();
+            gelirGiderTablo.ShowDialog();
+        }
+
+        private void gelirGiderEkleButton_MouseEnter(object sender, EventArgs e)
+        {
+            gelirGiderEkleButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void gelirGiderTablosuButton_MouseEnter(object sender, EventArgs e)
+        {
+            gelirGiderTablosuButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void gelirGiderEkleButton_MouseLeave(object sender, EventArgs e)
+        {
+            gelirGiderEkleButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
+        private void gelirGiderTablosuButton_MouseLeave(object sender, EventArgs e)
+        {
+            gelirGiderTablosuButton.BackColor = Color.FromArgb(200, 220, 240);
         }
     }
 }

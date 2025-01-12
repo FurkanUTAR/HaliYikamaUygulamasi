@@ -39,6 +39,37 @@ namespace haliYikama
             this.Hide();
         }
 
+        private void siparisOlusturButton_MouseEnter(object sender, EventArgs e)
+        {
+            siparisOlusturButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void musteriDuzenleButton_MouseEnter(object sender, EventArgs e)
+        {
+            musteriDuzenleButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void musteriSilButton_MouseEnter(object sender, EventArgs e)
+        {
+            musteriSilButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+
+        private void siparisOlusturButton_MouseLeave(object sender, EventArgs e)
+        {
+            siparisOlusturButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
+        private void musteriDuzenleButton_MouseLeave(object sender, EventArgs e)
+        {
+            musteriDuzenleButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
+        private void musteriSilButton_MouseLeave(object sender, EventArgs e)
+        {
+            musteriSilButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
         private void musteriDuzenleButton_Click(object sender, EventArgs e)
         {
             musteriDuzenle musteriDuzenle = new musteriDuzenle();

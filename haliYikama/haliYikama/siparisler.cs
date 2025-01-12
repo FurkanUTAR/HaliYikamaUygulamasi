@@ -19,6 +19,8 @@ namespace haliYikama
     {
         OleDbConnection connect = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=haliYikama.mdb");
 
+        string islem;
+
         public siparisler()
         {
             InitializeComponent();
@@ -28,6 +30,8 @@ namespace haliYikama
         {
             hepsiGoster();
             yukle();
+
+            hepsiButton.BackColor = Color.FromArgb(150, 150, 180);
         }
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
@@ -39,42 +43,53 @@ namespace haliYikama
 
         private void alinacakDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            alinacakKontrol();
-        }
-
-        private void teslimatDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            teslimatKontrol();
-        }
-
-        private void veresiyeDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            veresiyeKontrol();
-        }
-
-        private void hepsiDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            hepsiKontrol();
+            if (islem=="alinacak") alinacakKontrol();
+            else if (islem=="teslimat") teslimatKontrol();
+            else if (islem=="veresiye") veresiyeKontrol();
+            else hepsiKontrol();
         }
 
         private void alinacaklarButton_Click(object sender, EventArgs e)
         {
             alinacakGoster();
+            islem = "alinacak";
+
+            alinacaklarButton.BackColor = Color.FromArgb(150, 150, 180);
+            teslimatButton.BackColor = Color.FromArgb(200, 200, 220);
+            veresiyeButton.BackColor = Color.FromArgb(200, 200, 220);
+            hepsiButton.BackColor = Color.FromArgb(200, 200, 220);
         }
 
         private void teslimatButton_Click(object sender, EventArgs e)
         {
             teslimatGoster();
+            islem = "teslimat";
+
+            teslimatButton.BackColor = Color.FromArgb(150, 150, 180);
+            alinacaklarButton.BackColor = Color.FromArgb(200, 200, 220);
+            veresiyeButton.BackColor = Color.FromArgb(200, 200, 220);
+            hepsiButton.BackColor = Color.FromArgb(200, 200, 220);
         }
 
         private void veresiyeButton_Click(object sender, EventArgs e)
         {
             veresiyeGoster();
+            islem = "veresiye";
+
+            veresiyeButton.BackColor = Color.FromArgb(150, 150, 180);
+            teslimatButton.BackColor = Color.FromArgb(200, 200, 220);
+            alinacaklarButton.BackColor = Color.FromArgb(200, 200, 220);
+            hepsiButton.BackColor = Color.FromArgb(200, 200, 220);
         }
 
         private void hepsiButton_Click(object sender, EventArgs e)
         {
             hepsiGoster();
+
+            hepsiButton.BackColor = Color.FromArgb(150, 150, 180);
+            teslimatButton.BackColor = Color.FromArgb(200, 200, 220);
+            veresiyeButton.BackColor = Color.FromArgb(200, 200, 220);
+            alinacaklarButton.BackColor = Color.FromArgb(200, 200, 220);
         }
 
         void alinacakGoster()
@@ -234,6 +249,7 @@ namespace haliYikama
 
                     if (durum == "Alınacak")
                     {
+                        islem = "alinacak";
                         alinacaklar alinacaklar = new alinacaklar();
                         alinacaklar.siparisNo = siparisNo;
                         alinacaklar.Show();
@@ -241,6 +257,7 @@ namespace haliYikama
                     }
                     else if (durum == "Teslimat")
                     {
+                        islem = "teslimat";
                         teslimEdilecekler teslimEdilecekler = new teslimEdilecekler();
                         teslimEdilecekler.siparisNo = siparisNo;
                         teslimEdilecekler.Show();
@@ -248,6 +265,7 @@ namespace haliYikama
                     }
                     else if (durum == "Veresiye")
                     {
+                        islem = "veresiye";
                         veresiye veresiye = new veresiye();
                         veresiye.siparisNo = siparisNo;
                         veresiye.Show();

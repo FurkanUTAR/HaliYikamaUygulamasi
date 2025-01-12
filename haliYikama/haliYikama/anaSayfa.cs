@@ -25,21 +25,25 @@ namespace haliYikama
             anaSayfaPanel.Visible = true;
             ayarlarPanel.Visible = false;
 
-            ayarlarPanel.Location=anaSayfaPanel.Location;
+
+            if (anaSayfaPanel.Visible) anaSayfaButton.BackColor = Color.FromArgb(150, 150, 180);
+            else anaSayfaButton.BackColor = Color.FromArgb(200, 200, 220);
+
+            ayarlarPanel.Location = anaSayfaPanel.Location;
         }
 
         private void fiyatButton_Click(object sender, EventArgs e)
         {
             fiyat fiyat = new fiyat();
             fiyat.Show();
-            this.Hide();
+           
         }
 
         private void mesajlarButton_Click(object sender, EventArgs e)
         {
             mesajlar mesajlar = new mesajlar();
-            mesajlar.Show();
-            this.Hide();
+            mesajlar.ShowDialog();
+            
         }
 
         private void musterilerButton_Click(object sender, EventArgs e)
@@ -66,15 +70,13 @@ namespace haliYikama
         private void gelirGiderButton_Click(object sender, EventArgs e)
         {
             gelirGiderTakip gelirGiderTakip = new gelirGiderTakip();
-            gelirGiderTakip.Show();
-            this.Hide();
+            gelirGiderTakip.ShowDialog();
         }
 
         private void ozetlerButton_Click(object sender, EventArgs e)
         {
             ozetler ozetler = new ozetler();
-            ozetler.Show();
-            this.Hide();
+            ozetler.ShowDialog();
         }
 
         private void islemdekilerButton_Click(object sender, EventArgs e)
@@ -95,124 +97,110 @@ namespace haliYikama
         {
             anaSayfaPanel.Visible = true;
             ayarlarPanel.Visible = false;
+
+            if (anaSayfaPanel.Visible) { anaSayfaButton.BackColor = Color.FromArgb(150, 150, 180); ayarlarButton.BackColor = Color.FromArgb(200, 200, 220); }
+            else anaSayfaButton.BackColor = Color.FromArgb(200, 200, 220);
         }
 
         private void ayarlarButton_Click(object sender, EventArgs e)
         {
             anaSayfaPanel.Visible = false;
             ayarlarPanel.Visible = true;
+
+            if (ayarlarPanel.Visible) { ayarlarButton.BackColor = Color.FromArgb(150, 150, 180); anaSayfaButton.BackColor = Color.FromArgb(200, 200, 220); }
+            else ayarlarPanel.BackColor = Color.FromArgb(200, 200, 220);
         }
 
-
-        private void anaSayfaButton_MouseEnter(object sender, EventArgs e)
-        {
-            anaSayfaButton.BackColor = Color.FromArgb(180, 180, 200);
-        }
-
-        private void ayarlarButton_MouseEnter(object sender, EventArgs e)
-        {
-            ayarlarButton.BackColor = Color.FromArgb(180, 180, 200);
-        }
 
         private void musterilerButton_MouseEnter(object sender, EventArgs e)
         {
-            musterilerButton.BackColor = Color.FromArgb(200, 220, 240);
+            musterilerButton.BackColor = Color.FromArgb(160, 190, 210);
         }
 
         private void siparislerButton_MouseEnter(object sender, EventArgs e)
         {
-            siparislerButton.BackColor = Color.FromArgb(200, 220, 240);
+            siparislerButton.BackColor = Color.FromArgb(160, 190, 210);
         }
 
         private void ozetlerButton_MouseEnter(object sender, EventArgs e)
         {
-            ozetlerButton.BackColor = Color.FromArgb(200, 220, 240);
+            ozetlerButton.BackColor = Color.FromArgb(160, 190, 210);
         }
 
         private void gelirGiderButton_MouseEnter(object sender, EventArgs e)
         {
-            gelirGiderButton.BackColor = Color.FromArgb(200, 220, 240);
+            gelirGiderButton.BackColor = Color.FromArgb(160, 190, 210);
         }
 
         private void islemdekilerButton_MouseEnter(object sender, EventArgs e)
         {
-            islemdekilerButton.BackColor = Color.FromArgb(200, 220, 240);
+            islemdekilerButton.BackColor = Color.FromArgb(160, 190, 210);
         }
 
         private void aramaGecmisiButton_MouseEnter(object sender, EventArgs e)
         {
-            aramaGecmisiButton.BackColor = Color.FromArgb(200, 220, 240);
+            aramaGecmisiButton.BackColor = Color.FromArgb(160, 190, 210);
         }
 
         private void tamamlandiButton_MouseEnter(object sender, EventArgs e)
         {
-            tamamlandiButton.BackColor = Color.FromArgb(200, 220, 240);
+            tamamlandiButton.BackColor = Color.FromArgb(160, 190, 210);
         }
 
         private void fiyatButton_MouseEnter(object sender, EventArgs e)
         {
-            fiyatButton.BackColor = Color.FromArgb(200, 220, 240);
+            fiyatButton.BackColor = Color.FromArgb(160, 190, 210);
         }
 
         private void mesajlarButton_MouseEnter(object sender, EventArgs e)
         {
-            mesajlarButton.BackColor = Color.FromArgb(200, 220, 240);
+            mesajlarButton.BackColor = Color.FromArgb(160, 190, 210);
         }
 
-
-        private void anaSayfaButton_MouseLeave(object sender, EventArgs e)
-        {
-            anaSayfaButton.BackColor = Color.FromArgb(200, 200, 220);
-        }
-
-        private void ayarlarButton_MouseLeave(object sender, EventArgs e)
-        {
-            ayarlarButton.BackColor = Color.FromArgb(200, 200, 220);
-        }
 
         private void musterilerButton_MouseLeave(object sender, EventArgs e)
         {
-            musterilerButton.BackColor = Color.FromArgb(190, 210, 225);
+            musterilerButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void siparislerButton_MouseLeave(object sender, EventArgs e)
         {
-            siparislerButton.BackColor = Color.FromArgb(190, 210, 225);
+            siparislerButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void ozetlerButton_MouseLeave(object sender, EventArgs e)
         {
-            ozetlerButton.BackColor = Color.FromArgb(190, 210, 225);
+            ozetlerButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void gelirGiderButton_MouseLeave(object sender, EventArgs e)
         {
-            gelirGiderButton.BackColor = Color.FromArgb(190, 210, 225);
+            gelirGiderButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void islemdekilerButton_MouseLeave(object sender, EventArgs e)
         {
-            islemdekilerButton.BackColor = Color.FromArgb(190, 210, 225);
+            islemdekilerButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void aramaGecmisiButton_MouseLeave(object sender, EventArgs e)
         {
-            aramaGecmisiButton.BackColor = Color.FromArgb(190, 210, 225);
+            aramaGecmisiButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void tamamlandiButton_MouseLeave(object sender, EventArgs e)
         {
-            tamamlandiButton.BackColor = Color.FromArgb(190, 210, 225);
+            tamamlandiButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void fiyatButton_MouseLeave(object sender, EventArgs e)
         {
-            fiyatButton.BackColor = Color.FromArgb(190, 210, 225);
+            fiyatButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void mesajlarButton_MouseLeave(object sender, EventArgs e)
         {
-            mesajlarButton.BackColor = Color.FromArgb(190, 210, 225);
+            mesajlarButton.BackColor = Color.FromArgb(200, 220, 240);
         }
     }
 }

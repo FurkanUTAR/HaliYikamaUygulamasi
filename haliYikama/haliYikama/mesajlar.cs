@@ -23,13 +23,47 @@ namespace haliYikama
         private void mesajlar_Load(object sender, EventArgs e)
         {
             mesajlariGoster();
+            sayfa2.Visible = false;
+            sayfa2.Location = sayfa1.Location;
         }
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
         {
-            anaSayfa anaSayfa = new anaSayfa();
-            anaSayfa.Show();
             this.Hide();
+        }
+
+        private void rightPictureBox_Click(object sender, EventArgs e)
+        {
+            sayfa1.Visible = false;
+            sayfa2.Visible = true;
+        }
+
+        private void leftPictureBox_Click(object sender, EventArgs e)
+        {
+            sayfa1.Visible = false;
+            sayfa2.Visible = true;
+        }
+
+        private void leftPictureBox2_Click(object sender, EventArgs e)
+        {
+            sayfa1.Visible = true;
+            sayfa2.Visible = false;
+        }
+
+        private void rightPictureBox2_Click(object sender, EventArgs e)
+        {
+            sayfa1.Visible = true;
+            sayfa2.Visible = false;
+        }
+
+        private void kaydetButton_MouseEnter(object sender, EventArgs e)
+        {
+            kaydetButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void kaydetButton_MouseLeave(object sender, EventArgs e)
+        {
+            kaydetButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void kaydetButton_Click(object sender, EventArgs e)
@@ -39,7 +73,7 @@ namespace haliYikama
 
         void kaydet()
         {
-            string komut =  "UPDATE mesajlar SET " +
+            string komut = "UPDATE mesajlar SET " +
                             "teslimAlindi='" + teslimAlindiTextBox.Text + "'," +
                             "teslimEdildi='" + teslimEdildiTextBox.Text + "'," +
                             "teslimataCikti='" + teslimataCiktiTextBox.Text + "'," +
@@ -49,8 +83,9 @@ namespace haliYikama
 
             connect.Open();
 
-            OleDbCommand kaydet = new OleDbCommand(komut,connect);
+            OleDbCommand kaydet = new OleDbCommand(komut, connect);
             kaydet.ExecuteNonQuery();
+            MessageBox.Show("Mesajlar Kaydedildi!!");
 
             connect.Close();
         }
@@ -61,13 +96,13 @@ namespace haliYikama
 
             connect.Open();
 
-            OleDbDataAdapter da=new OleDbDataAdapter(komut,connect);
+            OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            if (dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
-                DataRow row =dt.Rows[0];
+                DataRow row = dt.Rows[0];
                 teslimAlindiTextBox.Text = row["teslimAlindi"].ToString();
                 teslimEdildiTextBox.Text = row["teslimEdildi"].ToString();
                 teslimEdilecekTextBox.Text = row["teslimEdilecek"].ToString();
@@ -77,5 +112,6 @@ namespace haliYikama
 
             connect.Close();
         }
+
     }
 }

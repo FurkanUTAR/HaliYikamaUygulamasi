@@ -59,16 +59,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(19, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 39;
             this.label1.Text = "Ad-Soyad";
             // 
             // adSoyadTextBox
             // 
             this.adSoyadTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.adSoyadTextBox.Location = new System.Drawing.Point(20, 32);
+            this.adSoyadTextBox.Location = new System.Drawing.Point(20, 35);
             this.adSoyadTextBox.Name = "adSoyadTextBox";
             this.adSoyadTextBox.Size = new System.Drawing.Size(207, 20);
             this.adSoyadTextBox.TabIndex = 40;
@@ -76,7 +77,7 @@
             // telNoTextBox
             // 
             this.telNoTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.telNoTextBox.Location = new System.Drawing.Point(20, 70);
+            this.telNoTextBox.Location = new System.Drawing.Point(20, 77);
             this.telNoTextBox.Name = "telNoTextBox";
             this.telNoTextBox.Size = new System.Drawing.Size(207, 20);
             this.telNoTextBox.TabIndex = 42;
@@ -84,16 +85,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 55);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(19, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 41;
             this.label2.Text = "Tel No";
             // 
             // adresTextBox
             // 
             this.adresTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.adresTextBox.Location = new System.Drawing.Point(20, 109);
+            this.adresTextBox.Location = new System.Drawing.Point(20, 119);
             this.adresTextBox.Multiline = true;
             this.adresTextBox.Name = "adresTextBox";
             this.adresTextBox.Size = new System.Drawing.Size(207, 67);
@@ -102,15 +104,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 93);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(19, 100);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 43;
             this.label3.Text = "Adres";
             // 
             // duzenleButton
             // 
-            this.duzenleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.duzenleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
+            this.duzenleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.duzenleButton.Location = new System.Drawing.Point(-5, -5);
             this.duzenleButton.Name = "duzenleButton";
             this.duzenleButton.Size = new System.Drawing.Size(216, 52);
@@ -118,6 +122,8 @@
             this.duzenleButton.Text = "Düzenle";
             this.duzenleButton.UseVisualStyleBackColor = false;
             this.duzenleButton.Click += new System.EventHandler(this.duzenleButton_Click);
+            this.duzenleButton.MouseEnter += new System.EventHandler(this.duzenleButton_MouseEnter);
+            this.duzenleButton.MouseLeave += new System.EventHandler(this.duzenleButton_MouseLeave);
             // 
             // panel1
             // 
@@ -149,7 +155,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.duzenleButton);
-            this.panel3.Location = new System.Drawing.Point(20, 187);
+            this.panel3.Location = new System.Drawing.Point(20, 192);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(207, 42);
             this.panel3.TabIndex = 49;

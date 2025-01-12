@@ -23,13 +23,47 @@ namespace haliYikama
         private void fiyat_Load(object sender, EventArgs e)
         {
             fiyatGoster();
+            sayfa2.Location = sayfa1.Location;
+            sayfa2.Visible = false;
         }
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
         {
-            anaSayfa anaSayfa = new anaSayfa();
-            anaSayfa.Show();
             this.Hide();
+        }
+
+        private void rightPictureBox_Click(object sender, EventArgs e)
+        {
+            sayfa1.Visible = false;
+            sayfa2.Visible = true;
+        }
+
+        private void leftPictureBox_Click(object sender, EventArgs e)
+        {
+            sayfa2.Visible = true;
+            sayfa1.Visible = false;
+        }
+
+        private void rightPictureBox2_Click(object sender, EventArgs e)
+        {
+            sayfa1.Visible = true;
+            sayfa2.Visible = false;
+        }
+
+        private void leftPictureBox2_Click(object sender, EventArgs e)
+        {
+            sayfa1.Visible = true;
+            sayfa2.Visible = false;
+        }
+
+        private void kaydetButton_MouseEnter(object sender, EventArgs e)
+        {
+            kaydetButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void kaydetButton_MouseLeave(object sender, EventArgs e)
+        {
+            kaydetButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void kaydetButton_Click(object sender, EventArgs e)

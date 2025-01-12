@@ -38,6 +38,16 @@ namespace haliYikama
             geriDon();
         }
 
+        private void duzenleButton_MouseEnter(object sender, EventArgs e)
+        {
+            duzenleButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void duzenleButton_MouseLeave(object sender, EventArgs e)
+        {
+            duzenleButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
         private void duzenleButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(adSoyadTextBox.Text) && !string.IsNullOrWhiteSpace(telNoTextBox.Text) && !string.IsNullOrWhiteSpace(adresTextBox.Text))
@@ -110,5 +120,6 @@ namespace haliYikama
             siparisOlustur.ShowDialog();
             this.Hide();
         }
+
     }
 }

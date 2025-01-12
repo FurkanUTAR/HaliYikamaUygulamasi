@@ -55,7 +55,7 @@
             this.fiyatPanel = new System.Windows.Forms.Panel();
             this.mesajlarPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -75,7 +75,7 @@
             // 
             // tamamlandiButton
             // 
-            this.tamamlandiButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.tamamlandiButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.tamamlandiButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.tamamlandiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tamamlandiButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
@@ -91,7 +91,7 @@
             // 
             // islemdekilerButton
             // 
-            this.islemdekilerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.islemdekilerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.islemdekilerButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.islemdekilerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.islemdekilerButton.Location = new System.Drawing.Point(-8, -6);
@@ -106,7 +106,7 @@
             // 
             // siparislerButton
             // 
-            this.siparislerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.siparislerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.siparislerButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.siparislerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.siparislerButton.Location = new System.Drawing.Point(-7, -5);
@@ -121,7 +121,7 @@
             // 
             // gelirGiderButton
             // 
-            this.gelirGiderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.gelirGiderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.gelirGiderButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.gelirGiderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gelirGiderButton.Location = new System.Drawing.Point(-7, -6);
@@ -136,7 +136,7 @@
             // 
             // aramaGecmisiButton
             // 
-            this.aramaGecmisiButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.aramaGecmisiButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.aramaGecmisiButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.aramaGecmisiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.aramaGecmisiButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
@@ -152,7 +152,7 @@
             // 
             // ozetlerButton
             // 
-            this.ozetlerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.ozetlerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.ozetlerButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.ozetlerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ozetlerButton.Location = new System.Drawing.Point(-11, -5);
@@ -167,7 +167,7 @@
             // 
             // musterilerButton
             // 
-            this.musterilerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.musterilerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.musterilerButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.musterilerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.musterilerButton.Location = new System.Drawing.Point(-6, -4);
@@ -182,7 +182,7 @@
             // 
             // mesajlarButton
             // 
-            this.mesajlarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.mesajlarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.mesajlarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mesajlarButton.Location = new System.Drawing.Point(-5, -5);
             this.mesajlarButton.Name = "mesajlarButton";
@@ -196,7 +196,7 @@
             // 
             // fiyatButton
             // 
-            this.fiyatButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.fiyatButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.fiyatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.fiyatButton.Location = new System.Drawing.Point(-6, -6);
             this.fiyatButton.Name = "fiyatButton";
@@ -214,16 +214,15 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.logoPanel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(205, 615);
+            this.panel1.Size = new System.Drawing.Size(205, 546);
             this.panel1.TabIndex = 2;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.ayarlarButton);
-            this.panel4.Location = new System.Drawing.Point(6, 223);
+            this.panel4.Location = new System.Drawing.Point(6, 221);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(193, 62);
             this.panel4.TabIndex = 4;
@@ -240,13 +239,11 @@
             this.ayarlarButton.Text = "Ayarlar";
             this.ayarlarButton.UseVisualStyleBackColor = false;
             this.ayarlarButton.Click += new System.EventHandler(this.ayarlarButton_Click);
-            this.ayarlarButton.MouseEnter += new System.EventHandler(this.ayarlarButton_MouseEnter);
-            this.ayarlarButton.MouseLeave += new System.EventHandler(this.ayarlarButton_MouseLeave);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.anaSayfaButton);
-            this.panel3.Location = new System.Drawing.Point(6, 153);
+            this.panel3.Location = new System.Drawing.Point(6, 151);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(193, 62);
             this.panel3.TabIndex = 1;
@@ -263,12 +260,10 @@
             this.anaSayfaButton.Text = "Ana Sayfa";
             this.anaSayfaButton.UseVisualStyleBackColor = false;
             this.anaSayfaButton.Click += new System.EventHandler(this.anaSayfaButton_Click);
-            this.anaSayfaButton.MouseEnter += new System.EventHandler(this.anaSayfaButton_MouseEnter);
-            this.anaSayfaButton.MouseLeave += new System.EventHandler(this.anaSayfaButton_MouseLeave);
             // 
             // logoPanel
             // 
-            this.logoPanel.Location = new System.Drawing.Point(1, 30);
+            this.logoPanel.Location = new System.Drawing.Point(1, 0);
             this.logoPanel.Name = "logoPanel";
             this.logoPanel.Size = new System.Drawing.Size(204, 117);
             this.logoPanel.TabIndex = 0;
@@ -283,9 +278,9 @@
             this.anaSayfaPanel.Controls.Add(this.ozetlerPanel);
             this.anaSayfaPanel.Controls.Add(this.siparislerPanel);
             this.anaSayfaPanel.Controls.Add(this.musterilerPanel);
-            this.anaSayfaPanel.Location = new System.Drawing.Point(205, 30);
+            this.anaSayfaPanel.Location = new System.Drawing.Point(205, 38);
             this.anaSayfaPanel.Name = "anaSayfaPanel";
-            this.anaSayfaPanel.Size = new System.Drawing.Size(777, 584);
+            this.anaSayfaPanel.Size = new System.Drawing.Size(777, 546);
             this.anaSayfaPanel.TabIndex = 3;
             // 
             // tamamlandiPanel
@@ -294,7 +289,7 @@
             this.tamamlandiPanel.Controls.Add(this.tamamlandiButton);
             this.tamamlandiPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tamamlandiPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.tamamlandiPanel.Location = new System.Drawing.Point(388, 393);
+            this.tamamlandiPanel.Location = new System.Drawing.Point(395, 384);
             this.tamamlandiPanel.Name = "tamamlandiPanel";
             this.tamamlandiPanel.Size = new System.Drawing.Size(175, 110);
             this.tamamlandiPanel.TabIndex = 13;
@@ -305,7 +300,7 @@
             this.aramaGecmisiPanel.Controls.Add(this.aramaGecmisiButton);
             this.aramaGecmisiPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.aramaGecmisiPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.aramaGecmisiPanel.Location = new System.Drawing.Point(207, 393);
+            this.aramaGecmisiPanel.Location = new System.Drawing.Point(214, 384);
             this.aramaGecmisiPanel.Name = "aramaGecmisiPanel";
             this.aramaGecmisiPanel.Size = new System.Drawing.Size(175, 110);
             this.aramaGecmisiPanel.TabIndex = 13;
@@ -316,7 +311,7 @@
             this.islemdekilerPanel.Controls.Add(this.islemdekilerButton);
             this.islemdekilerPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.islemdekilerPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.islemdekilerPanel.Location = new System.Drawing.Point(388, 277);
+            this.islemdekilerPanel.Location = new System.Drawing.Point(395, 268);
             this.islemdekilerPanel.Name = "islemdekilerPanel";
             this.islemdekilerPanel.Size = new System.Drawing.Size(175, 110);
             this.islemdekilerPanel.TabIndex = 13;
@@ -327,7 +322,7 @@
             this.gelirGiderTakipPanel.Controls.Add(this.gelirGiderButton);
             this.gelirGiderTakipPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gelirGiderTakipPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.gelirGiderTakipPanel.Location = new System.Drawing.Point(207, 277);
+            this.gelirGiderTakipPanel.Location = new System.Drawing.Point(214, 268);
             this.gelirGiderTakipPanel.Name = "gelirGiderTakipPanel";
             this.gelirGiderTakipPanel.Size = new System.Drawing.Size(175, 110);
             this.gelirGiderTakipPanel.TabIndex = 13;
@@ -338,7 +333,7 @@
             this.ozetlerPanel.Controls.Add(this.ozetlerButton);
             this.ozetlerPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ozetlerPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.ozetlerPanel.Location = new System.Drawing.Point(388, 161);
+            this.ozetlerPanel.Location = new System.Drawing.Point(395, 152);
             this.ozetlerPanel.Name = "ozetlerPanel";
             this.ozetlerPanel.Size = new System.Drawing.Size(175, 110);
             this.ozetlerPanel.TabIndex = 13;
@@ -349,7 +344,7 @@
             this.siparislerPanel.Controls.Add(this.siparislerButton);
             this.siparislerPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.siparislerPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.siparislerPanel.Location = new System.Drawing.Point(207, 161);
+            this.siparislerPanel.Location = new System.Drawing.Point(214, 152);
             this.siparislerPanel.Name = "siparislerPanel";
             this.siparislerPanel.Size = new System.Drawing.Size(175, 110);
             this.siparislerPanel.TabIndex = 12;
@@ -360,7 +355,7 @@
             this.musterilerPanel.Controls.Add(this.musterilerButton);
             this.musterilerPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.musterilerPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.musterilerPanel.Location = new System.Drawing.Point(207, 55);
+            this.musterilerPanel.Location = new System.Drawing.Point(214, 46);
             this.musterilerPanel.Name = "musterilerPanel";
             this.musterilerPanel.Size = new System.Drawing.Size(356, 100);
             this.musterilerPanel.TabIndex = 11;
@@ -369,9 +364,9 @@
             // 
             this.ayarlarPanel.Controls.Add(this.fiyatPanel);
             this.ayarlarPanel.Controls.Add(this.mesajlarPanel);
-            this.ayarlarPanel.Location = new System.Drawing.Point(205, 30);
+            this.ayarlarPanel.Location = new System.Drawing.Point(205, 38);
             this.ayarlarPanel.Name = "ayarlarPanel";
-            this.ayarlarPanel.Size = new System.Drawing.Size(777, 584);
+            this.ayarlarPanel.Size = new System.Drawing.Size(777, 546);
             this.ayarlarPanel.TabIndex = 14;
             // 
             // fiyatPanel
@@ -380,7 +375,7 @@
             this.fiyatPanel.Controls.Add(this.fiyatButton);
             this.fiyatPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.fiyatPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.fiyatPanel.Location = new System.Drawing.Point(207, 123);
+            this.fiyatPanel.Location = new System.Drawing.Point(207, 104);
             this.fiyatPanel.Name = "fiyatPanel";
             this.fiyatPanel.Size = new System.Drawing.Size(356, 100);
             this.fiyatPanel.TabIndex = 12;
@@ -391,41 +386,44 @@
             this.mesajlarPanel.Controls.Add(this.mesajlarButton);
             this.mesajlarPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mesajlarPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.mesajlarPanel.Location = new System.Drawing.Point(207, 261);
+            this.mesajlarPanel.Location = new System.Drawing.Point(207, 242);
             this.mesajlarPanel.Name = "mesajlarPanel";
             this.mesajlarPanel.Size = new System.Drawing.Size(356, 100);
             this.mesajlarPanel.TabIndex = 12;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(220)))));
-            this.panel2.Controls.Add(this.panel7);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(982, 29);
-            this.panel2.TabIndex = 15;
+            this.panel2.Size = new System.Drawing.Size(982, 41);
+            this.panel2.TabIndex = 42;
             // 
-            // panel7
+            // label1
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel7.Location = new System.Drawing.Point(846, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(136, 29);
-            this.panel7.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label1.Location = new System.Drawing.Point(430, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 31);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Ana Sayfa";
             // 
             // anaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(982, 615);
+            this.ClientSize = new System.Drawing.Size(982, 584);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.anaSayfaPanel);
             this.Controls.Add(this.ayarlarPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "anaSayfa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ana Sayfa";
             this.Load += new System.EventHandler(this.anaSayfa_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -442,6 +440,7 @@
             this.fiyatPanel.ResumeLayout(false);
             this.mesajlarPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -474,6 +473,6 @@
         private System.Windows.Forms.Panel fiyatPanel;
         private System.Windows.Forms.Panel mesajlarPanel;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label1;
     }
 }

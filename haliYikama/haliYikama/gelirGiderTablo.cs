@@ -47,9 +47,24 @@ namespace haliYikama
             else goster();
         }
 
+        private void silButton_MouseEnter(object sender, EventArgs e)
+        {
+            silButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void silButton_MouseLeave(object sender, EventArgs e)
+        {
+            silButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
         private void silButton_Click(object sender, EventArgs e)
         {
             sil();
+        }
+
+        private void tarihDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (filtreComboBox.SelectedIndex == 0) secilenTarih();
         }
 
         void yukle()
@@ -61,6 +76,19 @@ namespace haliYikama
             filtreComboBox.Items.Add("Fiyat Artan");
             filtreComboBox.Items.Add("Sadece Gelir");
             filtreComboBox.Items.Add("Sadece Gider");
+
+            gelirGiderDataGridView.BackgroundColor = Color.FromArgb(240, 245, 250);
+            gelirGiderDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 245, 250);
+            gelirGiderDataGridView.EnableHeadersVisualStyles = false;
+            gelirGiderDataGridView.RowHeadersVisible = false;
+            gelirGiderDataGridView.ReadOnly = true;
+            gelirGiderDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gelirGiderDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
+            gelirGiderDataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 245, 250);
+            gelirGiderDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 235, 245);
+            gelirGiderDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            gelirGiderDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            gelirGiderDataGridView.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
         }
 
         void hesap()
@@ -100,6 +128,7 @@ namespace haliYikama
             cmd.ExecuteNonQuery();
 
             connect.Close();
+            hesap();
             goster();
         }
 
@@ -115,6 +144,7 @@ namespace haliYikama
             connect.Close();
 
             gelirGiderDataGridView.DataSource = dt;
+            kontrol();
             gelirGiderDataGridView.Columns["Kimlik"].Visible = false;
         }
 
@@ -228,9 +258,17 @@ namespace haliYikama
             gelirGiderDataGridView.Columns["Kimlik"].Visible = false;
         }
 
-        private void tarihDateTimePicker_ValueChanged(object sender, EventArgs e)
+        void kontrol()
         {
-            if (filtreComboBox.SelectedIndex == 0) secilenTarih();
+            if (gelirGiderDataGridView != null && gelirGiderDataGridView.Columns.Count > 0)
+            {
+                if (gelirGiderDataGridView.Columns.Contains("tarih")) gelirGiderDataGridView.Columns["tarih"].HeaderText = "Tarih";
+                if (gelirGiderDataGridView.Columns.Contains("tur")) gelirGiderDataGridView.Columns["tur"].HeaderText = "Tür";
+                if (gelirGiderDataGridView.Columns.Contains("kategori")) gelirGiderDataGridView.Columns["kategori"].HeaderText = "Kategori";
+                if (gelirGiderDataGridView.Columns.Contains("miktar")) gelirGiderDataGridView.Columns["miktar"].HeaderText = "Miktar";
+                if (gelirGiderDataGridView.Columns.Contains("aciklama")) gelirGiderDataGridView.Columns["aciklama"].HeaderText = "Açıklama";
+            }
+            else MessageBox.Show("DataGridView başlatılmadı veya sütunları yok.");
         }
     }
 }

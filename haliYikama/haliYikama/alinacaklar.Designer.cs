@@ -35,22 +35,22 @@
             this.adetComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.metreKareTextBox = new System.Windows.Forms.TextBox();
-            this.eklePictureBox = new System.Windows.Forms.PictureBox();
-            this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
             this.gonderButton = new System.Windows.Forms.Button();
             this.indirimTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.indirimEklePictureBox = new System.Windows.Forms.PictureBox();
             this.cıkarButton = new System.Windows.Forms.Button();
             this.teslimTarihiDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.toplamFiyatLabel = new System.Windows.Forms.Label();
             this.adetLabel = new System.Windows.Forms.Label();
+            this.indirimEklePictureBox = new System.Windows.Forms.PictureBox();
+            this.eklePictureBox = new System.Windows.Forms.PictureBox();
+            this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.alinacakHaliDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.indirimEklePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eklePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.indirimEklePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // urunComboBox
@@ -116,27 +116,6 @@
             this.metreKareTextBox.Size = new System.Drawing.Size(32, 20);
             this.metreKareTextBox.TabIndex = 44;
             // 
-            // eklePictureBox
-            // 
-            this.eklePictureBox.Location = new System.Drawing.Point(199, 44);
-            this.eklePictureBox.Name = "eklePictureBox";
-            this.eklePictureBox.Size = new System.Drawing.Size(23, 19);
-            this.eklePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.eklePictureBox.TabIndex = 45;
-            this.eklePictureBox.TabStop = false;
-            this.eklePictureBox.Click += new System.EventHandler(this.eklePictureBox_Click);
-            // 
-            // geriDonPictureBox
-            // 
-            this.geriDonPictureBox.Image = global::haliYikama.Properties.Resources.left;
-            this.geriDonPictureBox.Location = new System.Drawing.Point(1, 1);
-            this.geriDonPictureBox.Name = "geriDonPictureBox";
-            this.geriDonPictureBox.Size = new System.Drawing.Size(23, 19);
-            this.geriDonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.geriDonPictureBox.TabIndex = 36;
-            this.geriDonPictureBox.TabStop = false;
-            this.geriDonPictureBox.Click += new System.EventHandler(this.geriDonPictureBox_Click);
-            // 
             // gonderButton
             // 
             this.gonderButton.Location = new System.Drawing.Point(146, 428);
@@ -162,16 +141,6 @@
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 47;
             this.label4.Text = "İndirim";
-            // 
-            // indirimEklePictureBox
-            // 
-            this.indirimEklePictureBox.Location = new System.Drawing.Point(112, 84);
-            this.indirimEklePictureBox.Name = "indirimEklePictureBox";
-            this.indirimEklePictureBox.Size = new System.Drawing.Size(23, 19);
-            this.indirimEklePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.indirimEklePictureBox.TabIndex = 49;
-            this.indirimEklePictureBox.TabStop = false;
-            this.indirimEklePictureBox.Click += new System.EventHandler(this.indirimEklePictureBox_Click);
             // 
             // cıkarButton
             // 
@@ -228,6 +197,39 @@
             this.adetLabel.TabIndex = 57;
             this.adetLabel.Text = "Adet";
             // 
+            // indirimEklePictureBox
+            // 
+            this.indirimEklePictureBox.Image = global::haliYikama.Properties.Resources.addOrder;
+            this.indirimEklePictureBox.Location = new System.Drawing.Point(112, 84);
+            this.indirimEklePictureBox.Name = "indirimEklePictureBox";
+            this.indirimEklePictureBox.Size = new System.Drawing.Size(23, 19);
+            this.indirimEklePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.indirimEklePictureBox.TabIndex = 49;
+            this.indirimEklePictureBox.TabStop = false;
+            this.indirimEklePictureBox.Click += new System.EventHandler(this.indirimEklePictureBox_Click);
+            // 
+            // eklePictureBox
+            // 
+            this.eklePictureBox.Image = global::haliYikama.Properties.Resources.addOrder;
+            this.eklePictureBox.Location = new System.Drawing.Point(199, 44);
+            this.eklePictureBox.Name = "eklePictureBox";
+            this.eklePictureBox.Size = new System.Drawing.Size(23, 19);
+            this.eklePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.eklePictureBox.TabIndex = 45;
+            this.eklePictureBox.TabStop = false;
+            this.eklePictureBox.Click += new System.EventHandler(this.eklePictureBox_Click);
+            // 
+            // geriDonPictureBox
+            // 
+            this.geriDonPictureBox.Image = global::haliYikama.Properties.Resources.left;
+            this.geriDonPictureBox.Location = new System.Drawing.Point(1, 1);
+            this.geriDonPictureBox.Name = "geriDonPictureBox";
+            this.geriDonPictureBox.Size = new System.Drawing.Size(23, 19);
+            this.geriDonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.geriDonPictureBox.TabIndex = 36;
+            this.geriDonPictureBox.TabStop = false;
+            this.geriDonPictureBox.Click += new System.EventHandler(this.geriDonPictureBox_Click);
+            // 
             // alinacaklar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,9 +258,9 @@
             this.Text = "Alınacaklar";
             this.Load += new System.EventHandler(this.alinacaklar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.alinacakHaliDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.indirimEklePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eklePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.indirimEklePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

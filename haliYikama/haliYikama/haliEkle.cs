@@ -28,10 +28,19 @@ namespace haliYikama
             yukle();
         }
 
+        private void geriDonPictureBox_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
         private void eklePictureBox_Click(object sender, EventArgs e)
         {
             siparisEkle();
-            this.Close();
+        }
+
+        private void urunComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            kontrol();
         }
 
         void yukle()
@@ -51,11 +60,16 @@ namespace haliYikama
             for (int i = 1; i < 1000; i++) adetComboBox.Items.Add(i);
         }
 
+        void kontrol()
+        {
+            if (urunComboBox.Text == "Yorgan(Tek)" || urunComboBox.Text == "Yorgan(Çift)") { metreKareTextBox.Enabled = false; metreKareTextBox.Text = ""; }
+            else metreKareTextBox.Enabled = true;
+        }
+
         void siparisEkle()
         {
             if (!string.IsNullOrWhiteSpace(adetComboBox.Text) && (!string.IsNullOrWhiteSpace(metreKareTextBox.Text) || !metreKareTextBox.Enabled))
             {
-
                 double metreKare = metreKareTextBox.Enabled ? Convert.ToDouble(metreKareTextBox.Text) : 1;
                 double adet = Convert.ToDouble(adetComboBox.Text);
                 double fiyat = 0;
@@ -114,6 +128,7 @@ namespace haliYikama
                     cmd.ExecuteNonQuery();
 
                     connect.Close();
+                    this.Close();
                 }
                 else
                 {
@@ -126,6 +141,7 @@ namespace haliYikama
                     cmd.ExecuteNonQuery();
 
                     connect.Close();
+                    this.Close();
                 }
             }
             else

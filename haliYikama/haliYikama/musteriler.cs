@@ -123,12 +123,12 @@ namespace haliYikama
 
         private void araButton_MouseEnter(object sender, EventArgs e)
         {
-            araButton.BackColor = Color.FromArgb(200, 220, 240);
+            araButton.BackColor = Color.FromArgb(160, 190, 210);
         }
 
         private void araButton_MouseLeave(object sender, EventArgs e)
         {
-            araButton.BackColor = Color.FromArgb(190, 210, 225);
+            araButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void araButton_Click(object sender, EventArgs e)
@@ -306,7 +306,5 @@ namespace haliYikama
             musteriDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
             musteriDataGridView.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
         }
-
-    
     }
 }

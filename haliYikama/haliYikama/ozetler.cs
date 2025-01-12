@@ -30,7 +30,6 @@ namespace haliYikama
         double yillikGider;
         double yillikKar;
 
-
         public ozetler()
         {
             InitializeComponent();
@@ -41,15 +40,51 @@ namespace haliYikama
             gunlukOzet();
             aylikOzet();
             yillikOzet();
+
+            aylikPanel.Location = gunlukPanel.Location;
+            yillikPanel.Location = gunlukPanel.Location;
+
+            aylikPanel.Visible = false;
+            yillikPanel.Visible = false;
+
+            gunlukButton.BackColor = Color.FromArgb(150, 150, 180);
         }
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
         {
-            anaSayfa anaSayfa = new anaSayfa();
-            anaSayfa.Show();
             this.Hide();
         }
 
+        private void gunlukButton_Click(object sender, EventArgs e)
+        {
+            gunlukPanel.Visible = true;
+            aylikPanel.Visible = false;
+            yillikPanel.Visible = false;
+
+            if (gunlukPanel.Visible) { gunlukButton.BackColor = Color.FromArgb(150, 150, 180); aylikButton.BackColor = Color.FromArgb(200, 200, 220); yillikButton.BackColor = Color.FromArgb(200, 200, 220); }
+            else gunlukButton.BackColor = Color.FromArgb(200, 200, 220);
+        }
+
+        private void aylikButton_Click(object sender, EventArgs e)
+        {
+            aylikPanel.Visible = true;
+            gunlukPanel.Visible = false;
+            yillikPanel.Visible = false;
+
+            if (aylikPanel.Visible) { aylikButton.BackColor = Color.FromArgb(150, 150, 180); gunlukButton.BackColor = Color.FromArgb(200, 200, 220); yillikButton.BackColor = Color.FromArgb(200, 200, 220); }
+            else aylikButton.BackColor = Color.FromArgb(200, 200, 220);
+        }
+
+        private void yillikButton_Click(object sender, EventArgs e)
+        {
+            yillikPanel.Visible = true;
+            aylikPanel.Visible = false;
+            gunlukPanel.Visible = false;
+
+            if (yillikPanel.Visible) { yillikButton.BackColor = Color.FromArgb(150, 150, 180); gunlukButton.BackColor = Color.FromArgb(200, 200, 220); aylikButton.BackColor = Color.FromArgb(200, 200, 220); }
+            else yillikButton.BackColor = Color.FromArgb(200, 200, 220);
+        }
+            
         void gunlukOzet()
         {
             gunlukSiparisHesap();
@@ -72,6 +107,7 @@ namespace haliYikama
 
                 gunlukToplamSiparisLabel.Text = gunlukSiparisSayisi.ToString();
             }
+
             void gunlukYeniMusteriHesap()
             {
                 string gunlukYeniMusteriKomut = "SELECT COUNT(*) FROM musteriler WHERE FORMAT(eklemeTarih, 'yyyy-MM-dd') = ?";

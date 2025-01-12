@@ -29,7 +29,7 @@ namespace haliYikama
 
         private void siparisDetay_Load(object sender, EventArgs e)
         {
-            goster();
+            yukle();
             indirimHesap();
             adet();
             toplam();
@@ -58,10 +58,40 @@ namespace haliYikama
 
         private void yenilePictureBox_Click(object sender, EventArgs e)
         {
-            goster();
+            yukle();
             indirimHesap();
             adet();
             toplam();
+        }
+
+        private void haliEkleButton_MouseEnter(object sender, EventArgs e)
+        {
+            haliEkleButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void haliCikarButton_MouseEnter(object sender, EventArgs e)
+        {
+            haliCikarButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void teslimatCekButton_MouseEnter(object sender, EventArgs e)
+        {
+            teslimatCekButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void haliEkleButton_MouseLeave(object sender, EventArgs e)
+        {
+            haliEkleButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
+        private void haliCikarButton_MouseLeave(object sender, EventArgs e)
+        {
+            haliCikarButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
+        private void teslimatCekButton_MouseLeave(object sender, EventArgs e)
+        {
+            teslimatCekButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void haliEkleButton_Click(object sender, EventArgs e)
@@ -74,31 +104,10 @@ namespace haliYikama
         private void haliCikarButton_Click(object sender, EventArgs e)
         {
             haliCikar();
-            goster();
+            yukle();
             indirimHesap();
             toplam();
             adet();
-        }
-
-        void goster()
-        {
-            string komut = "SELECT * FROM haliBilgi WHERE siparisNo= " + siparisNo;
-
-            connect.Open();
-
-            OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            haliBilgiDataGridView.DataSource = dt;
-            haliBilgiDataGridView.Columns["Kimlik"].Visible = false;
-            haliBilgiDataGridView.Columns["siparisNo"].Visible = false;
-            haliBilgiDataGridView.Columns["haliCins"].HeaderText = "Cins";
-            haliBilgiDataGridView.Columns["haliAdet"].HeaderText = "Adet";
-            haliBilgiDataGridView.Columns["haliBoyut"].HeaderText = "Boyut";
-            haliBilgiDataGridView.Columns["haliFiyat"].HeaderText = "Fiyat";
-
-            connect.Close();
         }
 
         void toplam()
@@ -173,6 +182,45 @@ namespace haliYikama
             if (oku.Read()) indirimMiktari = oku["indirimMiktar"] != DBNull.Value ? Convert.ToDouble(oku["indirimMiktar"]) : 0.0;
 
             connect.Close();
+        }
+
+        void yukle()
+        {
+            string komut = "SELECT * FROM haliBilgi WHERE siparisNo= " + siparisNo;
+
+            connect.Open();
+
+            OleDbDataAdapter da = new OleDbDataAdapter(komut, connect);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            haliBilgiDataGridView.DataSource = dt;
+
+            connect.Close();
+
+            if (haliBilgiDataGridView != null && haliBilgiDataGridView.Columns.Count > 0)
+            {
+                if (haliBilgiDataGridView.Columns.Contains("Kimlik")) haliBilgiDataGridView.Columns["Kimlik"].Visible = false;
+                if (haliBilgiDataGridView.Columns.Contains("siparisNo")) haliBilgiDataGridView.Columns["siparisNo"].Visible = false;
+
+                if (haliBilgiDataGridView.Columns.Contains("siparisNo")) haliBilgiDataGridView.Columns["siparisNo"].HeaderText = "Sipariş Numarası";
+                if (haliBilgiDataGridView.Columns.Contains("haliCins")) haliBilgiDataGridView.Columns["haliCins"].HeaderText = "Halı Cinsi";
+                if (haliBilgiDataGridView.Columns.Contains("haliAdet")) haliBilgiDataGridView.Columns["haliAdet"].HeaderText = "Halı Adeti";
+                if (haliBilgiDataGridView.Columns.Contains("haliBoyut")) haliBilgiDataGridView.Columns["haliBoyut"].HeaderText = "Halı Boyutu";
+                if (haliBilgiDataGridView.Columns.Contains("haliFiyat")) haliBilgiDataGridView.Columns["haliFiyat"].HeaderText = "Halı Fiyatı";
+            }
+            else MessageBox.Show("DataGridView başlatılmadı veya sütunları yok.");
+
+            haliBilgiDataGridView.BackgroundColor = Color.FromArgb(240, 245, 250);
+            haliBilgiDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 245, 250);
+            haliBilgiDataGridView.ReadOnly = true;
+            haliBilgiDataGridView.RowHeadersVisible = false;
+            haliBilgiDataGridView.EnableHeadersVisualStyles = false;
+            haliBilgiDataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 245, 250);
+            haliBilgiDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 235, 245);
+            haliBilgiDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            haliBilgiDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            haliBilgiDataGridView.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
         }
     }
 }

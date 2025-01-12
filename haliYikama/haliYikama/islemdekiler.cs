@@ -29,7 +29,7 @@ namespace haliYikama
 
         private void islemdekiler_Load(object sender, EventArgs e)
         {
-            goster();
+            yukle();
         }
 
         private void islemdekilerDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -44,13 +44,13 @@ namespace haliYikama
             {
                 siparisDetay siparisDetay = new siparisDetay();
                 siparisDetay.siparisNo = siparisNo;
-                siparisDetay.Show();
+                siparisDetay.ShowDialog();
                 this.Hide();
             }
             else MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        void goster()
+        void yukle()
         {
             string komut = "SELECT * FROM siparisler WHERE siparisDurum='Islemde'";
 
@@ -61,13 +61,41 @@ namespace haliYikama
             da.Fill(dt);
 
             islemdekilerDataGridView.DataSource = dt;
-            islemdekilerDataGridView.Columns["siparisNotu"].Visible = false;
-            islemdekilerDataGridView.Columns["siparisDurum"].Visible = false;
-            islemdekilerDataGridView.Columns["teslimTarih"].Visible = false;
-            islemdekilerDataGridView.Columns["veresiyeTutar"].Visible = false;
 
             connect.Close();
 
+            if (islemdekilerDataGridView != null && islemdekilerDataGridView.Columns.Count > 0)
+            {
+                if (islemdekilerDataGridView.Columns.Contains("siparisNotu")) islemdekilerDataGridView.Columns["siparisNotu"].Visible = false;
+                if (islemdekilerDataGridView.Columns.Contains("siparisDurum")) islemdekilerDataGridView.Columns["siparisDurum"].Visible = false;
+                if (islemdekilerDataGridView.Columns.Contains("teslimTarih")) islemdekilerDataGridView.Columns["teslimTarih"].Visible = false;
+                if (islemdekilerDataGridView.Columns.Contains("veresiyeTutar")) islemdekilerDataGridView.Columns["veresiyeTutar"].Visible = false;
+
+                if (islemdekilerDataGridView.Columns.Contains("siparisNo")) islemdekilerDataGridView.Columns["siparisNo"].HeaderText = "Sipariş Numarası";
+                if (islemdekilerDataGridView.Columns.Contains("adSoyad")) islemdekilerDataGridView.Columns["adSoyad"].HeaderText = "Adı Soyadı";
+                if (islemdekilerDataGridView.Columns.Contains("telNo")) islemdekilerDataGridView.Columns["telNo"].HeaderText = "Telefon Numarası";
+                if (islemdekilerDataGridView.Columns.Contains("adres")) islemdekilerDataGridView.Columns["adres"].HeaderText = "Adresi";
+                if (islemdekilerDataGridView.Columns.Contains("siparisTarih")) islemdekilerDataGridView.Columns["siparisTarih"].HeaderText = "Sipariş Tarihi";
+                if (islemdekilerDataGridView.Columns.Contains("siparisNotu")) islemdekilerDataGridView.Columns["siparisNotu"].HeaderText = "Sipariş Notu";
+                if (islemdekilerDataGridView.Columns.Contains("siparisDurum")) islemdekilerDataGridView.Columns["siparisDurum"].HeaderText = "Sipariş Durumu";
+                if (islemdekilerDataGridView.Columns.Contains("teslimTarih")) islemdekilerDataGridView.Columns["teslimTarih"].HeaderText = "Teslim Edilme Tarihi";
+                if (islemdekilerDataGridView.Columns.Contains("haliAdet")) islemdekilerDataGridView.Columns["haliAdet"].HeaderText = "Halı Adeti";
+                if (islemdekilerDataGridView.Columns.Contains("siparisTutar")) islemdekilerDataGridView.Columns["siparisTutar"].HeaderText = "Sipariş Tutarı";
+                if (islemdekilerDataGridView.Columns.Contains("veresiyeTutar")) islemdekilerDataGridView.Columns["veresiyeTutar"].HeaderText = "Veresiye Tutar";
+                if (islemdekilerDataGridView.Columns.Contains("indirimMiktar")) islemdekilerDataGridView.Columns["indirimMiktar"].HeaderText = "İndirim Miktarı";
+            }
+            else MessageBox.Show("DataGridView başlatılmadı veya sütunları yok.");
+
+            islemdekilerDataGridView.BackgroundColor = Color.FromArgb(240, 245, 250);
+            islemdekilerDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 245, 250);
+            islemdekilerDataGridView.ReadOnly = true;
+            islemdekilerDataGridView.RowHeadersVisible = false;
+            islemdekilerDataGridView.EnableHeadersVisualStyles = false;
+            islemdekilerDataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 245, 250);
+            islemdekilerDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 235, 245);
+            islemdekilerDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            islemdekilerDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            islemdekilerDataGridView.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
         }
     }
 }

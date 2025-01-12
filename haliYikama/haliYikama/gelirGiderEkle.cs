@@ -56,6 +56,16 @@ namespace haliYikama
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
         }
 
+        private void ekleButton_MouseEnter(object sender, EventArgs e)
+        {
+            ekleButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void ekleButton_MouseLeave(object sender, EventArgs e)
+        {
+            ekleButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
         private void ekleButton_Click(object sender, EventArgs e)
         {
             gelirGiderEkleme();

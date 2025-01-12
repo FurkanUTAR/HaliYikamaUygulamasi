@@ -90,7 +90,8 @@
             // 
             // siparisTarihiDateTimePicker
             // 
-            this.siparisTarihiDateTimePicker.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.siparisTarihiDateTimePicker.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
+            this.siparisTarihiDateTimePicker.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.siparisTarihiDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.siparisTarihiDateTimePicker.Location = new System.Drawing.Point(88, 161);
             this.siparisTarihiDateTimePicker.Name = "siparisTarihiDateTimePicker";
@@ -109,7 +110,7 @@
             // 
             // siparisOlusturButton
             // 
-            this.siparisOlusturButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.siparisOlusturButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.siparisOlusturButton.Location = new System.Drawing.Point(-4, -5);
             this.siparisOlusturButton.Name = "siparisOlusturButton";
             this.siparisOlusturButton.Size = new System.Drawing.Size(168, 46);
@@ -117,6 +118,8 @@
             this.siparisOlusturButton.Text = "Sipraiş Oluştur";
             this.siparisOlusturButton.UseVisualStyleBackColor = false;
             this.siparisOlusturButton.Click += new System.EventHandler(this.siparisOlusturButton_Click);
+            this.siparisOlusturButton.MouseEnter += new System.EventHandler(this.siparisOlusturButton_MouseEnter);
+            this.siparisOlusturButton.MouseLeave += new System.EventHandler(this.siparisOlusturButton_MouseLeave);
             // 
             // adresLabel
             // 
@@ -128,7 +131,7 @@
             // 
             // musteriDuzenleButton
             // 
-            this.musteriDuzenleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.musteriDuzenleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.musteriDuzenleButton.Location = new System.Drawing.Point(-4, -5);
             this.musteriDuzenleButton.Name = "musteriDuzenleButton";
             this.musteriDuzenleButton.Size = new System.Drawing.Size(168, 46);
@@ -136,6 +139,8 @@
             this.musteriDuzenleButton.Text = "Müşteriyi Düzenle";
             this.musteriDuzenleButton.UseVisualStyleBackColor = false;
             this.musteriDuzenleButton.Click += new System.EventHandler(this.musteriDuzenleButton_Click);
+            this.musteriDuzenleButton.MouseEnter += new System.EventHandler(this.musteriDuzenleButton_MouseEnter);
+            this.musteriDuzenleButton.MouseLeave += new System.EventHandler(this.musteriDuzenleButton_MouseLeave);
             // 
             // geriDonPictureBox
             // 
@@ -196,7 +201,7 @@
             // 
             // musteriSilButton
             // 
-            this.musteriSilButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
+            this.musteriSilButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
             this.musteriSilButton.Location = new System.Drawing.Point(-5, -5);
             this.musteriSilButton.Name = "musteriSilButton";
             this.musteriSilButton.Size = new System.Drawing.Size(168, 46);
@@ -204,6 +209,8 @@
             this.musteriSilButton.Text = "Müşteriyi Sil";
             this.musteriSilButton.UseVisualStyleBackColor = false;
             this.musteriSilButton.Click += new System.EventHandler(this.musteriSilButton_Click);
+            this.musteriSilButton.MouseEnter += new System.EventHandler(this.musteriSilButton_MouseEnter);
+            this.musteriSilButton.MouseLeave += new System.EventHandler(this.musteriSilButton_MouseLeave);
             // 
             // panel5
             // 
