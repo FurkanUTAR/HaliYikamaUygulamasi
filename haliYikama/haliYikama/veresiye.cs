@@ -37,9 +37,17 @@ namespace haliYikama
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
         {
-            siparisler siparisler = new siparisler();
-            siparisler.Show();
             this.Hide();
+        }
+
+        private void gonderButton_MouseEnter(object sender, EventArgs e)
+        {
+            gonderButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void gonderButton_MouseLeave(object sender, EventArgs e)
+        {
+            gonderButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void gonderButton_Click(object sender, EventArgs e)
@@ -52,6 +60,29 @@ namespace haliYikama
             odemeYontemiComboBox.Items.Add("Nakit");
             odemeYontemiComboBox.Items.Add("Kart");
             odemeYontemiComboBox.Items.Add("Havale");
+
+            if (veresiyeDataGridView != null && veresiyeDataGridView.Columns.Count > 0)
+            {
+                if (veresiyeDataGridView.Columns.Contains("siparisNo")) veresiyeDataGridView.Columns["siparisNo"].HeaderText = "Sipariş Numarası";
+                if (veresiyeDataGridView.Columns.Contains("haliCins")) veresiyeDataGridView.Columns["haliCins"].HeaderText = "Halı Cinsi";
+                if (veresiyeDataGridView.Columns.Contains("haliAdet")) veresiyeDataGridView.Columns["haliAdet"].HeaderText = "Halı Adeti";
+                if (veresiyeDataGridView.Columns.Contains("haliBoyut")) veresiyeDataGridView.Columns["haliBoyut"].HeaderText = "Halı Boyutu";
+                if (veresiyeDataGridView.Columns.Contains("haliFiyat")) veresiyeDataGridView.Columns["haliFiyat"].HeaderText = "Fiyat";
+            }
+
+            veresiyeDataGridView.BackgroundColor = Color.FromArgb(240, 245, 250);
+            veresiyeDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 245, 250);
+            veresiyeDataGridView.EnableHeadersVisualStyles = false;
+            veresiyeDataGridView.RowHeadersVisible = false;
+            veresiyeDataGridView.ReadOnly = true;
+            veresiyeDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            veresiyeDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            veresiyeDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
+            veresiyeDataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 245, 250);
+            veresiyeDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 235, 245);
+            veresiyeDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            veresiyeDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            veresiyeDataGridView.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
         }
 
         void goster()
@@ -104,8 +135,6 @@ namespace haliYikama
 
                         connect.Close();
 
-                        siparisler siparisler = new siparisler();
-                        siparisler.Show();
                         this.Hide();
                     }
                     else
@@ -136,8 +165,6 @@ namespace haliYikama
 
                         connect.Close();
 
-                        siparisler siparisler = new siparisler();
-                        siparisler.Show();
                         this.Hide();
                     }
                     else
@@ -159,8 +186,6 @@ namespace haliYikama
 
                         connect.Close();
 
-                        siparisler siparisler = new siparisler();
-                        siparisler.Show();
                         this.Hide();
                     }
                 }

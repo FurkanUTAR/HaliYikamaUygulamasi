@@ -27,14 +27,11 @@ namespace haliYikama
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
         {
-            siparisler siparisler = new siparisler();
-            siparisler.Show();
             this.Hide();
         }
 
         private void alinacaklar_Load(object sender, EventArgs e)
         {
-            yukle();
             goster();
             adet();
             toplam();
@@ -50,6 +47,26 @@ namespace haliYikama
             siparisEkle();
             toplam();
             adet();
+        }
+
+        private void cıkarButton_MouseEnter(object sender, EventArgs e)
+        {
+            cıkarButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void gonderButton_MouseEnter(object sender, EventArgs e)
+        {
+            gonderButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void cıkarButton_MouseLeave(object sender, EventArgs e)
+        {
+            cıkarButton.BackColor = Color.FromArgb(200, 220, 240);
+        }
+
+        private void gonderButton_MouseLeave(object sender, EventArgs e)
+        {
+            gonderButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void cıkarButton_Click(object sender, EventArgs e)
@@ -74,8 +91,6 @@ namespace haliYikama
             if (result == DialogResult.Yes)
             {
                 siparisAl();
-                siparisler siparisler = new siparisler();
-                siparisler.Show();
                 this.Hide();
             }
         }
@@ -88,6 +103,7 @@ namespace haliYikama
             urunComboBox.Items.Add("Plastik");
             urunComboBox.Items.Add("Bambu");
             urunComboBox.Items.Add("Yün");
+            urunComboBox.Items.Add("Isparta");
             urunComboBox.Items.Add("İpek");
             urunComboBox.Items.Add("Stor Perde");
             urunComboBox.Items.Add("Overlok");
@@ -95,6 +111,30 @@ namespace haliYikama
             urunComboBox.Items.Add("Yorgan(Çift)");
 
             for (int i = 1; i < 1000; i++) adetComboBox.Items.Add(i);
+
+            if (alinacakHaliDataGridView != null && alinacakHaliDataGridView.Columns.Count > 0)
+            {
+                if (alinacakHaliDataGridView.Columns.Contains("haliCins")) alinacakHaliDataGridView.Columns["haliCins"].HeaderText = "Halı Cinsi";
+                if (alinacakHaliDataGridView.Columns.Contains("haliAdet")) alinacakHaliDataGridView.Columns["haliAdet"].HeaderText = "Halı Adeti";
+                if (alinacakHaliDataGridView.Columns.Contains("haliBoyut")) alinacakHaliDataGridView.Columns["haliBoyut"].HeaderText = "Halı Boyutu";
+                if (alinacakHaliDataGridView.Columns.Contains("haliFiyat")) alinacakHaliDataGridView.Columns["haliFiyat"].HeaderText = "Fiyat";
+            }
+
+            alinacakHaliDataGridView.BackgroundColor = Color.FromArgb(240, 245, 250);
+            alinacakHaliDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 245, 250);
+            alinacakHaliDataGridView.EnableHeadersVisualStyles = false;
+            alinacakHaliDataGridView.RowHeadersVisible = false;
+            alinacakHaliDataGridView.ReadOnly = true;
+            alinacakHaliDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            alinacakHaliDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            alinacakHaliDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
+            alinacakHaliDataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 245, 250);
+            alinacakHaliDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 235, 245);
+            alinacakHaliDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            alinacakHaliDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            alinacakHaliDataGridView.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
+            teslimTarihiDateTimePicker.Value = DateTime.Now;
         }
 
         void siparisEkle()
@@ -106,7 +146,7 @@ namespace haliYikama
                 double fiyat = 0;
 
                 double makine = 0; double akrilik = 0; double shaggy = 0; double plastik = 0; double bambu = 0; double yun = 0;
-                double ipek = 0; double storPerde = 0; double overlok = 0; double yorganTek = 0; double yorganCift = 0;
+                double ipek = 0; double storPerde = 0; double overlok = 0; double yorganTek = 0; double yorganCift = 0; double isparta = 0;
 
                 string komut = "SELECT * FROM haliFiyat WHERE Kimlik=11";
 
@@ -123,6 +163,7 @@ namespace haliYikama
                     plastik = Convert.ToDouble(oku["plastik"]);
                     bambu = Convert.ToDouble(oku["bambu"]);
                     yun = Convert.ToDouble(oku["yun"]);
+                    isparta = Convert.ToDouble(oku["isparta"]);
                     ipek = Convert.ToDouble(oku["ipek"]);
                     storPerde = Convert.ToDouble(oku["storPerde"]);
                     overlok = Convert.ToDouble(oku["overlok"]);
@@ -138,6 +179,7 @@ namespace haliYikama
                     case "Plastik": fiyat = plastik * metreKare * adet; break;
                     case "Bambu": fiyat = bambu * metreKare * adet; break;
                     case "Yün": fiyat = yun * metreKare * adet; break;
+                    case "Isparta": fiyat = isparta * metreKare * adet; break;
                     case "İpek": fiyat = ipek * metreKare * adet; break;
                     case "Stor Perde": fiyat = storPerde * metreKare * adet; break;
                     case "Overlok": fiyat = overlok * metreKare * adet; break;
@@ -202,6 +244,7 @@ namespace haliYikama
             alinacakHaliDataGridView.DataSource = dt;
             alinacakHaliDataGridView.Columns["Kimlik"].Visible = false;
             alinacakHaliDataGridView.Columns["siparisNo"].Visible = false;
+            yukle();
 
             connect.Close();
         }

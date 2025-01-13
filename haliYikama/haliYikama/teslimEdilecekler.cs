@@ -28,8 +28,6 @@ namespace haliYikama
 
         private void geriDonPictureBox_Click(object sender, EventArgs e)
         {
-            siparisler siparisler = new siparisler();
-            siparisler.Show();
             this.Hide();
         }
 
@@ -40,6 +38,16 @@ namespace haliYikama
             toplam();
 
             toplamFiyatLabel.Text = toplamFiyat.ToString() + " ₺";
+        }
+
+        private void gonderButton_MouseEnter(object sender, EventArgs e)
+        {
+            gonderButton.BackColor = Color.FromArgb(160, 190, 210);
+        }
+
+        private void gonderButton_MouseLeave(object sender, EventArgs e)
+        {
+            gonderButton.BackColor = Color.FromArgb(200, 220, 240);
         }
 
         private void gonderButton_Click(object sender, EventArgs e)
@@ -68,6 +76,29 @@ namespace haliYikama
             {
                 haliDataGridView.Columns["Kimlik"].Visible = false;
             }
+
+            if (haliDataGridView != null && haliDataGridView.Columns.Count > 0)
+            {
+                if (haliDataGridView.Columns.Contains("siparisNo")) haliDataGridView.Columns["siparisNo"].HeaderText = "Sipariş Numarası";
+                if (haliDataGridView.Columns.Contains("haliCins")) haliDataGridView.Columns["haliCins"].HeaderText = "Halı Cinsi";
+                if (haliDataGridView.Columns.Contains("haliAdet")) haliDataGridView.Columns["haliAdet"].HeaderText = "Halı Adeti";
+                if (haliDataGridView.Columns.Contains("haliBoyut")) haliDataGridView.Columns["haliBoyut"].HeaderText = "Halı Boyutu";
+                if (haliDataGridView.Columns.Contains("haliFiyat")) haliDataGridView.Columns["haliFiyat"].HeaderText = "Fiyat";
+            }
+
+            haliDataGridView.BackgroundColor = Color.FromArgb(240, 245, 250);
+            haliDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 245, 250);
+            haliDataGridView.EnableHeadersVisualStyles = false;
+            haliDataGridView.RowHeadersVisible = false;
+            haliDataGridView.ReadOnly = true;
+            haliDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            haliDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            haliDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
+            haliDataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 245, 250);
+            haliDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 235, 245);
+            haliDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            haliDataGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 220, 240);
+            haliDataGridView.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
         }
 
         void toplam()
@@ -131,8 +162,6 @@ namespace haliYikama
 
                         connect.Close();
 
-                        siparisler siparisler = new siparisler();
-                        siparisler.Show();
                         this.Hide();
                     }
                 }
@@ -171,8 +200,6 @@ namespace haliYikama
 
                         connect.Close();
 
-                        siparisler siparisler = new siparisler();
-                        siparisler.Show();
                         this.Hide();
                     }
                     else
@@ -188,8 +215,6 @@ namespace haliYikama
 
                         connect.Close();
 
-                        siparisler siparisler = new siparisler();
-                        siparisler.Show();
                         this.Hide();
                     }
                 }

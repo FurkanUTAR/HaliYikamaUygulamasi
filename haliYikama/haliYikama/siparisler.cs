@@ -34,6 +34,15 @@ namespace haliYikama
             hepsiButton.BackColor = Color.FromArgb(150, 150, 180);
         }
 
+        private void yenilePictureBox_Click(object sender, EventArgs e)
+        {
+            if (islem == "alinacak") alinacakGoster();
+            else if (islem == "teslimat") teslimatGoster();
+            else if (islem == "veresiye") veresiyeGoster();
+            else if (islem == "hepsi") hepsiGoster();
+            else MessageBox.Show("Hata!!");
+        }
+
         private void geriDonPictureBox_Click(object sender, EventArgs e)
         {
             anaSayfa anaSayfa = new anaSayfa();
@@ -192,8 +201,7 @@ namespace haliYikama
                 {
                     alinacaklar alinacaklar = new alinacaklar();
                     alinacaklar.siparisNo = siparisNo;
-                    alinacaklar.Show();
-                    this.Hide();
+                    alinacaklar.ShowDialog();
                 }
                 else MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -210,8 +218,7 @@ namespace haliYikama
                 {
                     teslimEdilecekler teslimEdilecekler = new teslimEdilecekler();
                     teslimEdilecekler.siparisNo = siparisNo;
-                    teslimEdilecekler.Show();
-                    this.Hide();
+                    teslimEdilecekler.ShowDialog();
                 }
                 else MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -229,8 +236,7 @@ namespace haliYikama
                 {
                     veresiye veresiye = new veresiye();
                     veresiye.siparisNo = siparisNo;
-                    veresiye.Show();
-                    this.Hide();
+                    veresiye.ShowDialog();
                 }
                 else MessageBox.Show("Seçilen kaydın Sipariş Numarası geçerli bir sayı değil.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -252,24 +258,21 @@ namespace haliYikama
                         islem = "alinacak";
                         alinacaklar alinacaklar = new alinacaklar();
                         alinacaklar.siparisNo = siparisNo;
-                        alinacaklar.Show();
-                        this.Hide();
+                        alinacaklar.ShowDialog();
                     }
                     else if (durum == "Teslimat")
                     {
                         islem = "teslimat";
                         teslimEdilecekler teslimEdilecekler = new teslimEdilecekler();
                         teslimEdilecekler.siparisNo = siparisNo;
-                        teslimEdilecekler.Show();
-                        this.Hide();
+                        teslimEdilecekler.ShowDialog();
                     }
                     else if (durum == "Veresiye")
                     {
                         islem = "veresiye";
                         veresiye veresiye = new veresiye();
                         veresiye.siparisNo = siparisNo;
-                        veresiye.Show();
-                        this.Hide();
+                        veresiye.ShowDialog();
                     }
                     else MessageBox.Show($"Geçersiz durum: {durum}");
                 }

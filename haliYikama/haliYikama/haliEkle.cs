@@ -51,6 +51,7 @@ namespace haliYikama
             urunComboBox.Items.Add("Plastik");
             urunComboBox.Items.Add("Bambu");
             urunComboBox.Items.Add("Yün");
+            urunComboBox.Items.Add("Isparta");
             urunComboBox.Items.Add("İpek");
             urunComboBox.Items.Add("Stor Perde");
             urunComboBox.Items.Add("Overlok");
@@ -75,7 +76,7 @@ namespace haliYikama
                 double fiyat = 0;
 
                 double makine = 0; double akrilik = 0; double shaggy = 0; double plastik = 0; double bambu = 0; double yun = 0;
-                double ipek = 0; double storPerde = 0; double overlok = 0; double yorganTek = 0; double yorganCift = 0;
+                double ipek = 0; double storPerde = 0; double overlok = 0; double yorganTek = 0; double yorganCift = 0; double isparta = 0;
 
                 string komut = "SELECT * FROM haliFiyat WHERE Kimlik=11";
 
@@ -92,6 +93,7 @@ namespace haliYikama
                     plastik = Convert.ToDouble(oku["plastik"]);
                     bambu = Convert.ToDouble(oku["bambu"]);
                     yun = Convert.ToDouble(oku["yun"]);
+                    yun = Convert.ToDouble(oku["isparta"]);
                     ipek = Convert.ToDouble(oku["ipek"]);
                     storPerde = Convert.ToDouble(oku["storPerde"]);
                     overlok = Convert.ToDouble(oku["overlok"]);
@@ -107,6 +109,7 @@ namespace haliYikama
                     case "Plastik": fiyat = plastik * metreKare * adet; break;
                     case "Bambu": fiyat = bambu * metreKare * adet; break;
                     case "Yün": fiyat = yun * metreKare * adet; break;
+                    case "Isparta": fiyat = isparta * metreKare * adet; break;
                     case "İpek": fiyat = ipek * metreKare * adet; break;
                     case "Stor Perde": fiyat = storPerde * metreKare * adet; break;
                     case "Overlok": fiyat = overlok * metreKare * adet; break;

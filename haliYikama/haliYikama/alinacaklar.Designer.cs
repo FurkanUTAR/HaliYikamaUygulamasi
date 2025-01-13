@@ -47,17 +47,25 @@
             this.indirimEklePictureBox = new System.Windows.Forms.PictureBox();
             this.eklePictureBox = new System.Windows.Forms.PictureBox();
             this.geriDonPictureBox = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.alinacakHaliDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.indirimEklePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eklePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // urunComboBox
             // 
             this.urunComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.urunComboBox.FormattingEnabled = true;
-            this.urunComboBox.Location = new System.Drawing.Point(11, 43);
+            this.urunComboBox.Location = new System.Drawing.Point(72, 27);
             this.urunComboBox.Name = "urunComboBox";
             this.urunComboBox.Size = new System.Drawing.Size(95, 21);
             this.urunComboBox.TabIndex = 37;
@@ -66,7 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 27);
+            this.label1.Location = new System.Drawing.Point(71, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 38;
@@ -74,18 +82,18 @@
             // 
             // alinacakHaliDataGridView
             // 
-            this.alinacakHaliDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.alinacakHaliDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
             this.alinacakHaliDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.alinacakHaliDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.alinacakHaliDataGridView.Location = new System.Drawing.Point(1, 106);
+            this.alinacakHaliDataGridView.Location = new System.Drawing.Point(18, 94);
             this.alinacakHaliDataGridView.Name = "alinacakHaliDataGridView";
-            this.alinacakHaliDataGridView.Size = new System.Drawing.Size(232, 236);
+            this.alinacakHaliDataGridView.Size = new System.Drawing.Size(319, 160);
             this.alinacakHaliDataGridView.TabIndex = 39;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 27);
+            this.label2.Location = new System.Drawing.Point(171, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 41;
@@ -95,7 +103,7 @@
             // 
             this.adetComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.adetComboBox.FormattingEnabled = true;
-            this.adetComboBox.Location = new System.Drawing.Point(112, 43);
+            this.adetComboBox.Location = new System.Drawing.Point(171, 27);
             this.adetComboBox.Name = "adetComboBox";
             this.adetComboBox.Size = new System.Drawing.Size(43, 21);
             this.adetComboBox.TabIndex = 40;
@@ -103,7 +111,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(160, 27);
+            this.label3.Location = new System.Drawing.Point(217, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(18, 13);
             this.label3.TabIndex = 43;
@@ -111,24 +119,27 @@
             // 
             // metreKareTextBox
             // 
-            this.metreKareTextBox.Location = new System.Drawing.Point(161, 43);
+            this.metreKareTextBox.Location = new System.Drawing.Point(218, 28);
             this.metreKareTextBox.Name = "metreKareTextBox";
             this.metreKareTextBox.Size = new System.Drawing.Size(32, 20);
             this.metreKareTextBox.TabIndex = 44;
             // 
             // gonderButton
             // 
-            this.gonderButton.Location = new System.Drawing.Point(146, 428);
+            this.gonderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
+            this.gonderButton.Location = new System.Drawing.Point(-7, -6);
             this.gonderButton.Name = "gonderButton";
-            this.gonderButton.Size = new System.Drawing.Size(84, 36);
+            this.gonderButton.Size = new System.Drawing.Size(100, 47);
             this.gonderButton.TabIndex = 46;
             this.gonderButton.Text = "Gönder";
-            this.gonderButton.UseVisualStyleBackColor = true;
+            this.gonderButton.UseVisualStyleBackColor = false;
             this.gonderButton.Click += new System.EventHandler(this.gonderButton_Click);
+            this.gonderButton.MouseEnter += new System.EventHandler(this.gonderButton_MouseEnter);
+            this.gonderButton.MouseLeave += new System.EventHandler(this.gonderButton_MouseLeave);
             // 
             // indirimTextBox
             // 
-            this.indirimTextBox.Location = new System.Drawing.Point(13, 83);
+            this.indirimTextBox.Location = new System.Drawing.Point(72, 68);
             this.indirimTextBox.Name = "indirimTextBox";
             this.indirimTextBox.Size = new System.Drawing.Size(95, 20);
             this.indirimTextBox.TabIndex = 48;
@@ -136,7 +147,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 67);
+            this.label4.Location = new System.Drawing.Point(71, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 47;
@@ -144,18 +155,21 @@
             // 
             // cıkarButton
             // 
-            this.cıkarButton.Location = new System.Drawing.Point(145, 348);
+            this.cıkarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
+            this.cıkarButton.Location = new System.Drawing.Point(-7, -6);
             this.cıkarButton.Name = "cıkarButton";
-            this.cıkarButton.Size = new System.Drawing.Size(84, 24);
+            this.cıkarButton.Size = new System.Drawing.Size(100, 47);
             this.cıkarButton.TabIndex = 50;
             this.cıkarButton.Text = "Çıkar";
-            this.cıkarButton.UseVisualStyleBackColor = true;
+            this.cıkarButton.UseVisualStyleBackColor = false;
             this.cıkarButton.Click += new System.EventHandler(this.cıkarButton_Click);
+            this.cıkarButton.MouseEnter += new System.EventHandler(this.cıkarButton_MouseEnter);
+            this.cıkarButton.MouseLeave += new System.EventHandler(this.cıkarButton_MouseLeave);
             // 
             // teslimTarihiDateTimePicker
             // 
             this.teslimTarihiDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.teslimTarihiDateTimePicker.Location = new System.Drawing.Point(145, 84);
+            this.teslimTarihiDateTimePicker.Location = new System.Drawing.Point(201, 68);
             this.teslimTarihiDateTimePicker.Name = "teslimTarihiDateTimePicker";
             this.teslimTarihiDateTimePicker.Size = new System.Drawing.Size(81, 20);
             this.teslimTarihiDateTimePicker.TabIndex = 54;
@@ -164,7 +178,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(143, 68);
+            this.label5.Location = new System.Drawing.Point(200, 52);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 55;
@@ -173,7 +187,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 354);
+            this.label7.Location = new System.Drawing.Point(74, 271);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(9, 13);
             this.label7.TabIndex = 59;
@@ -182,7 +196,7 @@
             // toplamFiyatLabel
             // 
             this.toplamFiyatLabel.AutoSize = true;
-            this.toplamFiyatLabel.Location = new System.Drawing.Point(52, 354);
+            this.toplamFiyatLabel.Location = new System.Drawing.Point(80, 271);
             this.toplamFiyatLabel.Name = "toplamFiyatLabel";
             this.toplamFiyatLabel.Size = new System.Drawing.Size(32, 13);
             this.toplamFiyatLabel.TabIndex = 58;
@@ -191,7 +205,7 @@
             // adetLabel
             // 
             this.adetLabel.AutoSize = true;
-            this.adetLabel.Location = new System.Drawing.Point(8, 354);
+            this.adetLabel.Location = new System.Drawing.Point(31, 271);
             this.adetLabel.Name = "adetLabel";
             this.adetLabel.Size = new System.Drawing.Size(29, 13);
             this.adetLabel.TabIndex = 57;
@@ -200,7 +214,7 @@
             // indirimEklePictureBox
             // 
             this.indirimEklePictureBox.Image = global::haliYikama.Properties.Resources.addOrder;
-            this.indirimEklePictureBox.Location = new System.Drawing.Point(112, 84);
+            this.indirimEklePictureBox.Location = new System.Drawing.Point(172, 69);
             this.indirimEklePictureBox.Name = "indirimEklePictureBox";
             this.indirimEklePictureBox.Size = new System.Drawing.Size(23, 19);
             this.indirimEklePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -211,7 +225,7 @@
             // eklePictureBox
             // 
             this.eklePictureBox.Image = global::haliYikama.Properties.Resources.addOrder;
-            this.eklePictureBox.Location = new System.Drawing.Point(199, 44);
+            this.eklePictureBox.Location = new System.Drawing.Point(256, 29);
             this.eklePictureBox.Name = "eklePictureBox";
             this.eklePictureBox.Size = new System.Drawing.Size(23, 19);
             this.eklePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -224,45 +238,87 @@
             this.geriDonPictureBox.Image = global::haliYikama.Properties.Resources.left;
             this.geriDonPictureBox.Location = new System.Drawing.Point(1, 1);
             this.geriDonPictureBox.Name = "geriDonPictureBox";
-            this.geriDonPictureBox.Size = new System.Drawing.Size(23, 19);
+            this.geriDonPictureBox.Size = new System.Drawing.Size(30, 25);
             this.geriDonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.geriDonPictureBox.TabIndex = 36;
             this.geriDonPictureBox.TabStop = false;
             this.geriDonPictureBox.Click += new System.EventHandler(this.geriDonPictureBox_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.geriDonPictureBox);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(434, 361);
+            this.panel1.TabIndex = 60;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.adetLabel);
+            this.panel2.Controls.Add(this.teslimTarihiDateTimePicker);
+            this.panel2.Controls.Add(this.toplamFiyatLabel);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.alinacakHaliDataGridView);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.urunComboBox);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.adetComboBox);
+            this.panel2.Controls.Add(this.indirimEklePictureBox);
+            this.panel2.Controls.Add(this.eklePictureBox);
+            this.panel2.Controls.Add(this.indirimTextBox);
+            this.panel2.Controls.Add(this.metreKareTextBox);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(40, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(354, 353);
+            this.panel2.TabIndex = 61;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.gonderButton);
+            this.panel4.Location = new System.Drawing.Point(252, 302);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(84, 36);
+            this.panel4.TabIndex = 61;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.cıkarButton);
+            this.panel3.Location = new System.Drawing.Point(252, 260);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(84, 36);
+            this.panel3.TabIndex = 60;
+            // 
             // alinacaklar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 476);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.toplamFiyatLabel);
-            this.Controls.Add(this.adetLabel);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.teslimTarihiDateTimePicker);
-            this.Controls.Add(this.cıkarButton);
-            this.Controls.Add(this.indirimEklePictureBox);
-            this.Controls.Add(this.indirimTextBox);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.gonderButton);
-            this.Controls.Add(this.eklePictureBox);
-            this.Controls.Add(this.metreKareTextBox);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.adetComboBox);
-            this.Controls.Add(this.alinacakHaliDataGridView);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.urunComboBox);
-            this.Controls.Add(this.geriDonPictureBox);
+            this.ClientSize = new System.Drawing.Size(434, 361);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "alinacaklar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alınacaklar";
             this.Load += new System.EventHandler(this.alinacaklar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.alinacakHaliDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.indirimEklePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eklePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -287,5 +343,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label toplamFiyatLabel;
         private System.Windows.Forms.Label adetLabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
     }
 }

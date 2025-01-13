@@ -45,6 +45,7 @@
             this.anaSayfaPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.yenilePictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.siparisDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.geriDonPictureBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -54,6 +55,7 @@
             this.panel3.SuspendLayout();
             this.anaSayfaPanel.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.yenilePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // siparisDataGridView
@@ -215,6 +217,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
+            this.panel6.Controls.Add(this.yenilePictureBox);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.geriDonPictureBox);
             this.panel6.Location = new System.Drawing.Point(0, 0);
@@ -227,11 +230,22 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label1.Location = new System.Drawing.Point(430, 5);
+            this.label1.Location = new System.Drawing.Point(430, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 31);
             this.label1.TabIndex = 37;
             this.label1.Text = "Siparişler";
+            // 
+            // yenilePictureBox
+            // 
+            this.yenilePictureBox.Image = global::haliYikama.Properties.Resources.refresh1;
+            this.yenilePictureBox.Location = new System.Drawing.Point(954, 3);
+            this.yenilePictureBox.Name = "yenilePictureBox";
+            this.yenilePictureBox.Size = new System.Drawing.Size(25, 25);
+            this.yenilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.yenilePictureBox.TabIndex = 55;
+            this.yenilePictureBox.TabStop = false;
+            this.yenilePictureBox.Click += new System.EventHandler(this.yenilePictureBox_Click);
             // 
             // siparisler
             // 
@@ -255,6 +269,7 @@
             this.anaSayfaPanel.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.yenilePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,5 +289,6 @@
         private System.Windows.Forms.Panel anaSayfaPanel;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox yenilePictureBox;
     }
 }
